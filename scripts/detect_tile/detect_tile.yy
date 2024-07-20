@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"detect_tile",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"detect_tile",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

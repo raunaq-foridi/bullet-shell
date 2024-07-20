@@ -1,0 +1,16 @@
+// Script assets have changed for v2.3.0 see
+// https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
+
+function detect_tile(_relX,_relY){ //checks for a tile collision, if the object was moved by (relx,relY)
+	
+	//gets the id of the collision layer, and then gets the id of the map it uses
+	var _lay_id = layer_get_id("solid_tiles");
+	var _map_id = layer_tilemap_get_id(_lay_id);
+	
+	//checks for a tile where specified
+	var _collision=false;
+	if(place_meeting(x+_relX,y + _relY, _map_id)){
+		_collision=true;}
+		
+	return _collision
+}
