@@ -21,3 +21,6 @@ jump_speed= 10;
 
 iframes=100; //self explanatory.
 invincible=false; //Whether or not in iframes
+blink=false;	//visibility while "flashing" iframes
+blink_time=10;
+alarm[1]=blink_time;

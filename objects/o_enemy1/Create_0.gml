@@ -6,6 +6,8 @@
 
 hp=100;
 contact=1;
+knockback=20;
+
 grounded=false;
 terminal_speed=100;
 grav_speed=1;
