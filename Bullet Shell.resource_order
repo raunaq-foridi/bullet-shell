@@ -17,9 +17,13 @@
     {"name":"Timelines","order":8,"path":"folders/Timelines.yy",},
   ],
   "ResourceOrderSettings":[
-    {"name":"repeat_move","order":1,"path":"scripts/repeat_move/repeat_move.yy",},
+    {"name":"o_enemy1","order":3,"path":"objects/o_enemy1/o_enemy1.yy",},
+    {"name":"o_enemyParent","order":2,"path":"objects/o_enemyParent/o_enemyParent.yy",},
+    {"name":"o_hud","order":5,"path":"objects/o_hud/o_hud.yy",},
     {"name":"print","order":2,"path":"scripts/print/print.yy",},
+    {"name":"repeat_move","order":1,"path":"scripts/repeat_move/repeat_move.yy",},
+    {"name":"s_enemy1","order":4,"path":"sprites/s_enemy1/s_enemy1.yy",},
+    {"name":"s_player","order":1,"path":"sprites/s_player/s_player.yy",},
     {"name":"Sprite1","order":1,"path":"sprites/Sprite1/Sprite1.yy",},
-    {"name":"Sprite2","order":1,"path":"sprites/Sprite2/Sprite2.yy",},
   ],
 }

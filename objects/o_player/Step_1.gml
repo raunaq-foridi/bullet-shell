@@ -2,6 +2,7 @@
 // You can write your code in this editor
 
 
+//Might Bundle Groundedness+Gravity code into a reusable script eventually.
 //Groundedness code
 if (detect_tile(0,1)!=0){
 	grounded=true;

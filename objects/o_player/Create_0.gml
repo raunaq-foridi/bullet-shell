@@ -1,6 +1,9 @@
 /// @description Insert description here
 // You can write your code in this editor
 
+hp = 6;
+max_hp=6;
+
 grounded = false;
 grounded_x = x;	//position of last point the player was grounded
 grounded_y = y;
@@ -15,3 +18,6 @@ air_resistance=1; //How quickly you lose horizontal momentum midair when not hol
 
 move_speed = 5;
 jump_speed= 10;
+
+iframes=100; //self explanatory.
+invincible=false; //Whether or not in iframes
