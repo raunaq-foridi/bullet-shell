@@ -4,13 +4,13 @@
 //Then, all collision events and anything shared for all enemies should be done on enemyParent
 //Create event is unnecessary if not deviating from default values
 
-hp=100;
-contact=1;
-knockback=20;
 
-grounded=false;
-terminal_speed=100;
-grav_speed=1;
+//If using a Create event like this, use event_inherited();
+//This prevents you having to copy-paste ALL variables - only use the ones modified.
+
+event_inherited();
+
+knockback=10;
 
 vel_x=0;
 vel_y=0;

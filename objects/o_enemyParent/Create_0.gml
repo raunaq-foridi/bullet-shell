@@ -8,6 +8,9 @@ hp = 100;
 contact = 1;  //contact damage. Unsure if it'll ever be greater than 1 but yeah.
 knockback=1;
 
+iframes=20;
+invincible=false;
+
 grounded=false;
 terminal_speed=100;
 grav_speed=1;

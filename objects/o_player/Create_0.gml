@@ -24,3 +24,5 @@ invincible=false; //Whether or not in iframes
 blink=false;	//visibility while "flashing" iframes
 blink_time=10;
 alarm[1]=blink_time;
+
+facing = "right";	//which direction player is facing

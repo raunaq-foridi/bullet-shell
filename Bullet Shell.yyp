@@ -36,8 +36,9 @@
   "resources":[
     {"id":{"name":"o_enemy1","path":"objects/o_enemy1/o_enemy1.yy",},},
     {"id":{"name":"o_enemyParent","path":"objects/o_enemyParent/o_enemyParent.yy",},},
-    {"id":{"name":"o_player","path":"objects/o_player/o_player.yy",},},
     {"id":{"name":"o_hud","path":"objects/o_hud/o_hud.yy",},},
+    {"id":{"name":"o_player","path":"objects/o_player/o_player.yy",},},
+    {"id":{"name":"o_sword","path":"objects/o_sword/o_sword.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
     {"id":{"name":"detect_tile","path":"scripts/detect_tile/detect_tile.yy",},},
     {"id":{"name":"print","path":"scripts/print/print.yy",},},
@@ -45,6 +46,7 @@
     {"id":{"name":"s_enemy1","path":"sprites/s_enemy1/s_enemy1.yy",},},
     {"id":{"name":"s_player","path":"sprites/s_player/s_player.yy",},},
     {"id":{"name":"Sprite1","path":"sprites/Sprite1/Sprite1.yy",},},
+    {"id":{"name":"s_sword","path":"sprites/s_sword/s_sword.yy",},},
     {"id":{"name":"SolidTiles","path":"tilesets/SolidTiles/SolidTiles.yy",},},
   ],
   "resourceType":"GMProject",
