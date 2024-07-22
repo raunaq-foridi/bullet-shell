@@ -11,6 +11,7 @@
 event_inherited();
 
 knockback=10;
+hp = 4;
 
 vel_x=0;
 vel_y=0;
