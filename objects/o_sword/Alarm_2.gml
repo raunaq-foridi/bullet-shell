@@ -1,0 +1,3 @@
+/// @description cooldown
+
+recharging=false;
