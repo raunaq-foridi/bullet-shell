@@ -25,9 +25,9 @@
     {"name":"print","order":2,"path":"scripts/print/print.yy",},
     {"name":"repeat_move","order":1,"path":"scripts/repeat_move/repeat_move.yy",},
     {"name":"s_enemy1","order":4,"path":"sprites/s_enemy1/s_enemy1.yy",},
+    {"name":"s_enemy2","order":9,"path":"sprites/s_enemy2/s_enemy2.yy",},
     {"name":"s_player","order":1,"path":"sprites/s_player/s_player.yy",},
     {"name":"s_sword","order":7,"path":"sprites/s_sword/s_sword.yy",},
     {"name":"Sprite1","order":1,"path":"sprites/Sprite1/Sprite1.yy",},
-    {"name":"s_enemy2","order":9,"path":"sprites/s_enemy2/s_enemy2.yy",},
   ],
 }
