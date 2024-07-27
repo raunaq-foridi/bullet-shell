@@ -13,5 +13,6 @@ if (not other.invincible and attacking){
 		alarm[0]=iframes;	//starts enemies iframe timer
 	}
 		
+	audio_play_sound(snd_hit,1,false);	//play a hit sound effect
 }
 
