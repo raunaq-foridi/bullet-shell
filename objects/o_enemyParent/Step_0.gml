@@ -4,3 +4,4 @@ repeat_move(vel_x,vel_y);
 if (hp<=0){
 	instance_deactivate_object(self);
 }
+if (not invincible){visible=true;}

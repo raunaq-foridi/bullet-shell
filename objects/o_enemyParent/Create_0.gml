@@ -17,3 +17,12 @@ grav_speed=1;
 
 vel_x=0;
 vel_y=0;
+
+stunned=0;
+
+blink=4;
+alarm[1]=blink;	//how many frames it takes to blink
+
+knockback_resist=1;	//divisor: 0.5 means "takes half knockback"
+
+function movement_ai(){}	//blank function. use in child objects.
