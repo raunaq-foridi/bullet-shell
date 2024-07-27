@@ -7,6 +7,11 @@ if (not other.invincible and attacking){
 	other.invincible=true;	//makes enemy invulnerable
 	other.stunned=stun;		//stops enemy movement
 	
-	with(other){alarm[0]=iframes;}	//starts enemies iframe timer
+		if (o_player.facing="right"){other.vel_x+=knockback * other.knockback_resist;}
+		else{other.vel_x-=knockback  * other.knockback_resist;}
+	with(other){
+		alarm[0]=iframes;	//starts enemies iframe timer
+	}
+		
 }
 
