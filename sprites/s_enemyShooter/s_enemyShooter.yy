@@ -1,27 +1,27 @@
 {
   "$GMSprite":"",
-  "%Name":"s_enemy2",
+  "%Name":"s_enemyShooter",
   "bboxMode":0,
-  "bbox_bottom":40,
-  "bbox_left":24,
-  "bbox_right":39,
-  "bbox_top":25,
+  "bbox_bottom":23,
+  "bbox_left":0,
+  "bbox_right":25,
+  "bbox_top":0,
   "collisionKind":1,
   "collisionTolerance":0,
   "DynamicTexturePage":false,
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"d7f78fc8-03f3-42c6-8e87-f2af797bd29a","name":"d7f78fc8-03f3-42c6-8e87-f2af797bd29a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"","%Name":"be3a8903-cd6c-45f5-a80d-d68c61819f0a","name":"be3a8903-cd6c-45f5-a80d-d68c61819f0a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
-  "height":64,
+  "height":27,
   "HTile":false,
   "layers":[
-    {"$GMImageLayer":"","%Name":"f848a374-a85d-4293-9d9c-6c99b8de4b02","blendMode":0,"displayName":"default","isLocked":false,"name":"f848a374-a85d-4293-9d9c-6c99b8de4b02","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
+    {"$GMImageLayer":"","%Name":"ec26752b-41fb-4d29-b2f6-5b6d7c2854f4","blendMode":0,"displayName":"default","isLocked":false,"name":"ec26752b-41fb-4d29-b2f6-5b6d7c2854f4","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
-  "name":"s_enemy2",
+  "name":"s_enemyShooter",
   "nineSlice":null,
   "origin":0,
   "parent":{
@@ -33,7 +33,7 @@
   "resourceVersion":"2.0",
   "sequence":{
     "$GMSequence":"",
-    "%Name":"s_enemy2",
+    "%Name":"s_enemyShooter",
     "autoRecord":true,
     "backdropHeight":768,
     "backdropImageOpacity":0.5,
@@ -57,7 +57,7 @@
       "resourceType":"KeyframeStore<MomentsEventKeyframe>",
       "resourceVersion":"2.0",
     },
-    "name":"s_enemy2",
+    "name":"s_enemyShooter",
     "playback":1,
     "playbackSpeed":30.0,
     "playbackSpeedType":0,
@@ -69,8 +69,8 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"d7f78fc8-03f3-42c6-8e87-f2af797bd29a","path":"sprites/s_enemy2/s_enemy2.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"a662602f-d2bf-40be-a2f9-7e2136dbebfc","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"be3a8903-cd6c-45f5-a80d-d68c61819f0a","path":"sprites/s_enemyShooter/s_enemyShooter.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"01e10cf4-bd54-433a-9ac6-99f08203b776","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,
@@ -86,5 +86,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":64,
+  "width":27,
 }
