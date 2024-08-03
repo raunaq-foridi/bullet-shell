@@ -1,11 +1,12 @@
 {
   "$GMObject":"",
-  "%Name":"o_enemy1",
+  "%Name":"o_enemyShooter",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":2,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"o_enemy1",
+  "name":"o_enemyShooter",
   "overriddenProperties":[],
   "parent":{
     "name":"Enemies",
@@ -33,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"s_enemy1",
-    "path":"sprites/s_enemy1/s_enemy1.yy",
+    "name":"s_enemyShooter",
+    "path":"sprites/s_enemyShooter/s_enemyShooter.yy",
   },
   "spriteMaskId":null,
   "visible":true,

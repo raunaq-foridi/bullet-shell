@@ -9,7 +9,7 @@ else{grounded=false;}
 
 //gravity
 if (not grounded){
-	if (vel_y<=terminal_speed){
+	if (vel_y<terminal_speed){
 		vel_y+=grav_speed;}
 }
 else if(vel_y>0){	//i.e, if grounded, set fall speed to 0

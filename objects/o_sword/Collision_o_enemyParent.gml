@@ -2,7 +2,7 @@
 
 if (not other.invincible and attacking){
 	other.hp-=1;
-	print(other.hp);
+	//print(other.hp);
 	
 	other.invincible=true;	//makes enemy invulnerable
 	other.stunned=stun;		//stops enemy movement

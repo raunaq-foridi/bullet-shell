@@ -1,19 +1,19 @@
 {
   "$GMObject":"",
-  "%Name":"o_enemy1",
+  "%Name":"o_projBall",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"o_enemy1",
+  "name":"o_projBall",
   "overriddenProperties":[],
   "parent":{
-    "name":"Enemies",
-    "path":"folders/Objects/Enemies.yy",
+    "name":"Projectiles",
+    "path":"folders/Objects/Projectiles.yy",
   },
   "parentObjectId":{
-    "name":"o_enemyParent",
-    "path":"objects/o_enemyParent/o_enemyParent.yy",
+    "name":"o_projectileParent",
+    "path":"objects/o_projectileParent/o_projectileParent.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -33,8 +33,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"s_enemy1",
-    "path":"sprites/s_enemy1/s_enemy1.yy",
+    "name":"s_projBall",
+    "path":"sprites/s_projBall/s_projBall.yy",
   },
   "spriteMaskId":null,
   "visible":true,
