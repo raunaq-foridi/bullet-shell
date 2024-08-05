@@ -7,10 +7,15 @@ function detect_tile(_relX,_relY){ //checks for a tile collision, if the object 
 	var _lay_id = layer_get_id("solid_tiles");
 	var _map_id = layer_tilemap_get_id(_lay_id);
 	
+	//Do the same for the complex tile layer
+	var _lay_id2= layer_get_id("complex_tiles");
+	var _map_id2 = layer_tilemap_get_id(_lay_id2);
 	//checks for a tile where specified
 	var _collision=false;
 	if(place_meeting(x+_relX,y + _relY, _map_id)){
 		_collision=true;}
 		
+	if(place_meeting(x+_relX,y + _relY, _map_id2)){
+		_collision=true;}
 	return _collision
 }
