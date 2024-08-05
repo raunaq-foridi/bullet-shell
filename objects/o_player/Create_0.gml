@@ -15,6 +15,8 @@ grav_speed=1; //Strength of gravity on player
 terminal_speed=100; //maximum fall speed
 friction_power=1; //How "slippery" motion feels. 0 is basically ice physics.
 air_resistance=1; //How quickly you lose horizontal momentum midair when not holding a key down
+slope_max=16;		//maximum size of a jump that can be automatically climbed
+					//Temporary, unsuitable value for testing. ideally ~6-9
 
 move_speed = 5;
 jump_speed= 10;
