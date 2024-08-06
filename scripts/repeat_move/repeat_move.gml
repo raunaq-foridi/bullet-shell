@@ -2,6 +2,7 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 
 //moves an object by iteratively moving a given number of steps
+//and deals with tile collisions
 function repeat_move(_move_x,_move_y){
 	var _dir_x = sign(_move_x); //"direction", positive or negative x [+1 or -1]
 	var _dir_y = sign(_move_y);
