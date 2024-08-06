@@ -62,6 +62,8 @@
     {"id":{"name":"s_projBall","path":"sprites/s_projBall/s_projBall.yy",},},
     {"id":{"name":"s_sword","path":"sprites/s_sword/s_sword.yy",},},
     {"id":{"name":"Sprite1","path":"sprites/Sprite1/Sprite1.yy",},},
+    {"id":{"name":"Sprite10","path":"sprites/Sprite10/Sprite10.yy",},},
+    {"id":{"name":"Sprite9","path":"sprites/Sprite9/Sprite9.yy",},},
     {"id":{"name":"ComplexTiles","path":"tilesets/ComplexTiles/ComplexTiles.yy",},},
     {"id":{"name":"SolidTiles","path":"tilesets/SolidTiles/SolidTiles.yy",},},
   ],
