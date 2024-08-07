@@ -9,6 +9,17 @@ if (detect_tile(0,1)!=0){
 }
 else{grounded=false;}
 
+//Deal with Semi Solids
+
+if (place_meeting(x,y+1,o_semiSolid)){
+	var _semisolid = instance_place(0,1,o_semiSolid);
+	print("in");
+	if (not place_meeting(x,y,_semisolid)){
+		grounded=true;	//Only set grounded if the semi-solid is beneath you, not in you.
+		print("grounded");
+	}
+}
+
 //gravity
 if (not grounded){
 	if (vel_y<=terminal_speed){
@@ -25,3 +36,4 @@ if (round(vel_x!=0)){
 	vel_x -= _applied_friction;
 }
 else{vel_x=0;}	//cuts off any speed <0.5; probably good for performance, stops oscillation.
+
