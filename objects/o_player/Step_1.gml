@@ -4,21 +4,24 @@
 
 //Might Bundle Groundedness+Gravity code into a reusable script eventually.
 //Groundedness code
-if (detect_tile(0,1)!=0){
+if (detect_tile(0,1)!=0 or place_meeting(x,y+1,o_semiSolid)){
 	grounded=true;
 }
 else{grounded=false;}
 
 //Deal with Semi Solids
 
-if (place_meeting(x,y+1,o_semiSolid)){
-	var _semisolid = instance_place(0,1,o_semiSolid);
-	print("in");
+/*if (place_meeting(x,y+vel_y,o_semiSolid)){
+	var _semisolid = instance_place(x,y,o_semiSolid);
+	print(place_meeting(x,y,_semisolid));
 	if (not place_meeting(x,y,_semisolid)){
 		grounded=true;	//Only set grounded if the semi-solid is beneath you, not in you.
-		print("grounded");
+		//print(_semisolid);
 	}
-}
+	over_semi_solid=true;
+	//if (not place_meeting(x,y,o_semiSolid) or true){grounded=true;}
+	
+}*/
 
 //gravity
 if (not grounded){

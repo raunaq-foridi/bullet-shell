@@ -14,7 +14,13 @@ function repeat_move(_move_x,_move_y){
 		//move one step in x, unless collision
 		if (not detect_tile(_dir_x,0)){x+=_dir_x;}
 		//move one step in y, unless collision
-		if (not detect_tile(0,_dir_y)){y+=_dir_y;}
+		
+		if (not detect_tile(0,_dir_y)){
+			if (_dir_y<0 or not place_meeting(x,y+1,o_semiSolid)){
+				y+=_dir_y;
+			}
+			
+		}
 	}
 	//At this point all x or y motion is complete; move straight in the remaining direction
 	if (_mag_x>_mag_y){
@@ -24,7 +30,13 @@ function repeat_move(_move_x,_move_y){
 	}
 	else{
 		repeat(_mag_y-_mag_x){
-			if (not detect_tile(0,_dir_y)){y+=_dir_y;}	//move in y until done
+			if (not detect_tile(0,_dir_y)){
+				if (_dir_y<0 or not place_meeting(x,y+1,o_semiSolid)){
+					y+=_dir_y;
+				}
+			
+			}
+			//move in y until done
 		}
 	}
 }

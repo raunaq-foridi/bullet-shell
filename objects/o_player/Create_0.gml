@@ -29,3 +29,4 @@ alarm[1]=blink_time;
 
 facing = "right";	//which direction player is facing
 in_semi_solid=false;//Whether the player is currently passing through a semi solid
+over_semi_solid=false;
