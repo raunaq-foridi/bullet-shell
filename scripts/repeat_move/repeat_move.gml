@@ -17,21 +17,16 @@ function repeat_move(_move_x,_move_y){
 		if (not detect_tile(0,_dir_y)){
 				
 				if(place_meeting(x,y+1,o_semiSolid) and _dir_y>0){
-					var _semisolid=instance_place(x,y+1,o_semiSolid);
 					var _semisolidList = ds_list_create();
-					instance_place_list(x,y+1,o_semiSolid,_semisolidList,true);
-					var _semisolid2 = ds_list_find_value(_semisolidList,ds_list_size(_semisolidList)-1);
-					if(place_meeting(x,y,_semisolid2)){
-						y+=_dir_y;
+					instance_place_list(x,y+1,o_semiSolid,_semisolidList,true);	//List all objects the "foot" intersects, ordered by distance
+					var _semisolid = ds_list_find_value(_semisolidList,ds_list_size(_semisolidList)-1); //Grab the most distant of these
+					if(place_meeting(x,y,_semisolid)){ //If the most distant semi-solid at the foot intersects the player
+						y+=_dir_y;	//then ignore the semi-solid and continue moving
 					}
-					ds_list_destroy(_semisolidList);
+					ds_list_destroy(_semisolidList);	//for memory purposes.
 				}
 				else{
 					y+=_dir_y;}
-		//if (not detect_tile(0,_dir_y)){
-		//	if (_dir_y<0 or not place_meeting(x,y+1,o_semiSolid)){
-		//		y+=_dir_y;
-		//	}
 			
 		}
 	}
@@ -46,21 +41,16 @@ function repeat_move(_move_x,_move_y){
 			if (not detect_tile(0,_dir_y)){
 				
 				if(place_meeting(x,y+1,o_semiSolid) and _dir_y>0){
-					var _semisolid=instance_place(x,y+1,o_semiSolid);
 					var _semisolidList = ds_list_create();
 					instance_place_list(x,y+1,o_semiSolid,_semisolidList,true);
-					var _semisolid2 = ds_list_find_value(_semisolidList,ds_list_size(_semisolidList)-1);
-					if(place_meeting(x,y,_semisolid2)){
+					var _semisolid = ds_list_find_value(_semisolidList,ds_list_size(_semisolidList)-1);
+					if(place_meeting(x,y,_semisolid)){
 						y+=_dir_y;
 					}
 					ds_list_destroy(_semisolidList);
 				}
 				else{
 					y+=_dir_y;}
-				//if (_dir_y<0 or not place_meeting(x,y+1,o_semiSolid)){
-				//	y+=_dir_y;
-				//}
-
 			}
 			//move in y until done
 		}
