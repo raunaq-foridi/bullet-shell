@@ -17,5 +17,6 @@ function detect_tile(_relX,_relY){ //checks for a tile collision, if the object 
 		
 	if(place_meeting(x+_relX,y + _relY, _map_id2)){
 		_collision=true;}
+
 	return _collision
 }

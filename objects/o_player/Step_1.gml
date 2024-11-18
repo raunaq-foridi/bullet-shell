@@ -9,6 +9,37 @@ if (detect_tile(0,1)!=0){
 }
 else{grounded=false;}
 
+//Deal with Semi Solids		
+if(place_meeting(x,y+1,o_semiSolid) and vel_y>=0){
+	var _semisolid=instance_place(x,y+1,o_semiSolid);
+	var _semisolidList = ds_list_create();
+	instance_place_list(x,y+1,o_semiSolid,_semisolidList,true);
+	var _semisolid2 = ds_list_find_value(_semisolidList,ds_list_size(_semisolidList)-1);
+	if(not place_meeting(x,y,_semisolid2)){
+		grounded=true;
+	}
+	ds_list_destroy(_semisolidList);
+}
+/*if (place_meeting(x,y+1,o_semiSolid)){
+	var _semisolid = instance_place(x,y+1,o_semiSolid);	
+	if(place_meeting(x,y,_semisolid)){
+		grounded=false;
+	}
+}*/
+
+
+/*if (place_meeting(x,y+vel_y,o_semiSolid)){
+	var _semisolid = instance_place(x,y,o_semiSolid);
+	print(place_meeting(x,y,_semisolid));
+	if (not place_meeting(x,y,_semisolid)){
+		grounded=true;	//Only set grounded if the semi-solid is beneath you, not in you.
+		//print(_semisolid);
+	}
+	over_semi_solid=true;
+	//if (not place_meeting(x,y,o_semiSolid) or true){grounded=true;}
+	
+}*/
+
 //gravity
 if (not grounded){
 	if (vel_y<=terminal_speed){
@@ -25,3 +56,4 @@ if (round(vel_x!=0)){
 	vel_x -= _applied_friction;
 }
 else{vel_x=0;}	//cuts off any speed <0.5; probably good for performance, stops oscillation.
+
