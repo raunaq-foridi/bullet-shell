@@ -29,9 +29,15 @@ if (not grounded){
 else if(vel_y>0){	//i.e, if grounded, set fall speed to 0
 	vel_y=0;}
 
-//friction
 
-if (round(vel_x!=0)){
+//friction
+var _speed = sqrt(sqr(vel_x)+sqr(vel_y));
+if(_speed>max_vel){
+	vel_x*= max_vel/_speed;
+	vel_y*= max_vel/_speed;
+}
+
+if (round(vel_x)!=0){
 	var _applied_friction = sign(vel_x) * friction_power;	//linear friction, slows per second.
 	if(not grounded){_applied_friction= sign(vel_x) * air_resistance;}
 	vel_x -= _applied_friction;
