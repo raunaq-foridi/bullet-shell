@@ -11,10 +11,11 @@ grounded_y = y;
 vel_x = 0;	//Velocity for next step; passed into repeat_move()
 vel_y = 0;
 
-grav_speed=1; //Strength of gravity on player
+max_vel=5;
+grav_speed=0.2; //Strength of gravity on player
 terminal_speed=100; //maximum fall speed
 friction_power=1; //How "slippery" motion feels. 0 is basically ice physics.
-air_resistance=1; //How quickly you lose horizontal momentum midair when not holding a key down
+air_resistance=0; //How quickly you lose horizontal momentum midair when not holding a key down
 slope_max=4;		//maximum size of a jump that can be automatically climbed
 					
 
