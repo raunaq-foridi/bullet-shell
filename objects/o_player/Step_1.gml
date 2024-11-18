@@ -3,6 +3,24 @@
 
 
 //Might Bundle Groundedness+Gravity code into a reusable script eventually.
+//
+if(water=true){
+	max_vel=8;
+	grav_speed=0.2;
+	terminal_speed=100; 
+	friction_power=1; 
+	air_resistance=0.1;
+	slope_max=4;		
+}
+else{
+	max_vel=100;
+	grav_speed=1; 
+	terminal_speed=200; 
+	friction_power=1; 
+	air_resistance=1; 
+	slope_max=4;
+}
+
 //Groundedness code
 if (detect_tile(0,1)!=0){
 	grounded=true;
