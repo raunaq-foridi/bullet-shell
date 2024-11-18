@@ -1,4 +1,4 @@
-/// @description Parallax and Camera
+ /// @description Parallax and Camera
 
 //Deals with Camera
 
@@ -40,5 +40,5 @@ _cam_x = camera_get_view_x(view_camera[0]);		//grab camera co-ords
 _cam_y = camera_get_view_y(view_camera[0]);
 layer_x("Background",_cam_x*0.9);
 layer_y("Background",_cam_y);
-layer_x("Background_2",_cam_x*0.7);
+layer_x("Background_2",_cam_x*0.2);
 layer_y("Background_2",_cam_y+300);
