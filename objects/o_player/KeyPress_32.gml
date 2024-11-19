@@ -12,7 +12,10 @@ else if(water and alarm[2]<=0){
 	
 	vel_x+=water_dash*_dir[0];
 	vel_y+=water_dash*_dir[1];
-	//if(facing="right"){vel_x+=water_dash;}
-	//else{vel_x-=water_dash;}
+	
+	if(dir[1]=0){		//If not moving vertically, use last horizontal direction to dash
+		if(facing="right"){vel_x+=water_dash;}	
+		else{vel_x-=water_dash;}
+	}
 	alarm[2]=dash_cooldown;
 }
