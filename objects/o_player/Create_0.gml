@@ -23,6 +23,7 @@ move_speed = 5;
 jump_speed= 10;
 swim_speed = 5;
 swim_acceleration = 1;
+water_drag=2;
 water_dash = 8;
 dash_cooldown = 60;
 
@@ -33,4 +34,4 @@ blink_time=10;
 alarm[1]=blink_time;
 
 facing = "right";	//which direction player is facing
-water = true;
+water = false;

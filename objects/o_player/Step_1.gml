@@ -4,6 +4,9 @@
 
 //Might Bundle Groundedness+Gravity code into a reusable script eventually.
 //
+
+if(place_meeting(x,y,layer_tilemap_get_id(layer_get_id("water_tiles")))){water=true;}
+else{water=false;}
 if(water=true){
 	max_vel=20;
 	grav_speed=0.2;
@@ -43,6 +46,8 @@ if(place_meeting(x,y+1,o_semiSolid) and vel_y>=0){
 if (not grounded){
 	if (vel_y<=terminal_speed){
 		vel_y+=grav_speed;}
+	else if(water){
+		vel_y-=water_drag;}
 }
 else if(vel_y>0){	//i.e, if grounded, set fall speed to 0
 	vel_y=0;}
