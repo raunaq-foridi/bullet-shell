@@ -8,7 +8,7 @@
 if(place_meeting(x,y,layer_tilemap_get_id(layer_get_id("water_tiles")))){water=true;}
 else{water=false;}
 if(water=true){		//Water Physics Variables
-	max_vel=20;
+	max_vel=10;
 	grav_speed=0.2;
 	terminal_speed=5; 
 	friction_power=1; 
