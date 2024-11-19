@@ -67,3 +67,12 @@ if (round(vel_x)!=0){
 }
 else{vel_x=0;}	//cuts off any speed <0.5; probably good for performance, stops oscillation.
 
+
+//KEYBOARD CENTRIC CODE. BEWARE.
+if(not keyboard_check(ord("W")) and not keyboard_check(ord("S"))){
+	dir[1]=0;
+}
+
+if(not keyboard_check(ord("A")) and not keyboard_check(ord("D"))){
+	dir[0]=0;
+}

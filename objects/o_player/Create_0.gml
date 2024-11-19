@@ -33,5 +33,6 @@ blink=false;	//visibility while "flashing" iframes
 blink_time=10;
 alarm[1]=blink_time;
 
-facing = "right";	//which direction player is facing
+facing = "right";	//which direction player is facing, "left" or "right"
+dir = [1,0]			//direction as non-normalised vector. y is downwards.
 water = false;

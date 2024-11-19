@@ -6,7 +6,13 @@ if(grounded and not water){
 }
 
 else if(water and alarm[2]<=0){
-	if(facing="right"){vel_x+=water_dash;}
-	else{vel_x-=water_dash;}
+	var _mag = sqrt( sqr(dir[0]) + sqr(dir[1]))
+	var _dir = [0,0];
+	if(_mag!=0){_dir = [dir[0]/_mag, dir[1]/_mag]}
+	
+	vel_x+=water_dash*_dir[0];
+	vel_y+=water_dash*_dir[1];
+	//if(facing="right"){vel_x+=water_dash;}
+	//else{vel_x-=water_dash;}
 	alarm[2]=dash_cooldown;
 }
