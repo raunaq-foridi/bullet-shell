@@ -21,6 +21,8 @@ slope_max=4;		//maximum size of a jump that can be automatically climbed
 
 move_speed = 5;
 jump_speed= 10;
+swim_speed = 5;
+swim_acceleration = 1;
 
 iframes=100; //self explanatory.
 invincible=false; //Whether or not in iframes
@@ -29,4 +31,4 @@ blink_time=10;
 alarm[1]=blink_time;
 
 facing = "right";	//which direction player is facing
-water = false;
+water = true;
