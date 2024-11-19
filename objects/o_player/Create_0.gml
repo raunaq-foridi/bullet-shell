@@ -26,6 +26,7 @@ swim_acceleration = 1;
 water_drag=2;
 water_dash = 8;
 dash_cooldown = 60;
+swim_cooldown=5;
 
 iframes=100; //self explanatory.
 invincible=false; //Whether or not in iframes

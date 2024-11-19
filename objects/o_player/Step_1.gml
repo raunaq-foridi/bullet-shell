@@ -7,21 +7,23 @@
 
 if(place_meeting(x,y,layer_tilemap_get_id(layer_get_id("water_tiles")))){water=true;}
 else{water=false;}
-if(water=true){
+if(water=true){		//Water Physics Variables
 	max_vel=20;
 	grav_speed=0.2;
 	terminal_speed=5; 
 	friction_power=1; 
-	air_resistance=0.2;
+	air_resistance=0.75;
 	slope_max=4;		
 }
-else{
+else{				//Standard Physics Variables
 	max_vel=100;
 	grav_speed=1; 
 	terminal_speed=200; 
 	friction_power=1; 
 	air_resistance=1; 
 	slope_max=4;
+	
+	alarm[3]=swim_cooldown;
 }
 
 //Groundedness code
