@@ -5,11 +5,11 @@
 //Might Bundle Groundedness+Gravity code into a reusable script eventually.
 //
 if(water=true){
-	max_vel=8;
+	max_vel=20;
 	grav_speed=0.2;
-	terminal_speed=100; 
+	terminal_speed=5; 
 	friction_power=1; 
-	air_resistance=0.1;
+	air_resistance=0.2;
 	slope_max=4;		
 }
 else{
