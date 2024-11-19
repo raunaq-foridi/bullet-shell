@@ -11,8 +11,9 @@ grounded_y = y;
 vel_x = 0;	//Velocity for next step; passed into repeat_move()
 vel_y = 0;
 
+max_vel=100;
 grav_speed=1; //Strength of gravity on player
-terminal_speed=100; //maximum fall speed
+terminal_speed=200; //maximum fall speed
 friction_power=1; //How "slippery" motion feels. 0 is basically ice physics.
 air_resistance=1; //How quickly you lose horizontal momentum midair when not holding a key down
 slope_max=4;		//maximum size of a jump that can be automatically climbed
@@ -20,6 +21,11 @@ slope_max=4;		//maximum size of a jump that can be automatically climbed
 
 move_speed = 5;
 jump_speed= 10;
+swim_speed = 5;
+swim_acceleration = 1;
+water_drag=2;
+water_dash = 8;
+dash_cooldown = 60;
 
 iframes=100; //self explanatory.
 invincible=false; //Whether or not in iframes
@@ -28,3 +34,4 @@ blink_time=10;
 alarm[1]=blink_time;
 
 facing = "right";	//which direction player is facing
+water = false;
