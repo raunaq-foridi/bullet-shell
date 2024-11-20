@@ -12,7 +12,9 @@ if(water=true){		//Water Physics Variables
 	grav_speed=0.2;
 	terminal_speed=5; 
 	friction_power=1; 
-	air_resistance=0.75;
+	air_resistance=0.1;
+	linear_drag=0;
+	quadratic_drag=0.01;
 	slope_max=4;		
 }
 else{				//Standard Physics Variables
@@ -20,7 +22,9 @@ else{				//Standard Physics Variables
 	grav_speed=1; 
 	terminal_speed=200; 
 	friction_power=1; 
-	air_resistance=1; 
+	air_resistance=1;
+	linear_drag=0;
+	quadratic_drag=0;
 	slope_max=4;
 	
 	alarm[3]=swim_cooldown;
@@ -63,9 +67,18 @@ if(_speed>max_vel){
 }
 
 if (round(vel_x)!=0){
-	var _applied_friction = sign(vel_x) * friction_power;	//linear friction, slows per second.
-	if(not grounded){_applied_friction= sign(vel_x) * air_resistance;}
-	vel_x -= _applied_friction;
+	var _applied_friction = sign(vel_x) * friction_power;	//constant friction, slows per second.
+	if(not grounded){
+		_applied_friction= sign(vel_x) * air_resistance;	//constant
+		_applied_friction += vel_x * linear_drag;			//linear
+		_applied_friction += sign(vel_x) * sqr(vel_x) * quadratic_drag;	//quadratic
+		}
+	if(abs(_applied_friction)<=abs(vel_x)){		//Prevent oscillation
+		vel_x -= _applied_friction;
+	}
+	else{
+		vel_x=0;
+	}
 }
 else{vel_x=0;}	//cuts off any speed <0.5; probably good for performance, stops oscillation.
 

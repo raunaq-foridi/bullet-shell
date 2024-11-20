@@ -3,7 +3,7 @@
 
 if(alternate_dash){
 
-		if (alarm[2]>=50 and dashing){
+		if (alarm[2]>=dash_cooldown-dash_time and dashing and water){
 			
 			if(dash_dir[1]=0){
 				if(facing="right"){dash_dir[0]=1;}

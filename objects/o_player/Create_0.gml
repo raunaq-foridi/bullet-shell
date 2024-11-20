@@ -15,8 +15,11 @@ max_vel=100;
 grav_speed=1; //Strength of gravity on player
 terminal_speed=200; //maximum fall speed
 friction_power=1; //How "slippery" motion feels. 0 is basically ice physics.
-air_resistance=1; //How quickly you lose horizontal momentum midair when not holding a key down
+air_resistance=1; //How quickly you lose horizontal momentum midair when not holding a key down. Constant.
+linear_drag = 0;	//scales with velocity. Should be much lower than 1.
+quadratic_drag=0;	//Scales with velocity^2. Should be MUCH lower than 1.
 slope_max=4;		//maximum size of a jump that can be automatically climbed
+
 					
 
 move_speed = 5;
@@ -28,8 +31,9 @@ water_dash = 8;		//strength of water dash
 dash_cooldown = 60;
 swim_cooldown=5;	//frames after entering water that you cannot ascend
 
-alternate_dash=true;
+alternate_dash=true;	//enables a different water dash
 dashing=false;
+dash_time = 10;			//how long the dash lasts.
 
 iframes=100; //self explanatory.
 invincible=false; //Whether or not in iframes
