@@ -9,11 +9,11 @@ if(place_meeting(x,y,layer_tilemap_get_id(layer_get_id("water_tiles")))){water=t
 else{water=false;}
 if(water=true){		//Water Physics Variables
 	max_vel=10;
-	grav_speed=0.2;
+	grav_speed=0;
 	terminal_speed=5; 
 	friction_power=1; 
 	air_resistance=0.1;
-	linear_drag=0;
+	linear_drag=0.05;
 	quadratic_drag=0.01;
 	slope_max=4;		
 }
@@ -81,6 +81,22 @@ if (round(vel_x)!=0){
 	}
 }
 else{vel_x=0;}	//cuts off any speed <0.5; probably good for performance, stops oscillation.
+if (round(vel_y)!=0){
+	var _applied_friction = 0;
+	if(not grounded){
+		//_applied_friction= sign(vel_y) * air_resistance;	//constant not applied
+		_applied_friction += vel_y * linear_drag;			//linear
+		_applied_friction += sign(vel_y) * sqr(vel_y) * quadratic_drag;	//quadratic
+		}
+	if(abs(_applied_friction)<=abs(vel_y)){		//Prevent oscillation
+		vel_y -= _applied_friction;
+	}
+	else{
+		vel_y=0;
+	}
+}
+else{vel_y=0;}	//cuts off any speed <0.5; probably good for performance, stops oscillation.
+
 
 
 //KEYBOARD CENTRIC CODE. BEWARE.
