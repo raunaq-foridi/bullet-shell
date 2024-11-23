@@ -16,4 +16,4 @@ if(alternate_dash){
 	}
 	
 repeat_move(vel_x,vel_y);
-print(vel_x, vel_y, grounded);
+//print(vel_x, vel_y, grounded);
