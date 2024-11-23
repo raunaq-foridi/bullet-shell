@@ -47,3 +47,4 @@ dir = [1,0];		//direction as non-normalised vector. y is downwards.
 dash_dir=[1,0];
 water = false;
 climbing=false;
+climbable=false;
