@@ -1,4 +1,5 @@
 /// @description Right
 // You can write your code in this editor
-vel_x=move_speed;
+if(vel_x<=move_speed){vel_x=move_speed;}
 facing="right";
+dir[0]=1;

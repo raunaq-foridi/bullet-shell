@@ -1,4 +1,4 @@
-/// @description Visuals [for now]
+/// @description Visuals and resets
 
 
 if (invincible){

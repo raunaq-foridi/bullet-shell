@@ -41,7 +41,9 @@
     {"name":"Sprite1","order":1,"path":"sprites/Sprite1/Sprite1.yy",},
     {"name":"Sprite10","order":13,"path":"sprites/Sprite10/Sprite10.yy",},
     {"name":"Sprite11","order":1,"path":"sprites/Sprite11/Sprite11.yy",},
+    {"name":"s_WaterTiles","order":6,"path":"sprites/s_WaterTiles/s_WaterTiles.yy",},
     {"name":"Sprite9","order":4,"path":"sprites/Sprite9/Sprite9.yy",},
     {"name":"ComplexTiles","order":2,"path":"tilesets/ComplexTiles/ComplexTiles.yy",},
+    {"name":"WaterTiles","order":5,"path":"tilesets/WaterTiles/WaterTiles.yy",},
   ],
 }
