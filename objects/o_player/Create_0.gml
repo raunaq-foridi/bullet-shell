@@ -30,6 +30,7 @@ water_drag=2;		//loss of vertical momentum when falling into water from air
 water_dash = 8;		//strength of water dash
 dash_cooldown = 60;
 swim_cooldown=5;	//frames after entering water that you cannot ascend
+climb_speed=2;
 
 alternate_dash=true;	//enables a different water dash
 dashing=false;
@@ -45,3 +46,4 @@ facing = "right";	//which direction player is facing, "left" or "right"
 dir = [1,0];		//direction as non-normalised vector. y is downwards.
 dash_dir=[1,0];
 water = false;
+climbing=false;

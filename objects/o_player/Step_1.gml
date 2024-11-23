@@ -36,6 +36,7 @@ if (detect_tile(0,1)!=0){
 }
 else{grounded=false;}
 
+
 //Deal with Semi Solids		
 //See repeat_move() code
 if(place_meeting(x,y+1,o_semiSolid) and vel_y>=0){
@@ -48,6 +49,13 @@ if(place_meeting(x,y+1,o_semiSolid) and vel_y>=0){
 	ds_list_destroy(_semisolidList);	//memory purposes
 }
 
+//Deal with climbing
+if(climbing){
+	if (not place_meeting(x,y,o_climbable)){
+		climbing=false;
+	}
+	else{grounded=true;}
+	}
 //gravity
 if (not grounded){
 	if (vel_y<=terminal_speed){
