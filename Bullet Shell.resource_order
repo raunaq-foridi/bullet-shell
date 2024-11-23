@@ -27,6 +27,7 @@
     {"name":"o_hud","order":5,"path":"objects/o_hud/o_hud.yy",},
     {"name":"o_projBall","order":1,"path":"objects/o_projBall/o_projBall.yy",},
     {"name":"o_sword","order":6,"path":"objects/o_sword/o_sword.yy",},
+    {"name":"o_pause","order":16,"path":"objects/o_pause/o_pause.yy",},
     {"name":"print","order":2,"path":"scripts/print/print.yy",},
     {"name":"repeat_move","order":1,"path":"scripts/repeat_move/repeat_move.yy",},
     {"name":"slope","order":4,"path":"scripts/slope/slope.yy",},
