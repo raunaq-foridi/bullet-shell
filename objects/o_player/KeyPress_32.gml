@@ -23,3 +23,5 @@ else if(water and alarm[2]<=0){
 	}
 	alarm[2]=dash_cooldown;
 }
+
+if(climbing){climbing=false;}	//stop climbing if you jump

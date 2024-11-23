@@ -53,9 +53,27 @@ if(place_meeting(x,y+1,o_semiSolid) and vel_y>=0){
 if(climbing){
 	if (not place_meeting(x,y,o_climbable)){
 		climbing=false;
+		
 	}
-	else{grounded=true;}
+	else{
+		grounded=true;
+		vel_y=0;
+		//Deal with moving climbables
+		var _climbableList = ds_list_create();
+		instance_place_list(x,y,o_climbable,_climbableList,true); //ordered list of objects being climbed
+		var _climbable = ds_list_find_value(_climbableList,0);	//take most distant object
+		ds_list_destroy(_climbableList);
+		print(_climbable);
+		if (_climbable.snap){
+			x=_climbable.x;
+		}
+		if (_climbable.lock){
+			vel_x=0;
+		}
 	}
+}
+
+
 //gravity
 if (not grounded){
 	if (vel_y<=terminal_speed){
