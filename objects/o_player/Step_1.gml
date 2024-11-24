@@ -67,28 +67,32 @@ if(climbing){
 		//print(_climbable);
 		
 		if (keyboard_check(ord("W")) or keyboard_check(ord("S")) or keyboard_check(ord("A")) or keyboard_check(ord("D"))){
-			if(climbable!=_climbable){
+											//Change which climbable surface is latched onto only on input
+			if(climbable!=_climbable){		//if nothing is latched onto, latch on and set relative distances
 				climbable=_climbable;
 				climbable.rel_x=x-climbable.x;
 				climbable.rel_y=y-climbable.y;
 			}
 			else if((keyboard_check(ord("A")) or keyboard_check(ord("D"))) and not climbable.lock_x){
-				climbable=_climbable;
-				climbable.rel_x=x-climbable.x;
+				climbable=_climbable;			//the line above allows lock_x to work
+				if(abs(x-climbable.x)<climbable.clamp_x){
+					climbable.rel_x=x-climbable.x;	//By preventing input from changing relative x
+				}
+				
 			}
-			else{
-				climbable=_climbable;
+			else if (not climbable.lock_y){		//this allows lock_y to work
+				climbable=_climbable;			//for the same reason.
 				climbable.rel_y=y-climbable.y;
 			}
 		}
 		if(climbable){
 			if (climbable.snap_x){
-				x=climbable.x+climbable.rel_x;
-			}
+				x=climbable.x+climbable.rel_x;	//"snap" to climbable, with a relative distance.
+			}									//allows you to stay on a moving platform
 			if (climbable.snap_y){
 				y=climbable.y+climbable.rel_y;
 			}
-			if (climbable.lock_x){
+			if (climbable.lock_x){				//This code is useless.
 				vel_x=0;
 			}
 		}

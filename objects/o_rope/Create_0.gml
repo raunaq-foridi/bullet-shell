@@ -5,7 +5,7 @@
 event_inherited();
 
 snap_y=true;
-lock_y=true;
+lock_y=false;
 
 start_y=y;
 range=100;

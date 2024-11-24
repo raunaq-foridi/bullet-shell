@@ -4,7 +4,8 @@
 // Inherit the parent event
 event_inherited();
 snap_x=true;
-lock_x=true;
+//lock_x=true;
+clamp_x=5;
 
 start_x=x;
 range=100;
