@@ -3,8 +3,8 @@
 
 // Inherit the parent event
 event_inherited();
-snap=true;
-lock=true;
+snap_x=true;
+lock_x=true;
 
 start_x=x;
 range=100;

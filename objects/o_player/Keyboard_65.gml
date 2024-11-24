@@ -1,5 +1,12 @@
 /// @description Left
 // You can write your code in this editor
-if(-vel_x<=move_speed){vel_x=-move_speed;}
 facing="left";
-dir[0]=-1;
+if(climbing and climbable){
+	if(not climbable.lock_x){
+		repeat_move(-climb_speed,0);
+	}
+}
+else{
+	if(-vel_x<=move_speed){vel_x=-move_speed;}
+	dir[0]=-1;
+}
