@@ -70,15 +70,23 @@ if(climbing){
 			if(climbable!=_climbable){
 				climbable=_climbable;
 				climbable.rel_x=x-climbable.x;
+				climbable.rel_y=y-climbable.y;
 			}
 			else if((keyboard_check(ord("A")) or keyboard_check(ord("D"))) and not climbable.lock_x){
 				climbable=_climbable;
 				climbable.rel_x=x-climbable.x;
 			}
+			else{
+				climbable=_climbable;
+				climbable.rel_y=y-climbable.y;
+			}
 		}
 		if(climbable){
 			if (climbable.snap_x){
 				x=climbable.x+climbable.rel_x;
+			}
+			if (climbable.snap_y){
+				y=climbable.y+climbable.rel_y;
 			}
 			if (climbable.lock_x){
 				vel_x=0;
