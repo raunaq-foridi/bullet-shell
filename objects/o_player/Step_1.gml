@@ -59,18 +59,26 @@ if(climbing){
 		grounded=true;
 		vel_y=0;
 		//Deal with moving climbables
-
+		
 		var _climbableList = ds_list_create();
 		instance_place_list(x,y,o_climbable,_climbableList,true); //ordered list of objects being climbed
 		var _climbable = ds_list_find_value(_climbableList,0);	//take most distant object
 		ds_list_destroy(_climbableList);
 		print(_climbable);
+		
 		if (keyboard_check(ord("W")) or keyboard_check(ord("S")) or keyboard_check(ord("A")) or keyboard_check(ord("D"))){
-			climbable=_climbable;	
+			if(climbable!=_climbable){
+				climbable=_climbable;
+				climbable.rel_x=x-climbable.x;
+			}
+			else if(keyboard_check(ord("A")) or keyboard_check(ord("D"))){
+				climbable=_climbable;
+				climbable.rel_x=x-climbable.x;
+			}
 		}
 		if(climbable){
 			if (climbable.snap){
-				x=climbable.x;
+				x=climbable.x+climbable.rel_x;
 			}
 			if (climbable.lock){
 				vel_x=0;
