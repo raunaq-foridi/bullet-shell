@@ -73,17 +73,40 @@ if(climbing){
 				climbable.rel_x=x-climbable.x;
 				climbable.rel_y=y-climbable.y;
 			}
-			else if((keyboard_check(ord("A")) or keyboard_check(ord("D"))) and not climbable.lock_x){
+			/*else if((keyboard_check(ord("A")) or keyboard_check(ord("D"))) and not climbable.lock_x){
 				climbable=_climbable;			//the line above allows lock_x to work
 				if(abs(x-climbable.x)<climbable.clamp_x){
 					climbable.rel_x=x-climbable.x;	//By preventing input from changing relative x
 				}
 				
+			}*/
+			else{
+				if(keyboard_check(ord("A")) and not climbable.lock_x){
+					climbable=_climbable;
+					if(climbable.x-x < climbable.clamp_x or climbable.clamp_x<0){
+						climbable.rel_x=x-climbable.x;		//allows movement if not locked, and not beyond clamp range.
+					}
+				}
+				else if(keyboard_check(ord("D")) and not climbable.lock_x){
+					if(x-climbable.x<climbable.clamp_x or climbable.clamp_x<0){
+						climbable.rel_x=x-climbable.x;	//Likewise
+					}
+				}
+			
+				if (keyboard_check(ord("W")) and not climbable.lock_y){		//this allows lock_y to work
+					climbable=_climbable;			//for the same reason.
+					if(climbable.y-y<climbable.clamp_y or climbable.clamp_x<0){
+						climbable.rel_y=y-climbable.y;
+					}
+				}
+				else if (keyboard_check(ord("S")) and not climbable.lock_y){		//this allows lock_y to work
+					climbable=_climbable;			//for the same reason.
+					if(y-climbable.y<climbable.clamp_y or climbable.clamp_x<0){
+						climbable.rel_y=y-climbable.y;
+					}
+				}
 			}
-			else if (not climbable.lock_y){		//this allows lock_y to work
-				climbable=_climbable;			//for the same reason.
-				climbable.rel_y=y-climbable.y;
-			}
+
 		}
 		if(climbable){
 			if (climbable.snap_x){
