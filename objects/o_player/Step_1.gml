@@ -36,6 +36,7 @@ if (detect_tile(0,1)!=0){
 }
 else{grounded=false;}
 
+
 //Deal with Semi Solids		
 //See repeat_move() code
 if(place_meeting(x,y+1,o_semiSolid) and vel_y>=0){
@@ -47,6 +48,81 @@ if(place_meeting(x,y+1,o_semiSolid) and vel_y>=0){
 	}
 	ds_list_destroy(_semisolidList);	//memory purposes
 }
+
+//Deal with climbing
+if(climbing){
+	if (not place_meeting(x,y,o_climbable)){
+		climbing=false;
+		
+	}
+	else{
+		grounded=true;
+		vel_y=0;
+		//Deal with moving climbables
+		
+		var _climbableList = ds_list_create();
+		instance_place_list(x,y,o_climbable,_climbableList,true); //ordered list of objects being climbed
+		var _climbable = ds_list_find_value(_climbableList,0);	//take most distant object
+		ds_list_destroy(_climbableList);
+		//print(_climbable);
+		
+		if (keyboard_check(ord("W")) or keyboard_check(ord("S")) or keyboard_check(ord("A")) or keyboard_check(ord("D"))){
+											//Change which climbable surface is latched onto only on input
+			if(climbable!=_climbable){		//if nothing is latched onto, latch on and set relative distances
+				climbable=_climbable;
+				climbable.rel_x=x-climbable.x;
+				climbable.rel_y=y-climbable.y;
+			}
+			/*else if((keyboard_check(ord("A")) or keyboard_check(ord("D"))) and not climbable.lock_x){
+				climbable=_climbable;			//the line above allows lock_x to work
+				if(abs(x-climbable.x)<climbable.clamp_x){
+					climbable.rel_x=x-climbable.x;	//By preventing input from changing relative x
+				}
+				
+			}*/
+			else{
+				if(keyboard_check(ord("A")) and not climbable.lock_x){
+					climbable=_climbable;
+					if(climbable.x-x < climbable.clamp_x or climbable.clamp_x<0){
+						climbable.rel_x=x-climbable.x;		//allows movement if not locked, and not beyond clamp range.
+					}
+				}
+				else if(keyboard_check(ord("D")) and not climbable.lock_x){
+					if(x-climbable.x<climbable.clamp_x or climbable.clamp_x<0){
+						climbable.rel_x=x-climbable.x;	//Likewise
+					}
+				}
+			
+				if (keyboard_check(ord("W")) and not climbable.lock_y){		//this allows lock_y to work
+					climbable=_climbable;			//for the same reason.
+					if(climbable.y-y<climbable.clamp_y or climbable.clamp_y<0){
+						climbable.rel_y=y-climbable.y;
+					}
+				}
+				else if (keyboard_check(ord("S")) and not climbable.lock_y){		//this allows lock_y to work
+					climbable=_climbable;			//for the same reason.
+					if(y-climbable.y<climbable.clamp_y or climbable.clamp_y<0){
+						print("S");
+						climbable.rel_y=y-climbable.y;
+					}
+				}
+			}
+
+		}
+		if(climbable){
+			if (climbable.snap_x){
+				x=climbable.x+climbable.rel_x;	//"snap" to climbable, with a relative distance.
+			}									//allows you to stay on a moving platform
+			if (climbable.snap_y){
+				y=climbable.y+climbable.rel_y;
+			}
+			if (climbable.lock_x){				//This code is useless.
+				vel_x=0;
+			}
+		}
+	}
+}
+
 
 //gravity
 if (not grounded){

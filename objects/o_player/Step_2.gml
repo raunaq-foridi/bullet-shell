@@ -23,5 +23,6 @@ if(grounded){
 		if (_dy<=slope_max){vel_y+=_dy}	//shove player down while moving down slope
 	}
 	
-	
+		
 }
+if(not climbing){climbable=false;}
