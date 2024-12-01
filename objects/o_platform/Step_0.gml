@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
-var _speed=4;
+
+var _speed=2;
 
 if (moving="right"){
 	if (x-start_x<range){

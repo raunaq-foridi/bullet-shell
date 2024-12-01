@@ -36,6 +36,10 @@ if (detect_tile(0,1)!=0){
 }
 else{grounded=false;}
 
+if(place_meeting(x,y+1,o_platform)){
+	if(abs(vel_x)<abs(o_platform.momentum_x)){x+=o_platform.momentum_x;}	//dirty.
+	if(abs(vel_y)<abs(o_platform.momentum_y)){y+=o_platform.momentum_x;}
+}
 
 //Deal with Semi Solids		
 //See repeat_move() code
