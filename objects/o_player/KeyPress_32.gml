@@ -3,6 +3,9 @@
 
 if(grounded and not water){
 	vel_y = -jump_speed;	//negative, because positive is downwards for some weird reason.
+	if(place_meeting(x,y+1,o_platform)){
+		vel_x+= o_platform.momentum_x;
+	}
 }
 
 else if(water and alarm[2]<=0){
