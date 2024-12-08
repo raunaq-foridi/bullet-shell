@@ -1,7 +1,7 @@
 /// @description Carries out motion
 // You can write your code in this editor
 //platforms
-if(place_meeting(x,y+1,o_platform)){
+if(place_meeting(x,y+1,o_platform) and not place_meeting(x,y,o_platform)){
 	if(abs(vel_x)<abs(o_platform.mov_x)){
 		x+=o_platform.bonus_mov_x;
 		
@@ -10,13 +10,16 @@ if(place_meeting(x,y+1,o_platform)){
 		//if they leave it. This is intentional behaviour
 		//clamp_x should be set to a large value to prevent this being noticeable, or zero.
 		if(x>o_platform.x and o_platform.mov_x<0){
-			x+=o_platform.mov_x;
+			//x+=o_platform.mov_x;
+			repeat_move(o_platform.mov_x,0);
 		}
 		else if(x<o_platform.x and o_platform.mov_x>0){
-			x+=o_platform.mov_x;
+			//x+=o_platform.mov_x;
+			repeat_move(o_platform.mov_x,0);
 		}
 		else if(abs(x-o_platform.x)<o_platform.clamp_x or vel_x!=0 or o_platform.clamp_x==0){
-			x+=o_platform.mov_x;
+			//x+=o_platform.mov_x;
+			repeat_move(o_platform.mov_x,0);
 		}
 	}
 	//dirty.
