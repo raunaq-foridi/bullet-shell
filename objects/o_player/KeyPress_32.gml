@@ -3,7 +3,9 @@
 
 if(grounded and not water){
 	vel_y = -jump_speed;	//negative, because positive is downwards for some weird reason.
-	if(place_meeting(x,y+1,o_platform)){
+	
+	//platform momentum
+	if(place_meeting(x,y+1,o_platform)){ // and (abs(x-o_platform.x)<o_platform.clamp_x)
 		vel_x+= o_platform.momentum_x;
 	}
 }

@@ -23,7 +23,7 @@
   ],
   "name":"s_rope",
   "nineSlice":null,
-  "origin":0,
+  "origin":1,
   "parent":{
     "name":"Platforms",
     "path":"folders/Objects/Platforms.yy",
@@ -75,7 +75,7 @@
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":0,
+    "xorigin":32,
     "yorigin":0,
   },
   "swatchColours":null,
