@@ -10,8 +10,10 @@ if(not paused){
 		array_push(active,instance_id[_i]);
 	}
 	instance_deactivate_all(true);
+	instance_activate_object(o_restart_button);
 }
 else{
+	instance_deactivate_object(o_restart_button);
 	paused=false;
 	sprite_delete(pause_image);
 	for (var _i=0; _i<array_length(active); _i++){
