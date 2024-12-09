@@ -32,9 +32,10 @@ else{				//Standard Physics Variables
 //Groundedness code
 if (detect_tile(0,1)!=0){
 	grounded=true;
+	if(flying){vel_x=0;}
+	flying=false;
 }
 else{grounded=false;}
-
 
 
 //Deal with Semi Solids		
@@ -47,8 +48,8 @@ if(place_meeting(x,y+1,o_semiSolid) and vel_y>=0){
 		grounded=true;		//if at foot but NOT intersecting player, set grounded.
 	}
 	ds_list_destroy(_semisolidList);	//memory purposes
-}
 
+}
 //Deal with climbing
 if(climbing){
 	if (not place_meeting(x,y,o_climbable)){
@@ -141,7 +142,7 @@ if(_speed>max_vel){
 	vel_y*= max_vel/_speed;
 }
 
-if (round(vel_x)!=0){
+if (round(vel_x)!=0 and not flying){
 	var _applied_friction = sign(vel_x) * friction_power;	//constant friction, slows per second.
 	if(not grounded){
 		_applied_friction= sign(vel_x) * air_resistance;	//constant
@@ -155,7 +156,8 @@ if (round(vel_x)!=0){
 		vel_x=0;
 	}
 }
-else{vel_x=0;}	//cuts off any speed <0.5; probably good for performance, stops oscillation.
+else if (not flying){vel_x=0;}	//cuts off any speed <0.5; probably good for performance, stops oscillation.
+
 /*if (round(vel_y)!=0){
 	var _applied_friction = 0;
 	if(not grounded){
@@ -184,3 +186,5 @@ if(not keyboard_check(ord("W")) and not keyboard_check(ord("S"))){
 if(not keyboard_check(ord("A")) and not keyboard_check(ord("D"))){
 	dir[0]=0;
 }
+
+print(grounded);

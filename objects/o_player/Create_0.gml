@@ -48,3 +48,6 @@ dash_dir=[1,0];
 water = false;
 climbing=false;
 climbable=false;
+flying = false;		//Used when "thrown", turns air resistance off.
+					//useful for jumping off moving platforms, or taking
+					//very large amounts of knockback.

@@ -6,4 +6,4 @@ event_inherited();
 start_x=x;
 range=300;
 moving="left";
-clamp_x=10;
+clamp_x=0;
