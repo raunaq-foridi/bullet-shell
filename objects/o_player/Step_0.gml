@@ -1,25 +1,29 @@
 /// @description Carries out motion
 // You can write your code in this editor
 //platforms
-if(place_meeting(x,y+1,o_platform) and not place_meeting(x,y,o_platform)){
-	if(abs(vel_x)<abs(o_platform.mov_x)){
-		x+=o_platform.bonus_mov_x;
+if(place_meeting(x,y+1,o_platform) and not place_meeting(x,y,o_solid_platform)){
+	var _platform =0;
+	var _platformList = ds_list_create();
+	instance_place_list(x,y+1,o_platform,_platformList,true); //ordered list of objects intersecting one pixel below
+	_platform = ds_list_find_value(_platformList,ds_list_size(_platformList)-1);	//take most distant object
+	ds_list_destroy(_platformList);	//memory purposes
 		
+	
+	if(abs(vel_x)<=abs(_platform.mov_x)){
+
+		if(_platform.object_index != o_semiSolid){
+			x+=_platform.bonus_mov_x;
+		}
 		//moving, clamped
 		//note that when clamped, the player will return to the clamped area automatically
 		//if they leave it. This is intentional behaviour
 		//clamp_x should be set to a large value to prevent this being noticeable, or zero.
-		if(x>o_platform.x and o_platform.mov_x<0){
-			//x+=o_platform.mov_x;
-			repeat_move(o_platform.mov_x,0);
-		}
-		else if(x<o_platform.x and o_platform.mov_x>0){
-			//x+=o_platform.mov_x;
-			repeat_move(o_platform.mov_x,0);
-		}
-		else if(abs(x-o_platform.x)<o_platform.clamp_x or vel_x!=0 or o_platform.clamp_x==0){
-			//x+=o_platform.mov_x;
-			repeat_move(o_platform.mov_x,0);
+		
+		
+		if ((sign(x-_platform.x)!=sign(_platform.mov_x)
+		or abs(x-_platform.x)<_platform.clamp_x or vel_x!=0 or _platform.clamp_x==0)
+		and not place_meeting(x,y,_platform)){ //ignore the error. this works.
+			repeat_move(_platform.mov_x,0);
 		}
 	}
 	//dirty.

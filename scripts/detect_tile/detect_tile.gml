@@ -18,7 +18,7 @@ function detect_tile(_relX,_relY){ //checks for a tile collision, if the object 
 	if(place_meeting(x+_relX,y + _relY, _map_id2)){		//detect complex tiles
 		_collision=true;}
 
-	if(place_meeting(x+_relX,y + _relY, o_platform)){
+	if(place_meeting(x+_relX,y + _relY, o_solid_platform)){
 		_collision=true;}
 	
 	return _collision

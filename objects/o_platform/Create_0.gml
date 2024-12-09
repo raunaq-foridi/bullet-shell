@@ -17,6 +17,3 @@ clamp_x=10;		//the "pickup" distance for the platform
 				//ignored if 0
 			
 				
-start_x=x;
-range=300;
-moving="left";

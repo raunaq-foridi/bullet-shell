@@ -103,7 +103,6 @@ if(climbing){
 				else if (keyboard_check(ord("S")) and not climbable.lock_y){		//this allows lock_y to work
 					climbable=_climbable;			//for the same reason.
 					if(y-climbable.y<climbable.clamp_y or climbable.clamp_y<0){
-						print("S");
 						climbable.rel_y=y-climbable.y;
 					}
 				}

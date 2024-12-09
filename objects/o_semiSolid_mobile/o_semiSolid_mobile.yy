@@ -1,20 +1,20 @@
 {
   "$GMObject":"",
-  "%Name":"o_semiSolid",
+  "%Name":"o_semiSolid_mobile",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":1,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"o_semiSolid",
+  "name":"o_semiSolid_mobile",
   "overriddenProperties":[],
   "parent":{
     "name":"Platforms",
     "path":"folders/Objects/Platforms.yy",
   },
   "parentObjectId":{
-    "name":"o_platform",
-    "path":"objects/o_platform/o_platform.yy",
+    "name":"o_semiSolid",
+    "path":"objects/o_semiSolid/o_semiSolid.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
