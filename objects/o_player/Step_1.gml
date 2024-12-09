@@ -41,14 +41,11 @@ if (not flying){fly_speed=0;}
 //Deal with Semi Solids		
 //See repeat_move() code
 if(place_meeting(x,y+1,o_semiSolid) and vel_y>=0){
-	var _semisolidList = ds_list_create();
-	instance_place_list(x,y+1,o_semiSolid,_semisolidList,true); //ordered list of objects intersecting one pixel below
-	var _semisolid = ds_list_find_value(_semisolidList,ds_list_size(_semisolidList)-1);	//take most distant object
+	var _semisolid = furthest_instance(o_semiSolid);
 	if(not place_meeting(x,y,_semisolid)){
 		grounded=true;		//if at foot but NOT intersecting player, set grounded.
 		flying=false;
 	}
-	ds_list_destroy(_semisolidList);	//memory purposes
 
 }
 //Deal with climbing
@@ -63,10 +60,7 @@ if(climbing){
 		flying=false;
 		//Deal with moving climbables
 		
-		var _climbableList = ds_list_create();
-		instance_place_list(x,y,o_climbable,_climbableList,true); //ordered list of objects being climbed
-		var _climbable = ds_list_find_value(_climbableList,0);	//take most distant object
-		ds_list_destroy(_climbableList);
+		var _climbable = nearest_instance(o_climbable,0,0,0);
 		//print(_climbable);
 		
 		if (keyboard_check(ord("W")) or keyboard_check(ord("S")) or keyboard_check(ord("A")) or keyboard_check(ord("D"))){
