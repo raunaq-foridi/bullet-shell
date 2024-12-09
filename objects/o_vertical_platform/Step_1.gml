@@ -29,7 +29,9 @@ else{
 	}
 }
 
-if (place_meeting(x,y-o_player.vel_y-1,o_player)){
-	o_player.y+=mov_y
+if (place_meeting(x,y-o_player.vel_y-1,o_player)){	//move the player with the platform
+	if(not place_meeting(x,y,o_player)){		//No-clipping behaviour.
+		o_player.y+=mov_y						//avoid clipping through level design.
+	}
 }
 y+=mov_y;
