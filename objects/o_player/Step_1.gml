@@ -36,7 +36,7 @@ if (detect_tile(0,1)!=0){
 	flying=false;
 }
 else{grounded=false;}
-
+if (not flying){fly_speed=0;}
 
 //Deal with Semi Solids		
 //See repeat_move() code
@@ -46,6 +46,7 @@ if(place_meeting(x,y+1,o_semiSolid) and vel_y>=0){
 	var _semisolid = ds_list_find_value(_semisolidList,ds_list_size(_semisolidList)-1);	//take most distant object
 	if(not place_meeting(x,y,_semisolid)){
 		grounded=true;		//if at foot but NOT intersecting player, set grounded.
+		flying=false;
 	}
 	ds_list_destroy(_semisolidList);	//memory purposes
 
@@ -59,6 +60,7 @@ if(climbing){
 	else{
 		grounded=true;
 		vel_y=0;
+		flying=false;
 		//Deal with moving climbables
 		
 		var _climbableList = ds_list_create();
@@ -142,7 +144,7 @@ if(_speed>max_vel){
 	vel_y*= max_vel/_speed;
 }
 
-if (round(vel_x)!=0 and not flying){
+if (round(vel_x)!=0 and abs(vel_x)>abs(fly_speed)){
 	var _applied_friction = sign(vel_x) * friction_power;	//constant friction, slows per second.
 	if(not grounded){
 		_applied_friction= sign(vel_x) * air_resistance;	//constant
@@ -157,7 +159,6 @@ if (round(vel_x)!=0 and not flying){
 	}
 }
 else if (not flying){vel_x=0;}	//cuts off any speed <0.5; probably good for performance, stops oscillation.
-
 /*if (round(vel_y)!=0){
 	var _applied_friction = 0;
 	if(not grounded){
@@ -186,5 +187,3 @@ if(not keyboard_check(ord("W")) and not keyboard_check(ord("S"))){
 if(not keyboard_check(ord("A")) and not keyboard_check(ord("D"))){
 	dir[0]=0;
 }
-
-print(grounded);

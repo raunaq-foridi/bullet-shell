@@ -8,7 +8,10 @@ if(place_meeting(x,y+1,o_platform) and not place_meeting(x,y,o_solid_platform)){
 	_platform = ds_list_find_value(_platformList,ds_list_size(_platformList)-1);	//take most distant object
 	ds_list_destroy(_platformList);	//memory purposes
 		
-	flying=true;
+	if(not place_meeting(x,y,_platform)){	//Dont set flying in semi-solids or while clipped
+		flying=true;
+		fly_speed=_platform.mov_x;
+	}
 	
 	if(abs(vel_x)<=abs(_platform.mov_x)){
 

@@ -6,11 +6,9 @@ event_inherited();
 
 //Movement code
 var _speed=3;
-var _movement=[0,0]
 bonus_mov_y=0;
 if (moving="down"){
 	if (y-start_y<range){
-		_movement[1]+=_speed;
 		mov_y=_speed;
 		//momentum_y=_speed;//*1.95;
 	}
@@ -22,7 +20,6 @@ if (moving="down"){
 
 else{
 	if (start_y-y<range){
-		_movement[1]-=_speed;
 		mov_y=-_speed;
 		//momentum_x=-_speed;//*1.95;
 		}
