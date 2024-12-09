@@ -15,7 +15,8 @@ function repeat_move(_move_x,_move_y){
 		if (not detect_tile(_dir_x,0)){x+=_dir_x;}
 		//move one step in y, unless collision
 		if (not detect_tile(0,_dir_y)){
-				
+			
+				//Dealing with Semi Solids first
 				if(place_meeting(x,y+1,o_semiSolid) and _dir_y>0){
 					var _semisolidList = ds_list_create();
 					instance_place_list(x,y+1,o_semiSolid,_semisolidList,true);	//List all objects the "foot" intersects, ordered by distance
@@ -39,7 +40,7 @@ function repeat_move(_move_x,_move_y){
 	else{
 		repeat(_mag_y-_mag_x){
 			if (not detect_tile(0,_dir_y)){
-				
+				//semi-solids first
 				if(place_meeting(x,y+1,o_semiSolid) and _dir_y>0){
 					var _semisolidList = ds_list_create();
 					instance_place_list(x,y+1,o_semiSolid,_semisolidList,true);

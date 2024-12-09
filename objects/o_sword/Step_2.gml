@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-x=o_player.x +30;
+x=o_player.x //+30;
 y=o_player.y +20;
 
 if(o_player.facing="right"){

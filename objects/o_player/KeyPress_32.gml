@@ -3,6 +3,15 @@
 
 if(grounded and not water){
 	vel_y = -jump_speed;	//negative, because positive is downwards for some weird reason.
+	
+	//platform momentum
+	if(place_meeting(x,y+1,o_platform)){ // and (abs(x-o_platform.x)<o_platform.clamp_x)
+		
+		var _platform = furthest_instance(o_platform);
+		if not(place_meeting(x,y,_platform)){	//ignore error. this works.
+			vel_x+= _platform.momentum_x;
+		}
+	}         
 }
 
 else if(water and alarm[2]<=0){

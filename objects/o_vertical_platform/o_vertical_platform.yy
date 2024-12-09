@@ -1,20 +1,21 @@
 {
   "$GMObject":"",
-  "%Name":"o_semiSolid",
+  "%Name":"o_vertical_platform",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":1,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"o_semiSolid",
+  "name":"o_vertical_platform",
   "overriddenProperties":[],
   "parent":{
     "name":"Platforms",
     "path":"folders/Objects/Platforms.yy",
   },
   "parentObjectId":{
-    "name":"o_platform",
-    "path":"objects/o_platform/o_platform.yy",
+    "name":"o_solid_platform",
+    "path":"objects/o_solid_platform/o_solid_platform.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -34,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"Sprite11",
-    "path":"sprites/Sprite11/Sprite11.yy",
+    "name":"s_platform",
+    "path":"sprites/s_platform/s_platform.yy",
   },
   "spriteMaskId":null,
   "visible":true,

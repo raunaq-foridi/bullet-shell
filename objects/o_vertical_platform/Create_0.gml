@@ -1,12 +1,10 @@
 /// @description Insert description here
 // You can write your code in this editor
+
+// Inherit the parent event
 event_inherited();
-depth = 100;
-
-clamp_x=0;
 
 
+start_y=y;
 range=50;
-moving="right";
-start_x=x;
-descendable=true;
+moving="up";

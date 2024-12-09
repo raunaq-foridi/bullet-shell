@@ -1,12 +1,19 @@
 /// @description Insert description here
 // You can write your code in this editor
+var _speed=1;
 
 if (moving="right"){
-	if (x-start_x<range){x+=1;}
+	if (x-start_x<range){
+		x+=_speed;
+		momentum_x=_speed;
+	}
 	else{moving="left";}
 }
 
 else{
-	if (start_x-x<range){x-=1;}
+	if (start_x-x<range){
+		x-=_speed;
+		momentum_x=-_speed;
+		}
 	else{moving="right";}
-}
+}	
