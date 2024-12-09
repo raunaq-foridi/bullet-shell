@@ -13,6 +13,7 @@ if(place_meeting(x,y+1,o_platform) and not place_meeting(x,y,o_solid_platform)){
 
 		if(_platform.object_index != o_semiSolid){
 			x+=_platform.bonus_mov_x;
+			//y+=_platform.bonus_mov_y;
 		}
 		//moving, clamped
 		//note that when clamped, the player will return to the clamped area automatically
@@ -20,9 +21,9 @@ if(place_meeting(x,y+1,o_platform) and not place_meeting(x,y,o_solid_platform)){
 		//clamp_x should be set to a large value to prevent this being noticeable, or zero.
 		
 		
-		if ((sign(x-_platform.x)!=sign(_platform.mov_x)
-		or abs(x-_platform.x)<_platform.clamp_x or vel_x!=0 or _platform.clamp_x==0)
-		and not place_meeting(x,y,_platform)){ //ignore the error. this works.
+		if ((sign(x-_platform.x)!=sign(_platform.mov_x) //if moving in opposite direction to player
+		or abs(x-_platform.x)<_platform.clamp_x or vel_x!=0 or _platform.clamp_x==0)	//or within clamp region
+		and not place_meeting(x,y,_platform)){ //ignore the error. this works.			//not clipped in
 			repeat_move(_platform.mov_x,0);
 		}
 	}

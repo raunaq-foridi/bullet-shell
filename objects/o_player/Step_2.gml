@@ -26,4 +26,3 @@ if(grounded){
 		
 }
 if(not climbing){climbable=false;}
-

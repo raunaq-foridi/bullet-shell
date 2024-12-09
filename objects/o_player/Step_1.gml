@@ -29,7 +29,6 @@ else{				//Standard Physics Variables
 	
 	alarm[3]=swim_cooldown;
 }
-
 //Groundedness code
 if (detect_tile(0,1)!=0){
 	grounded=true;

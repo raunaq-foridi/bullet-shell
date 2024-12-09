@@ -11,7 +11,7 @@ if(grounded and not water){
 		instance_place_list(x,y+1,o_platform,_platformList,true); //ordered list of objects intersecting one pixel below
 		_platform = ds_list_find_value(_platformList,ds_list_size(_platformList)-1);	//take most distant object
 		ds_list_destroy(_platformList);	//memory purposes
-		if not(place_meeting(x,y,_platform)){
+		if not(place_meeting(x,y,_platform)){	//ignore error. this works.
 			vel_x+= _platform.momentum_x;
 		}
 	}
