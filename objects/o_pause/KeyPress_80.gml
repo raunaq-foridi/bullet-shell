@@ -11,9 +11,12 @@ if(not paused){
 	}
 	instance_deactivate_all(true);
 	instance_activate_object(o_restart_button);
+	instance_activate_object(o_settings_button);
 }
 else{
 	instance_deactivate_object(o_restart_button);
+	instance_deactivate_object(o_settings_button);
+	instance_deactivate_all(true);
 	paused=false;
 	sprite_delete(pause_image);
 	for (var _i=0; _i<array_length(active); _i++){

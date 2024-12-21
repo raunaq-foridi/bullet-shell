@@ -11,6 +11,6 @@ if (other.invincible=false){
 	var _sign= sign(x-other.x);
 	other.vel_x+=knockback*_sign;
 	
-	if(destroy_on_collision){instance_deactivate_object(self);}
+	if(destroy_on_collision){instance_deactivate_object(id);}
 	
 }
