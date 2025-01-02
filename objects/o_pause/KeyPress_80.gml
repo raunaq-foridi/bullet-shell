@@ -10,14 +10,12 @@ if(not paused){
 		array_push(active,instance_id[_i]);
 	}
 	instance_deactivate_all(true);
-	//instance_activate_object(o_restart_button);
 	create_button(620,190,4.5,1.5,"restart",room_restart);
-	//instance_activate_object(o_settings_button);
 	create_button(620,290,4.5,1.5,"settings",open_settings);
 }
 else{
-	//instance_deactivate_object(o_restart_button);
-	instance_deactivate_object(o_settings_button);
+	instance_destroy(o_generic_button);
+	instance_destroy(o_toggle);
 	instance_deactivate_all(true);
 	paused=false;
 	sprite_delete(pause_image);

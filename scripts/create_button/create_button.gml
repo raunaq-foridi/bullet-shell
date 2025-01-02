@@ -14,3 +14,16 @@ function create_button(_x,_y,_width,_height,_text,_script,_arguments){
 		arguments=_arguments		//Pass a list of parameters to pass through the script
 	}
 }
+
+function create_toggle(_x,_y,_width,_height,_text,_bool,_align){
+	if(is_undefined(_align)){_align="right";}
+	var _toggle = instance_create_layer(_x,_y,layer_get_id("Instances"),o_toggle);
+	with(_toggle){
+		x=_x;
+		y=_y;
+		toggle=_bool;
+		text=_text;
+		align=_align;
+	}
+
+}
