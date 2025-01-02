@@ -52,4 +52,5 @@ climbable=false;
 flying = false;		//Used when "thrown", turns air resistance off.
 fly_speed=0;		//useful for jumping off moving platforms, or taking
 					//very large amounts of knockback.
-					
+		
+//create_button(200,200,200,200,"button",print,["hello", "test"])

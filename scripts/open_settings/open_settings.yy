@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"open_settings",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"open_settings",
+  "parent":{
+    "name":"UI",
+    "path":"folders/Scripts/UI.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
