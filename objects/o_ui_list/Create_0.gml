@@ -7,7 +7,7 @@ height= 400;
 
 //padding
 item_height = 50;	//how spaced out items are on y axis
-padding = 25;		//space between list and left edge
+padding = 50;		//space between list and right edge
 
 list = ds_list_create();
 sprite=-1;

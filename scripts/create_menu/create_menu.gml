@@ -21,6 +21,18 @@ function create_menu(_x,_y,_width,_height,_list,_sprite){
 	}
 }
 
+//function to format toggles, sliders etc properly alongside text
+//Move this to o_ui_list eventually. need not be global.
+function settings_item(_x,_y,_text,_type,_variable){
+	switch (_type){
+		case "toggle":
+			draw_text(_x,_y,_text);
+			create_toggle(_x,_y-25,5,5,"",_variable);
+		break
+	}
+}
+
+
 //some built in lists, for when being dynamic is unnecessary
 //put common lists here, such as settings.
 

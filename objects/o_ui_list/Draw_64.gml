@@ -26,10 +26,11 @@ for (var _i=0; _i<ds_list_size(list); _i++){
 	var _variable = _array[UI.VARIABLE];
 	
 	//introduce padding
-	var _x = x+padding;
+	var _x = x-padding;
 	var _y = y + _i * item_height;
 	draw_set_halign(fa_right);
-	draw_text(_x+width-padding,_y,_text);
-	draw_set_halign(fa_left);
+	draw_text(_x+width-padding,_y+item_height/2,_text);
+	//draw_set_halign(fa_left);
+	settings_item(_x+width-padding,_y+item_height/2,_text,_type,_variable);
 }
 
