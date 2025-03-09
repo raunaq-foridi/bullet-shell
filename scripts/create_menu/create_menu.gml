@@ -23,11 +23,19 @@ function create_menu(_x,_y,_width,_height,_list,_sprite){
 
 //function to format toggles, sliders etc properly alongside text
 //Move this to o_ui_list eventually. need not be global.
-function settings_item(_x,_y,_text,_type,_variable){
+function settings_item(_x,_y,_text,_type,_variable,_cleanup){
+	//_cleanup should be a ds_list. Destroy each object after a frame to prevent infinite objects!
 	switch (_type){
 		case "toggle":
-			draw_text(_x,_y,_text);
-			create_toggle(_x,_y-25,5,5,"",_variable);
+			//draw_text(_x-_left_offset,_y,_text);
+			create_toggle(_x,_y-25,5,5,"",_variable,_cleanup);
+		break
+		case "slider":
+			//draw_text(_x-_left_offset,_y,_text);
+			var _length= 40
+			//create_slider(_x+_length-200,_y-25,_length,20,"",_variable);  //Valid when origin placed in corner
+			create_slider(_x+80,_y+30, _length,20,"",_variable,_cleanup);
+			
 		break
 	}
 }

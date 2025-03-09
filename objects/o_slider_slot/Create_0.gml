@@ -6,6 +6,12 @@ text="Placeholder Text";
 align="left";
 
 state = false;
-toggle= "";			//This should be set to a global variable, probably a global variable.
+variable= "";			//This should be set to a (global) variable
+
 hovering=false;
 clicked=false;
+
+width = 10;
+height= 10;
+
+bar = "";				//The associated slider bar. set by the bar on creation.

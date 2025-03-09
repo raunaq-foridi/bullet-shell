@@ -27,10 +27,15 @@ for (var _i=0; _i<ds_list_size(list); _i++){
 	
 	//introduce padding
 	var _x = x-padding;
-	var _y = y + _i * item_height;
+	var _y = y + _i * item_height+10;
+	draw_set_halign(fa_left);
+	//draw_text(x+padding,y+item_height/2,"default pos");
+	//draw_text(_x+width-padding,_y+item_height/2,_text);
+	draw_text(x+padding,_y+item_height/2,_text);
 	draw_set_halign(fa_right);
-	draw_text(_x+width-padding,_y+item_height/2,_text);
-	//draw_set_halign(fa_left);
-	settings_item(_x+width-padding,_y+item_height/2,_text,_type,_variable);
-}
+	
+	if (ds_list_size(cleanup_list)<ds_list_size(list)){
+		settings_item(_x+width-padding,_y+item_height/2,_text,_type,_variable,cleanup_list);
+	}
 
+}
