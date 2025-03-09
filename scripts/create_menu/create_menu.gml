@@ -35,7 +35,10 @@ function settings_item(_x,_y,_text,_type,_variable,_cleanup){
 			var _length= 40
 			//create_slider(_x+_length-200,_y-25,_length,20,"",_variable);  //Valid when origin placed in corner
 			create_slider(_x+80,_y+30, _length,20,"",_variable,_cleanup);
-			
+		break
+		case "list":
+		//the _text parameter is used for the list of options here. multitasking :D
+			create_text_toggle(_x,_y,1,1,_text,_variable,_cleanup);
 		break
 	}
 }

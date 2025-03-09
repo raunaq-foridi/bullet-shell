@@ -34,8 +34,8 @@ for (var _i=0; _i<ds_list_size(list); _i++){
 	draw_text(x+padding,_y+item_height/2,_text);
 	draw_set_halign(fa_right);
 	
-	if (ds_list_size(cleanup_list)<ds_list_size(list)){
-		settings_item(_x+width-padding,_y+item_height/2,_text,_type,_variable,cleanup_list);
+	if (ds_list_size(cleanup_list)<ds_list_size(list)+1){
+		settings_item(_x+width-padding,_y+item_height/2,_range,_type,_variable,cleanup_list);
 	}
 
 }
