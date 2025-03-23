@@ -17,7 +17,11 @@ function create_menu(_x,_y,_width,_height,_list,_sprite){
 		sprite=_sprite;	//cranberry
 		for(var _i = 0; _i<array_length(_list); _i++){
 			ds_list_add(list,_list[_i]);
+			
 		}
+		//create scrollbar
+		
+		create_slider(x + _width, y, _height, 10, "","volume",cleanup_list,[0,max_scroll],"scrollbar");
 	}
 }
 
@@ -60,7 +64,8 @@ function list_name(_listname){
 			_array = [
 			["mute","toggle",0,[0,1],"mute"],
 			["volume","slider",100,[0,100],"volume"],
-			["resolution","list","low",["low","medium","high"],"resolution"]
+			["resolution","list","low",["low","medium","high"],"resolution"],
+			["","","",[],""]	//dummy entry. Required to fix stuff.
 			]
 		break
 		

@@ -15,3 +15,4 @@ scale=1;
 
 hovering = false;
 grabbing = false;
+text=""

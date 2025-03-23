@@ -7,4 +7,4 @@ image_xscale=scale;
 //print("slider: " + string(slider.x));
 //print("slider is at "+string([slider.x,slider.y]));
 //print("Bar is at "+string([x,y]));
-draw_self();
+//draw_self();

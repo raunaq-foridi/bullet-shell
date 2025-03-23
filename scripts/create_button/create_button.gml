@@ -30,7 +30,11 @@ function create_toggle(_x,_y,_width,_height,_text,_bool,_cleanup,_align){
 }
 
 function create_slider(_x,_y,_width,_height,_text,_var,_cleanup,_range,_align){
+	var _rotation = 0;
 	if(is_undefined(_align)){_align="right";}
+	else if(_align=="scrollbar"){
+			_rotation = 270;
+	}
 	if(is_undefined(_range)){_range=[0,1];}
 	var _slot = instance_create_layer(_x,_y,layer_get_id("Instances"),o_slider_slot);
 	with(_slot){
@@ -41,6 +45,7 @@ function create_slider(_x,_y,_width,_height,_text,_var,_cleanup,_range,_align){
 		variable=_var;
 		text=_text;
 		align=_align;
+		image_angle = _rotation
 	}
 	ds_list_add(_cleanup,_slot);
 	var _bar = instance_create_layer(_x,_y,layer_get_id("Instances"),o_slider_bar);
@@ -57,6 +62,7 @@ function create_slider(_x,_y,_width,_height,_text,_var,_cleanup,_range,_align){
 			bar=_bar
 		}
 		x = empty_x + variable_global_get(variable) *(full_x - empty_x);
+		image_angle = _rotation
 	}
 	ds_list_add(_cleanup,_bar);
 }
@@ -73,4 +79,5 @@ function create_text_toggle(_x,_y,_width,_height,_values,_var,_cleanup,_align){
 		align=_align;
 		values=_values;
 	}
+	ds_list_add(_cleanup,_obj);
 }

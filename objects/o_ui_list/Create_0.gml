@@ -13,3 +13,8 @@ list = ds_list_create();
 cleanup_list=ds_list_create()
 sprite=-1;
 
+y_offset=0;
+max_scroll=1000;
+
+menu_surf=surface_create(width, height);
+surface_free(menu_surf);
