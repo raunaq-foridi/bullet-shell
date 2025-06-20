@@ -1,14 +1,12 @@
 {
   "$GMObject":"",
-  "%Name":"o_slider_slot",
+  "%Name":"o_scroll_bar",
   "eventList":[
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
     {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":64,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":8,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-    {"$GMEvent":"","%Name":"","collisionObjectId":null,"eventNum":50,"eventType":6,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"o_slider_slot",
+  "name":"o_scroll_bar",
   "overriddenProperties":[],
   "parent":{
     "name":"Settings",
@@ -33,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"s_slider_slot",
-    "path":"sprites/s_slider_slot/s_slider_slot.yy",
+    "name":"s_slider_bar",
+    "path":"sprites/s_slider_bar/s_slider_bar.yy",
   },
   "spriteMaskId":null,
   "visible":true,

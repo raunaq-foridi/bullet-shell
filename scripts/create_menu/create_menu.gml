@@ -72,6 +72,7 @@ function list_name(_listname){
 			
 			//Current issue: Each slider requires its own dummy entry at the end to function.
 			//long day. Not sustainable in its current form.
+			//Solved: Add a new dummy entry for each slider.
 		break
 		
 	}

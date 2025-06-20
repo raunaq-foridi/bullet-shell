@@ -18,6 +18,18 @@ if (!surface_exists(menu_surf))
 {
     menu_surf = surface_create(width, height);
 }
+//Deal with scrollbar
+scrollslot.x=x+width - 17
+scrollslot.y=y
+scrollslot.height=height
+scrollslot.bar.x=x+width-17
+scrollslot.bar.y=y+5-y_offset;
+/*with (scrollslot){
+	bar.x = window_mouse_get_x()
+	bar.y=window_mouse_get_y() 	
+}*/
+
+//Deal with menu items
 surface_set_target(menu_surf);
 draw_clear_alpha(c_black, 0);
 for (var _i=0; _i<ds_list_size(list); _i++){

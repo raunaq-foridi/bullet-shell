@@ -18,3 +18,5 @@ max_scroll=1000;
 
 menu_surf=surface_create(width, height);
 surface_free(menu_surf);
+
+scrollslot = instance_create_layer(x,y,"Instances",o_scroll_slot);
