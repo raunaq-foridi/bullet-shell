@@ -21,7 +21,7 @@ function create_menu(_x,_y,_width,_height,_list,_sprite){
 		}
 		//create scrollbar
 		
-		create_slider(x + _width, y, _height, 10, "","volume",cleanup_list,[0,max_scroll],"scrollbar");
+		//create_slider(x + _width, y, _height, 10, "","volume",cleanup_list,[0,max_scroll],"scrollbar");
 	}
 }
 
@@ -65,10 +65,20 @@ function list_name(_listname){
 			["mute","toggle",0,[0,1],"mute"],
 			["volume","slider",100,[0,100],"volume"],
 			["resolution","list","low",["low","medium","high"],"resolution"],
-			["","","",[],""]	//dummy entry. Required to fix stuff.
+			["test slider","slider",100,[0,200],"dummy"],
+			//["volume2","slider",100,[0,200],"dummy"],
+			//["","","",[],""]	//dummy entry. Required to fix stuff.
 			]
+			
+			//Current issue: Each slider requires its own dummy entry at the end to function.
+			//long day. Not sustainable in its current form.
 		break
 		
+	}
+	for(var _i=0; _i<array_length(_array); _i++){
+		if (_array[_i][1]=="slider"){
+			array_push(_array,["","","",[],""]);
+		}
 	}
 	return _array
 }
