@@ -1,9 +1,9 @@
 {
   "$GMScript":"",
-  "%Name":"create_button",
+  "%Name":"create_menu",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"create_button",
+  "name":"create_menu",
   "parent":{
     "name":"UI",
     "path":"folders/Scripts/UI.yy",

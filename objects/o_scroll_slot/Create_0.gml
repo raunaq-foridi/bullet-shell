@@ -6,6 +6,14 @@ text="Placeholder Text";
 align="left";
 
 state = false;
-toggle= "";			//This should be set to a global variable, probably a global variable.
+
+
 hovering=false;
 clicked=false;
+
+width = 20;
+height= 10;
+
+bar = instance_create_layer(x,y,"Instances",o_scroll_bar);
+
+ui_list = ""; //set on creation

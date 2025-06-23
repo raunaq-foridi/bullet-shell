@@ -15,7 +15,20 @@ if(not paused){
 }
 else{
 	instance_destroy(o_generic_button);
+	//instance_destroy(o_toggle);
+	instance_destroy(o_scroll_slot);
+	
+	/*
 	instance_destroy(o_toggle);
+	instance_destroy(o_slider_slot);
+	instance_destroy(o_text_toggle);
+	*/
+	if (instance_exists(o_ui_list)){
+		for (var _i=0; _i<ds_list_size(o_ui_list.cleanup_list); _i++){
+			instance_destroy(o_ui_list.cleanup_list[| _i]);
+		}
+		instance_destroy(o_ui_list);
+	}
 	instance_deactivate_all(true);
 	paused=false;
 	sprite_delete(pause_image);
