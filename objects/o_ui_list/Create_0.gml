@@ -14,9 +14,10 @@ cleanup_list=ds_list_create()
 sprite=-1;
 
 y_offset=0;
-max_scroll=1000;
+max_scroll=100;
 
 menu_surf=surface_create(width, height);
 surface_free(menu_surf);
 
 scrollslot = instance_create_layer(x,y,"Instances",o_scroll_slot);
+scrollslot.ui_list = id;
