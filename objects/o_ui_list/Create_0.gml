@@ -12,6 +12,7 @@ padding = 50;		//space between list and right edge
 list = ds_list_create();
 cleanup_list=ds_list_create()
 sprite=-1;
+//sprite = s_restart_button;
 
 y_offset=0;
 max_scroll=100;

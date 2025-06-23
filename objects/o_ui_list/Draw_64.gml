@@ -1,6 +1,8 @@
 /// @description draws a menu
 
 //draw background
+//sprite = s_restart_button;	For Testing; But also this one flashes so it sucks.
+
 if (sprite==-1){	//run if no sprite provided
 	draw_set_color($636363);
 	draw_set_alpha(0.5);
@@ -12,7 +14,8 @@ if (sprite==-1){	//run if no sprite provided
 	
 }
 else{
-//populate with a sprite drawing, eventually
+	draw_sprite_stretched(sprite,image_index,x,y,width,height);	//cranberry
+	//draw_sprite_ext(sprite,image_index,x,y)
 }
 if (!surface_exists(menu_surf))
 {
