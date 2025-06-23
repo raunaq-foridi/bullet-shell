@@ -9,9 +9,8 @@ with(bar){
 		var _dist = y-full_y;
 		var _prog = _dist/(empty_y-full_y);
 		
-		var _prog_change = _prog - _old_prog;
-		//if (abs(_prog_change)<=0.01){_prog_change=0;}	//Remove subpixel errors, hopefully.
-		_prog_change+=0.0088;
+		var _prog_change = _prog - _old_prog;		//goddamn floating points...
+		_prog_change+=0.0088;		//Cheaty and dirty method to fix inaccuracy. Imperfect.
 		print(_prog_change);
 		if (other.ui_list!=""){
 			other.ui_list.y_offset = _prog*other.ui_list.max_scroll;
