@@ -22,6 +22,6 @@ else if(vel_y>0){	//i.e, if grounded, bounce!
 //friction
 
 if (round(vel_x!=0)){
-	vel_x -= sign(vel_x)*0.4;	//very basic friction.
+	vel_x -= sign(vel_x)*friction_coeff;	//very basic friction.
 }
 else{vel_x=0;}	//cuts off any speed <0.5; probably good for performance, stops oscillation.

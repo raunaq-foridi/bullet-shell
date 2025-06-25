@@ -3,8 +3,11 @@
 //var _gears = gears + irandom(bonus_gears);
 
 for (var _val=0;_val<array_length(gear_value);_val++){	//Iterate over elements of gear_value
-	
-	for (var _i=0;_i<gears[_val];_i++){
+	var _gears = gears[_val]
+	if (bonus_gears!=0){
+		_gears =  gears[_val]+irandom(bonus_gears[_val]);
+	}
+	for (var _i=0;_i<_gears;_i++){
 		var _angle =random_range(gear_directions[0],gear_directions[1])
 		var _speed =random(gear_strength);
 	
