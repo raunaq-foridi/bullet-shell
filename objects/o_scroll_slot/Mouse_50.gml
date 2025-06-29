@@ -5,7 +5,7 @@ with(bar){
 		var _old_dist = y-full_y;
 		var _old_prog = _old_dist/(empty_y-full_y);
 		
-		y = clamp(window_mouse_get_y(),full_y,empty_y);
+		y = clamp(window_mouse_get_y(),full_y,empty_y-10);
 		var _dist = y-full_y;
 		var _prog = _dist/(empty_y-full_y);
 		

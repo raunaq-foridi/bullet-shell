@@ -10,4 +10,4 @@ vel_x=0;
 vel_y=0;
 
 bounciness = 0.6; //idk, it'll be cool!
-friction_coeff=0.1;	//closer to 0 = less friction
+friction_coeff=0.4;	//closer to 0 = less friction

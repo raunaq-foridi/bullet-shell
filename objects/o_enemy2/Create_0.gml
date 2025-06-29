@@ -10,7 +10,7 @@ knockback=15;
 
 gears = [5];		
 gear_value=[1];	
-bonus_gears=1;	
+bonus_gears=[1];	
 gear_directions=[200,520];
 gear_strength=15;
 
