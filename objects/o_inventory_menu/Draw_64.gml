@@ -119,8 +119,8 @@ for (var _i=0; _i<INV_SIZE;_i++){
 	
 	draw_sprite_stretched(_sprite,-1,_draw_x, _draw_y,_slotsize *item_scaling,_slotsize*item_scaling);
 	
-	//draw_text(_x,_y,_item[1]); //Consider the following:
-	if(_item[1]!=1){draw_text(_x,_y,_item[1]);}
+	draw_text(_x,_y,_item[1]); //Consider the following:
+	//if(_item[1]!=1){draw_text(_x,_y,_item[1]);} //Dont render count if =1
 	
 	
 	//Below does not work - renders _under_ other sprites.
@@ -140,6 +140,10 @@ if(point_distance(_mouse_x,_mouse_y,200,200)<small_slot_radius or held==-2){
 	if (mouse_check_button_released(mb_left)){
 		if(held<=-1){held=-2;}
 		else if(held>=0){
+			//return old item to inventory
+			with(o_manager){
+				item_pickup(other.small_slots[0]);
+			}
 			//put item in equipment slot
 			small_slots[0]=_inventory[held][0]	//later, update to check if this is suitable equipment.
 			_inventory[held][1]-=1;
@@ -170,6 +174,10 @@ if(point_distance(_mouse_x,_mouse_y,300,200)<small_slot_radius or held==-3){
 	if (mouse_check_button_released(mb_left)){
 		if(held<=-1){held=-3;}
 		else if(held>=0){
+			//return old item to inventory
+			with(o_manager){
+				item_pickup(other.small_slots[1]);
+			}
 			//put item in equipment slot
 			small_slots[1]=_inventory[held][0]	//later, update to check if this is suitable equipment.
 			_inventory[held][1]-=1;
