@@ -3,7 +3,7 @@
 with (o_manager){
 	//print(inventory);
 	item_pickup(other.item_id);
-	print(inventory);
+	//print(inventory);
 }
 
 instance_destroy();

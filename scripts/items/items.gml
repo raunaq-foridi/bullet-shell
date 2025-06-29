@@ -16,6 +16,6 @@ enum ITEM_PROP{
 }
 //Actual item properties [?]
 item = [
-["PLACEHOLDER","Placeholder artefact",pointer_null,"small","This is placeholder item to test features"],
-["ARTEFACT1","Sound Artefact",0,"small","This Artefact plays a sound upon swinging your sword"]
+["PLACEHOLDER","Placeholder artefact",0,"small","This is placeholder item to test features"],
+["ARTEFACT1","Sound Artefact",s_artefact_1,"small","This Artefact plays a sound upon swinging your sword"]
 ];
