@@ -41,4 +41,12 @@ inv_sprite=-1;
 slot_sprite=-1;
 
 selected = -1;
+held= -1;
+
+//Equipment
+//code will assume 2 small, 1 large. Modify as needed, but for now this wont auto-adjust.
+small_slots=[0,0];
+large_slots=[0];
+
+small_slot_radius=50;
 instance_deactivate_object(id);

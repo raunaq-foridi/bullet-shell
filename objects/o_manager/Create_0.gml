@@ -15,6 +15,7 @@ inventory=array_create(INV_SIZE,[0,0]);	//Create an Array of 0's
 //inventory format: [itemID,count]
 
 function item_pickup(_item_id){
+	if (_item_id == 0){return}
 	//check if item already in inventory
 	item_id = _item_id; //jank scope changing
 	var _item_search = function(_element,_index){return (_element[0] == item_id);}

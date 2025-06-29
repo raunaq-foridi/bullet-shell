@@ -16,6 +16,6 @@ enum ITEM_PROP{
 }
 //Actual item properties [?]
 item = [
-["PLACEHOLDER","Placeholder artefact",0,"small","This is placeholder item to test features"],
+["PLACEHOLDER","Placeholder artefact",0,"small",""], //blank because it is the empty slot, actually
 ["ARTEFACT1","Sound Artefact",s_artefact_1,"small","This Artefact plays a sound upon swinging your sword"]
 ];

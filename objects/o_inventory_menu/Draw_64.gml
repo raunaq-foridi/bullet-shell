@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
-
+var _mouse_x = window_mouse_get_x();
+var _mouse_y = window_mouse_get_y();
 //Draw Background
 if (bg_sprite==-1){	//run if no sprite provided
 	//var _camera = view_camera[0];
@@ -50,6 +51,7 @@ else{
 var _inventory = o_manager.inventory;
 var _tooltip_pos = [0,0];
 for (var _i=0; _i<INV_SIZE;_i++){
+	var _item = _inventory[_i];
 	//idea: grid position. x= _i % list_width; y = _i // list_width
 	var _grid_x = _i % list_width;
 	var _grid_y = _i div list_width;
@@ -65,13 +67,33 @@ for (var _i=0; _i<INV_SIZE;_i++){
 		_selected=true;
 		selected = _i;
 		_tooltip_pos=[_x,_y];
+		if (mouse_check_button_released(mb_left)){
+			if(_item[0]!=0 and _item[1]>0){held=_i;}
+			else{
+				//clear equipment by clicking on empty slot
+				if(held==-2){
+					//return the item to inventory
+					with(o_manager){
+						item_pickup(other.small_slots[0]);
+					}
+					small_slots[0]=0;		
+				}			
+				else if(held==-3){
+					with(o_manager){
+						item_pickup(other.small_slots[1]);
+					}
+					small_slots[1]=0;
+				}
+				held=-1;
+			}
+		}
 	}
 	else{_selected=false;}
 	//Render the slot
 	if (slot_sprite == -1){
 		//draw default square
 		draw_set_color(c_black);
-		if(_selected){
+		if(_selected ==true or held ==_i){
 			draw_set_color(c_gray);	
 		}
 		//display_mouse_get_y()
@@ -82,7 +104,7 @@ for (var _i=0; _i<INV_SIZE;_i++){
 		//draw slot if given sprite.	
 	}
 	//Draw item sprite, if not empty
-	var _item = _inventory[_i];
+	//var _item = _inventory[_i];
 	//Reminder: Inventory is an array of arrays, each element being [item_id, amount]
 	if (_item[0]==0){continue}	//ignore empty slots. Technically, since slots fill left to right, "break" should suffice.
 	
@@ -97,12 +119,81 @@ for (var _i=0; _i<INV_SIZE;_i++){
 	
 	draw_sprite_stretched(_sprite,-1,_draw_x, _draw_y,_slotsize *item_scaling,_slotsize*item_scaling);
 	
+	//draw_text(_x,_y,_item[1]); //Consider the following:
+	if(_item[1]!=1){draw_text(_x,_y,_item[1]);}
+	
+	
 	//Below does not work - renders _under_ other sprites.
 	//if(_selected){draw_text(window_mouse_get_x(),window_mouse_get_y(),_item_properties[ITEM_PROP.DESCRIPTION]);}
 }
 //dont worry, this will be cleaned up later.
-if(selected!=-1 and not array_equals(_tooltip_pos,[0,0])){
+
+
+//Equipment
+
+//equipment slot 1 - coded as "selected = -2"
+draw_set_color(c_dkgray);
+//if((_mouse_x-200)^2 + (_mouse_y-200)^2 < 50){ draw_set_color(c_ltgray);}	//^ is NOT exponentiation.
+if(point_distance(_mouse_x,_mouse_y,200,200)<small_slot_radius or held==-2){ 
+	draw_set_color(c_gray);
+	selected = -2;
+	if (mouse_check_button_released(mb_left)){
+		if(held<=-1){held=-2;}
+		else if(held>=0){
+			//put item in equipment slot
+			small_slots[0]=_inventory[held][0]	//later, update to check if this is suitable equipment.
+			_inventory[held][1]-=1;
+			held=-1;
+		}
+	}
+}	
+draw_circle(200,200,small_slot_radius,false);
+draw_set_color(-1);	
+if (small_slots[0]!=0){
+	var _item_properties = global.item[small_slots[0]];
+	var _sprite = _item_properties[ITEM_PROP.SPRITE];
+	//print(_item_properties);
+	//print(small_slots[0]);
+	//draw_sprite(_sprite,-1,200,200);
+	var _scale_x = small_slot_radius /sprite_get_width(_sprite);
+	var _scale_y = small_slot_radius /sprite_get_width(_sprite);
+	var _scale = min(_scale_x,_scale_y);				//To not mess with aspect ratios.
+	draw_sprite_ext(_sprite,-1,200,200,_scale,_scale,0,c_white,1);
+	
+}
+
+//equipment slot 2 - coded as "selected = -3"
+draw_set_color(c_dkgray);
+if(point_distance(_mouse_x,_mouse_y,300,200)<small_slot_radius or held==-3){ 
+	draw_set_color(c_gray);
+	selected = -3;
+	if (mouse_check_button_released(mb_left)){
+		if(held<=-1){held=-3;}
+		else if(held>=0){
+			//put item in equipment slot
+			small_slots[1]=_inventory[held][0]	//later, update to check if this is suitable equipment.
+			_inventory[held][1]-=1;
+			held=-1;
+		}
+	}
+}	
+draw_circle(300,200,small_slot_radius,false);
+draw_set_color(-1);	
+if (small_slots[1]!=0){
+	var _item_properties = global.item[small_slots[1]];
+	var _sprite = _item_properties[ITEM_PROP.SPRITE];
+	var _scale_x = small_slot_radius /sprite_get_width(_sprite);
+	var _scale_y = small_slot_radius /sprite_get_width(_sprite);
+	var _scale = min(_scale_x,_scale_y);				//To not mess with aspect ratios.
+	draw_sprite_ext(_sprite,-1,300,200,_scale,_scale,0,c_white,1);
+	
+}
+
+//Draw Tooltip
+if(selected>=0 and not array_equals(_tooltip_pos,[0,0])){
 	var _item = _inventory[selected];
 	var _item_properties = global.item[_item[0]];
 	draw_text(_tooltip_pos[0],_tooltip_pos[1],_item_properties[ITEM_PROP.DESCRIPTION]);
-	}
+	//Alternate way, to draw text at the mouse
+	//draw_text(window_mouse_get_x(),window_mouse_get_y(),_item_properties[ITEM_PROP.DESCRIPTION]);
+}
