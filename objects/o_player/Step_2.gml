@@ -26,3 +26,5 @@ if(grounded){
 		
 }
 if(not climbing){climbable=false;}
+
+array_sort(interactions,sort_distance);	//order the interactable objects by distance, so only the nearest is interacted with

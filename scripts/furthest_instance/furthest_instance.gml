@@ -1,7 +1,7 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 
-//Detects the furthest instance of an object that is being interracted with
+//Detects the furthest instance of an object that is being interacted with
 //i.e, the one directly beneath your feet, by default
 
 

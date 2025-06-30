@@ -54,3 +54,5 @@ fly_speed=0;		//useful for jumping off moving platforms, or taking
 					//very large amounts of knockback.
 
 equipment = [0,0];	//Items equipped in the small_slot of o_inventory_menu
+
+interactions = []	//A list of all instances the player can interact with.
