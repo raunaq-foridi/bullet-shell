@@ -75,3 +75,5 @@ for (var _i=0; _i<ds_list_size(list); _i++){
 }
 surface_reset_target();
 draw_surface(menu_surf, x, y);
+draw_set_halign(fa_left);
+draw_set_valign(fa_top);

@@ -14,3 +14,9 @@ function open_settings(){
 	//create_toggle(620,290,5,5,"Mute toggle","mute");
 	create_menu(100,100,_width,_height,list_name("settings"));
 }
+
+function true_restart(){
+	gc_collect();
+	sprite_delete(o_pause.pause_image);
+	game_restart();
+}

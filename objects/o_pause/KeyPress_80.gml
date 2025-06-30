@@ -10,8 +10,9 @@ if(not paused){
 		array_push(active,instance_id[_i]);
 	}
 	instance_deactivate_all(true);
-	create_button(620,190,4.5,1.5,"restart",room_restart);
-	create_button(620,290,4.5,1.5,"settings",open_settings);
+	//create_button(620,90,5.3,1.5,"Full Reset",true_restart);
+	create_button(620,190,5.3,1.5,"Restart",true_restart);
+	create_button(620,290,5.3,1.5,"Settings",open_settings);
 }
 else{
 	instance_destroy(o_generic_button);
