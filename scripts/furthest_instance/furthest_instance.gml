@@ -17,5 +17,5 @@ function furthest_instance(_object,_x,_y){
 		_instance = ds_list_find_value(_instanceList,ds_list_size(_instanceList)-1);	//take most distant object
 		ds_list_destroy(_instanceList);	//memory purposes
 	}
-	return _instance
+	return _instance		//as the name implies, this is an instance, not a real.
 }

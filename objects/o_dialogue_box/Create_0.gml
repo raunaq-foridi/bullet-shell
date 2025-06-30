@@ -15,8 +15,9 @@ letter_pos=0;		//for letter-by-letter typing; what letter is it on?
 text_padding = 20;
 
 sprite = -1;
-
-
+talk_sprite = -1;	//kinda assumes Undertale style talksprite usage. Might not go for that.
+name="";
+name_sprite =-1;	
 
 x=100;
 y=window_get_height()-300;
