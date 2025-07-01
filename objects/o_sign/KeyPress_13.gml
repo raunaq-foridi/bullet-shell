@@ -8,6 +8,7 @@ if(within_range){
 			if(typeof(other.text)=="string"){other.text=[other.text];}
 			text = other.text;
 			name = other.name;
+			text_delay = other.text_delay;
 		}
 	}
 }

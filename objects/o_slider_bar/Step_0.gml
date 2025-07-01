@@ -7,5 +7,6 @@ var _range = full_x - empty_x;
 var _displacement = x - empty_x;
 
 progress = _displacement/_range;
+var _output = (range[1]-range[0])*progress + range[0];
 
-variable_global_set(variable,progress);
+variable_global_set(variable,_output);

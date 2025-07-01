@@ -34,4 +34,7 @@ if(talk_sprite!=-1){
 	_x=sprite_get_width(talk_sprite);
 	draw_sprite(talk_sprite,-1,x+ text_padding,y+text_padding);
 }
-draw_text_ext_transformed(x+text_padding+_x,y+text_padding,text[dialogue],15,(width-2*text_padding-_x)/scale,scale,scale,0);
+var _text_delay = text_delay/global.text_speed;
+var _letter_pos = floor(letter_pos/_text_delay);
+var _text = string_copy(text[dialogue],1,_letter_pos);
+draw_text_ext_transformed(x+text_padding+_x,y+text_padding,_text,15,(width-2*text_padding-_x)/scale,scale,scale,0);

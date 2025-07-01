@@ -45,6 +45,7 @@ function create_slider(_x,_y,_width,_height,_text,_var,_cleanup,_range,_align){
 		variable=_var;
 		text=_text;
 		align=_align;
+		range=_range;		//not used. Should be in _bar
 		image_angle = _rotation
 	}
 	ds_list_add(_cleanup,_slot);
@@ -58,10 +59,12 @@ function create_slider(_x,_y,_width,_height,_text,_var,_cleanup,_range,_align){
 		full_x=_x-30;
 		variable=_var;
 		slider=_slot;
+		range=_range;
 		with(_slot){
 			bar=_bar
 		}
-		x = empty_x + variable_global_get(variable) *(full_x - empty_x);
+		var _total_range = range[1]-range[0];
+		x = empty_x + variable_global_get(variable) *(full_x - empty_x)/_total_range;
 		image_angle = _rotation
 	}
 	ds_list_add(_cleanup,_bar);

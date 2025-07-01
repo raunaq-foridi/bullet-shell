@@ -27,7 +27,7 @@ function create_menu(_x,_y,_width,_height,_list,_sprite){
 
 //function to format toggles, sliders etc properly alongside text
 //Move this to o_ui_list eventually. need not be global.
-function settings_item(_x,_y,_text,_type,_variable,_cleanup){
+function settings_item(_x,_y,_text,_type,_variable,_cleanup,_range=[0,1]){
 	//_cleanup should be a ds_list. Destroy each object after a frame to prevent infinite objects!
 	switch (_type){
 		case "toggle":
@@ -38,10 +38,11 @@ function settings_item(_x,_y,_text,_type,_variable,_cleanup){
 			//draw_text(_x-_left_offset,_y,_text);
 			var _length= 40
 			//create_slider(_x+_length-200,_y-25,_length,20,"",_variable);  //Valid when origin placed in corner
-			create_slider(_x+80,_y+30, _length,20,"",_variable,_cleanup);
+			create_slider(_x+80,_y+30, _length,20,"",_variable,_cleanup,_range);
 		break
 		case "list":
 		//the _text parameter is used for the list of options here. multitasking :D
+		//Multitasking is bad. Change this later.
 			create_text_toggle(_x,_y,1,1,_text,_variable,_cleanup);
 		break
 	}
@@ -63,9 +64,9 @@ function list_name(_listname){
 		//variable name should be a string referring to a global variable.
 			_array = [
 			["mute","toggle",0,[0,1],"mute"],
-			["volume","slider",100,[0,100],"volume"],
+			["volume","slider",100,[0,1],"volume"],
 			["resolution","list","low",["low","medium","high"],"resolution"],
-			["test slider","slider",100,[0,200],"dummy"],
+			["Text Speed","slider",1,[1,10],"text_speed"],
 			//["volume2","slider",100,[0,200],"dummy"],
 			//["","","",[],""]	//dummy entry. Required to fix stuff.
 			]

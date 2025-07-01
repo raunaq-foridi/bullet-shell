@@ -6,6 +6,7 @@
 text = ["Placeholder Text AAAAAAAAAAAAAaaaaaaaaa aaaaaaaAAAAAaa a aa aaaaaaaaa aaa aaaaaaaaaa aaa aaaaa aaaa aaa aaaaa",
 		"Here is a second line of test dialogue"];
 text_speed=1;
+text_delay=10;		//Makes *this* dialogue box slower. Divided by global text speed
 text_size=1;
 dialogue = 0;		//Text will later be made into a list, that goes through upon pressing enter. this tracks which index to use.
 scale = 2;
