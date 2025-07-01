@@ -9,6 +9,7 @@ if(within_range){
 			text = other.text;
 			name = other.name;
 			text_delay = other.text_delay;
+			voice = other.voice;
 		}
 	}
 }

@@ -14,3 +14,5 @@ split_character="`" //Use this character to denote separate dialogue entries
 
 text = string_split(text,split_character);
 name = "";			//used mostly for children objects such as NPCs
+//voice = snd_type; //Variable Definition
+//voice_variation = 1;

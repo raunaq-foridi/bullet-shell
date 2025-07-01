@@ -20,6 +20,9 @@ talk_sprite = -1;	//kinda assumes Undertale style talksprite usage. Might not go
 name="";
 name_sprite =-1;	
 
+voice = snd_type;	//sound effect used for vocal blips
+voice_variation = 0.2;
+
 x=100;
 y=window_get_height()-300;
 

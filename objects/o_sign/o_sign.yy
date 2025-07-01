@@ -32,6 +32,7 @@
     {"$GMObjectProperty":"","%Name":"text","filters":[],"listItems":[],"multiselect":true,"name":"text","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"Placeholder Text","varType":2,},
     {"$GMObjectProperty":"","%Name":"depth","filters":[],"listItems":[],"multiselect":false,"name":"depth","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
     {"$GMObjectProperty":"","%Name":"text_delay","filters":[],"listItems":[],"multiselect":false,"name":"text_delay","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"1","varType":0,},
+    {"$GMObjectProperty":"","%Name":"voice","filters":[],"listItems":[],"multiselect":false,"name":"voice","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"snd_type","varType":5,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
