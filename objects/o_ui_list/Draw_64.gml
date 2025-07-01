@@ -21,6 +21,9 @@ if (!surface_exists(menu_surf))
 {
     menu_surf = surface_create(width, height);
 }
+//Deal with close button position
+close.x=x;
+close.y=y;
 //Deal with scrollbar
 scrollslot.x=x+width - 17;
 scrollslot.y=y;
@@ -40,6 +43,9 @@ scrollslot.bar.y=y+5+_scrollprogress*height;
 		y= other.y + _i * other.item_height+10 -y_offset;
 	}
 }*/
+
+
+
 //Deal with menu items
 surface_set_target(menu_surf);
 draw_clear_alpha(c_black, 0);

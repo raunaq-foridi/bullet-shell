@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-if(not paused){
+/*if(not paused){
 	paused=true;
 	
 	pause_image= sprite_create_from_surface(application_surface,0,0,view_wport[0],view_hport[0],false,false,0,0);
@@ -19,11 +19,6 @@ else{
 	//instance_destroy(o_toggle);
 	instance_destroy(o_scroll_slot);
 	
-	/*
-	instance_destroy(o_toggle);
-	instance_destroy(o_slider_slot);
-	instance_destroy(o_text_toggle);
-	*/
 	if (instance_exists(o_ui_list)){
 		for (var _i=0; _i<ds_list_size(o_ui_list.cleanup_list); _i++){
 			instance_destroy(o_ui_list.cleanup_list[| _i]);
@@ -38,3 +33,5 @@ else{
 		}
 	active=[];
 	}
+	*/
+pause();

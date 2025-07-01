@@ -8,13 +8,15 @@ enum UI{
 }
 
 //creates a list menu, such as a settings menu
-function create_menu(_x,_y,_width,_height,_list,_sprite){
+function create_menu(_x,_y,_width,_height,_list,_sprite,_other_lists=[],_name=""){
 	if (is_undefined(_sprite)){_sprite=-1;}
 	var _menu = instance_create_layer(_x,_y,"Instances",o_ui_list);
 	with(_menu){
 		width=_width;
 		height=_height;
 		sprite=_sprite;	//cranberry
+		other_lists=_other_lists;		//what other tabs can be accessed
+		name = _name;					//what tab is this? If no other lists, this is unnecessary
 		for(var _i = 0; _i<array_length(_list); _i++){
 			ds_list_add(list,_list[_i]);
 			
@@ -65,7 +67,21 @@ function list_name(_listname){
 			_array = [
 			["mute","toggle",0,[0,1],"mute"],
 			["volume","slider",100,[0,1],"volume"],
-			["resolution","list","low",["low","medium","high"],"resolution"],
+			["resolution","list","low",["low","medium","high"],"resolution"]
+			//["volume2","slider",100,[0,200],"dummy"],
+			//["","","",[],""]	//dummy entry. Required to fix stuff.
+			]
+			
+			//Current issue: Each slider requires its own dummy entry at the end to function.
+			//long day. Not sustainable in its current form.
+			//Solved: Add a new dummy entry for each slider.
+		break
+		case "text_settings":
+		//list format is [text,type,current value,range,variable name]
+		//for discrete variables, range is all possible values
+		//for continuous ones like sliders, it is simply min and max.
+		//variable name should be a string referring to a global variable.
+			_array = [
 			["Text Speed","slider",1,[1,10],"text_speed"],
 			["Text Size","slider",1,[1,3],"dialogue_text_size"]
 			//["volume2","slider",100,[0,200],"dummy"],

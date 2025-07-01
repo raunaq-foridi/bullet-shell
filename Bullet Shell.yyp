@@ -46,6 +46,7 @@
   "name":"Bullet Shell",
   "resources":[
     {"id":{"name":"o_climbable","path":"objects/o_climbable/o_climbable.yy",},},
+    {"id":{"name":"o_close_button","path":"objects/o_close_button/o_close_button.yy",},},
     {"id":{"name":"o_collectible","path":"objects/o_collectible/o_collectible.yy",},},
     {"id":{"name":"o_dialogue_box","path":"objects/o_dialogue_box/o_dialogue_box.yy",},},
     {"id":{"name":"o_enemy1","path":"objects/o_enemy1/o_enemy1.yy",},},
@@ -100,6 +101,7 @@
     {"id":{"name":"snd_sword","path":"sounds/snd_sword/snd_sword.yy",},},
     {"id":{"name":"snd_type","path":"sounds/snd_type/snd_type.yy",},},
     {"id":{"name":"s_artefact_1","path":"sprites/s_artefact_1/s_artefact_1.yy",},},
+    {"id":{"name":"s_artefact_2","path":"sprites/s_artefact_2/s_artefact_2.yy",},},
     {"id":{"name":"s_climbable","path":"sprites/s_climbable/s_climbable.yy",},},
     {"id":{"name":"s_ComplexTiles","path":"sprites/s_ComplexTiles/s_ComplexTiles.yy",},},
     {"id":{"name":"s_default_collectible","path":"sprites/s_default_collectible/s_default_collectible.yy",},},
@@ -129,6 +131,7 @@
     {"id":{"name":"Sprite11","path":"sprites/Sprite11/Sprite11.yy",},},
     {"id":{"name":"Sprite17","path":"sprites/Sprite17/Sprite17.yy",},},
     {"id":{"name":"Sprite31","path":"sprites/Sprite31/Sprite31.yy",},},
+    {"id":{"name":"Sprite32","path":"sprites/Sprite32/Sprite32.yy",},},
     {"id":{"name":"Sprite9","path":"sprites/Sprite9/Sprite9.yy",},},
     {"id":{"name":"ComplexTiles","path":"tilesets/ComplexTiles/ComplexTiles.yy",},},
     {"id":{"name":"SolidTiles","path":"tilesets/SolidTiles/SolidTiles.yy",},},
