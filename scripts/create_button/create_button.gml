@@ -64,7 +64,7 @@ function create_slider(_x,_y,_width,_height,_text,_var,_cleanup,_range,_align){
 			bar=_bar
 		}
 		var _total_range = range[1]-range[0];
-		x = empty_x + variable_global_get(variable) *(full_x - empty_x)/_total_range;
+		x = empty_x + (variable_global_get(variable)-range[0]) *(full_x - empty_x)/_total_range;
 		image_angle = _rotation
 	}
 	ds_list_add(_cleanup,_bar);

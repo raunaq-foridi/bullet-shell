@@ -68,7 +68,26 @@ for (var _i=0; _i<INV_SIZE;_i++){
 		selected = _i;
 		_tooltip_pos=[_x,_y];
 		if (mouse_check_button_released(mb_left)){
-			if(_item[0]!=0 and _item[1]>0){held=_i;}
+			if(_item[0]!=0 and _item[1]>0){
+				
+				//If the same item as the held equip slot is clicked, return the item to the inventory
+				if(held==-2 and small_slots[0]==_item[0]){
+					with(o_manager){
+						item_pickup(other.small_slots[0]);
+					}
+					small_slots[0]=0;
+					held=-1
+				}
+				else if(held==-3 and small_slots[1]==_item[0]){
+					with(o_manager){
+						item_pickup(other.small_slots[1]);
+					}
+					small_slots[1]=0;
+					held=-1
+				}
+				//otherwise, hold the new item
+				else{held=_i;}
+			}
 			else{
 				//clear equipment by clicking on empty slot
 				if(held==-2){
@@ -112,13 +131,17 @@ for (var _i=0; _i<INV_SIZE;_i++){
 	var _item_properties = global.item[_item[0]];
 	var _sprite = _item_properties[ITEM_PROP.SPRITE];
 	//print(_sprite);
-	if(_sprite==0){continue} //Mostly to avoid crashes if sprite has not been set.
+	//print(sprite_get_name(_sprite));
+	//print(_item_properties);
+	
+	//if(_sprite==0){continue} //Mostly to avoid crashes if sprite has not been set.
+	//This seems to break things. Unsure why. Funny - it was meant to *Avoid* crashes.
+	
 	//draw the sprite
 	var _draw_x = _x + _slotsize* (1-item_scaling)/2 -1		//no clue why its 1 off.
 	var _draw_y = _y + _slotsize* (1-item_scaling)/2 -1
-	
 	draw_sprite_stretched(_sprite,-1,_draw_x, _draw_y,_slotsize *item_scaling,_slotsize*item_scaling);
-	
+	//draw_sprite_ext(_sprite,-1,200,200,1,1,0,c_white,1)
 	draw_text(_x,_y,_item[1]); //Consider the following:
 	//if(_item[1]!=1){draw_text(_x,_y,_item[1]);} //Dont render count if =1
 	

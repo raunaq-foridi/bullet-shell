@@ -67,6 +67,7 @@ function list_name(_listname){
 			["volume","slider",100,[0,1],"volume"],
 			["resolution","list","low",["low","medium","high"],"resolution"],
 			["Text Speed","slider",1,[1,10],"text_speed"],
+			["Text Size","slider",1,[1,3],"dialogue_text_size"]
 			//["volume2","slider",100,[0,200],"dummy"],
 			//["","","",[],""]	//dummy entry. Required to fix stuff.
 			]
