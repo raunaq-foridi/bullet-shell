@@ -1,7 +1,7 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 
-//Detects the furthest instance of an object that is being interracted with
+//Detects the furthest instance of an object that is being interacted with
 //i.e, the one directly beneath your feet, by default
 
 
@@ -17,5 +17,5 @@ function furthest_instance(_object,_x,_y){
 		_instance = ds_list_find_value(_instanceList,ds_list_size(_instanceList)-1);	//take most distant object
 		ds_list_destroy(_instanceList);	//memory purposes
 	}
-	return _instance
+	return _instance		//as the name implies, this is an instance, not a real.
 }

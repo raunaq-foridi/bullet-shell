@@ -1,4 +1,5 @@
 /// @description Water + Climbing.
+if(occupied){exit}		//pause controls if in dialogue
 
 if (place_meeting(x,y,o_climbable)){		//begin climb if pressed on ladder
 	climbing=true;	

@@ -22,3 +22,9 @@ surface_free(menu_surf);
 
 scrollslot = instance_create_layer(x,y,"Instances",o_scroll_slot);
 scrollslot.ui_list = id;
+
+close = instance_create_layer(x,y,"Instances",o_close_button);
+
+other_lists=[];
+name="";
+alarm[0]=1;

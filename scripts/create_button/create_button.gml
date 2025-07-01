@@ -1,6 +1,6 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function create_button(_x,_y,_width,_height,_text,_script,_arguments){
+function create_button(_x,_y,_width,_height,_text,_script,_arguments,_textless=false){
 	if(is_undefined(_arguments)){_arguments=[];}
 	var _button = instance_create_layer(_x,_y,layer_get_id("Instances"),o_generic_button);
 	with(_button){
@@ -9,7 +9,8 @@ function create_button(_x,_y,_width,_height,_text,_script,_arguments){
 		height= _height;
 		x=_x;
 		y=_y;
-		text = _text;
+		if(not _textless){text = _text;}
+		else{text="";}
 		script= _script;		//pass a script without parentheses, eg print or create_button
 		arguments=_arguments		//Pass a list of parameters to pass through the script
 	}
@@ -45,6 +46,7 @@ function create_slider(_x,_y,_width,_height,_text,_var,_cleanup,_range,_align){
 		variable=_var;
 		text=_text;
 		align=_align;
+		range=_range;		//not used. Should be in _bar
 		image_angle = _rotation
 	}
 	ds_list_add(_cleanup,_slot);
@@ -58,10 +60,12 @@ function create_slider(_x,_y,_width,_height,_text,_var,_cleanup,_range,_align){
 		full_x=_x-30;
 		variable=_var;
 		slider=_slot;
+		range=_range;
 		with(_slot){
 			bar=_bar
 		}
-		x = empty_x + variable_global_get(variable) *(full_x - empty_x);
+		var _total_range = range[1]-range[0];
+		x = empty_x + (variable_global_get(variable)-range[0]) *(full_x - empty_x)/_total_range;
 		image_angle = _rotation
 	}
 	ds_list_add(_cleanup,_bar);

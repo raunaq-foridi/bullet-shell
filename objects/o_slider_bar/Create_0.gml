@@ -16,3 +16,5 @@ scale=1;
 hovering = false;
 grabbing = false;
 text=""
+
+range=[0,1];

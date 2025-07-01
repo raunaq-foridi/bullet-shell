@@ -10,8 +10,8 @@
   "name":"o_collectible",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Interractions",
+    "path":"folders/Objects/Interractions.yy",
   },
   "parentObjectId":null,
   "persistent":false,

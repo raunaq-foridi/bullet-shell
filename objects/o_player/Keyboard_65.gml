@@ -1,5 +1,7 @@
 /// @description Left
 // You can write your code in this editor
+if(occupied){exit}		//pause controls if in dialogue
+
 facing="left";
 //climbing code
 if(climbing and climbable and not climbable.lock_x){	//ignore code if Locked.
