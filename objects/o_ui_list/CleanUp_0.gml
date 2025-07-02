@@ -9,5 +9,4 @@ ds_list_destroy(list);
 surface_free(menu_surf);
 instance_destroy(close);
 instance_destroy(scrollslot);
-print(instance_count);
 //print("cleaned!");

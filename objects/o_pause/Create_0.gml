@@ -19,8 +19,9 @@ function pause(){
 	}
 	instance_deactivate_all(true);
 	//create_button(620,90,5.3,1.5,"Full Reset",true_restart);
-	create_button(620,190,5.3,1.5,"Restart",true_restart);
+	create_button(620,190,5.3,1.5,"Restart",true_restart);		//ignore errors. 7th param is optional.
 	create_button(620,290,5.3,1.5,"Settings",open_settings);
+	//create_button(620,390,5.3,1.5,"Next Room",room_goto,[Room1_Child_0]);
 }
 else{
 	instance_destroy(o_generic_button);
