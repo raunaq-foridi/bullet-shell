@@ -11,6 +11,9 @@ global.dialogue_text_size=2;//specifically for dialogue boxes. May be replaced w
 coins = 0; //This is NOT for final usage. This is for testing purposes
 gears = 0; //This ones probably for final usage.
 
+room_saves = ds_map_create();			//ds_map of ds_maps. 1 map per room, titled by room name
+//persistent_states = ds_map_create();
+
 //inventory
 #macro INV_SIZE 30
 inventory=array_create(INV_SIZE,[0,0]);	//Create an Array of 0's

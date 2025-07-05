@@ -11,3 +11,10 @@ vel_y=0;
 
 bounciness = 0.6; //idk, it'll be cool!
 friction_coeff=0.4;	//closer to 0 = less friction
+
+//for persistence
+keep_state = true;		//kept for room
+save_state = false;		//kept for saved game
+start_x=x;
+start_y=y;
+state=[]
