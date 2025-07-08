@@ -2,7 +2,16 @@
 // You can write your code in this editor
 //Room persistence
 var _room_name = room_get_name(room);
-var _room_map = ds_map_create();
+var _room_map = "";
+if (not ds_map_exists(room_saves,_room_name)){
+	_room_map = ds_map_create();
+}
+else{
+	ds_map_destroy(room_saves[? _room_name]);
+	ds_map_delete(room_saves,_room_name);
+	_room_map = ds_map_create();
+	//_room_map = room_saves[? _room_name];
+}
 
 with (all){
 	//This is a BAD way to do this. Consider wisely.
@@ -12,7 +21,10 @@ with (all){
 		_key += "#x"+string(start_x);
 		_key+= "#y"+string(start_y);
 		
-		ds_map_add(_room_map,_key,state);
+		ds_map_set(_room_map,_key,state);
 	}
 }
+//ds_map_delete(room_saves,_room_name);
+//ds_map_replace(room_saves,_room_name,_room_map);
 ds_map_add_map(room_saves,_room_name,_room_map);
+//ds_map_destroy(_room_map);
