@@ -9,6 +9,7 @@
     {"name":"inst_3C154AEF","path":"rooms/Room2/Room2.yy",},
     {"name":"inst_5810CC80","path":"rooms/Room2/Room2.yy",},
     {"name":"inst_1A6F407D","path":"rooms/Room2/Room2.yy",},
+    {"name":"inst_2C2CA54E","path":"rooms/Room2/Room2.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -19,8 +20,9 @@
         {"$GMRInstance":"","%Name":"inst_5810CC80","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_5810CC80","objectId":{"name":"o_horizontal_platform","path":"objects/o_horizontal_platform/o_horizontal_platform.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":3.5,"scaleY":1.0,"x":1312.0,"y":448.0,},
         {"$GMRInstance":"","%Name":"inst_1A6F407D","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_1A6F407D","objectId":{"name":"o_portal","path":"objects/o_portal/o_portal.yy",},"properties":[
             {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"o_portal","path":"objects/o_portal/o_portal.yy",},"propertyId":{"name":"destination","path":"objects/o_portal/o_portal.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"Room_Save_Test",},
-            {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"o_portal","path":"objects/o_portal/o_portal.yy",},"propertyId":{"name":"player_pos","path":"objects/o_portal/o_portal.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"[15,305]",},
+            {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"o_portal","path":"objects/o_portal/o_portal.yy",},"propertyId":{"name":"player_pos","path":"objects/o_portal/o_portal.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"[45,305]",},
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1664.0,"y":384.0,},
+        {"$GMRInstance":"","%Name":"inst_2C2CA54E","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_2C2CA54E","objectId":{"name":"o_lever","path":"objects/o_lever/o_lever.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1504.0,"y":429.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRTileLayer":"","%Name":"water_tiles","depth":0,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":true,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"water_tiles","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":63,"SerialiseWidth":107,"TileCompressedData":[
           -17,-2147483648,-90,0,-17,-2147483648,-90,0,-17,-2147483648,-90,0,-17,-2147483648,-90,0,-17,-2147483648,
@@ -47,7 +49,7 @@
           -29,0,-78,-2147483648,-29,0,-78,-2147483648,-29,0,
         ],"TileDataFormat":1,},"tilesetId":{"name":"SolidTiles","path":"tilesets/SolidTiles/SolidTiles.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
     {"$GMRTileLayer":"","%Name":"complex_tiles","depth":200,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":true,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"complex_tiles","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":63,"SerialiseWidth":107,"TileCompressedData":[
-          -749,-2147483648,-2156,0,1,11,-126,0,1,2,-22,0,1,3,-40,0,-3,10,-41,0,1,2,-19,0,2,15,7,-86,0,1,2,-14,
+          -749,-2147483648,-2156,0,1,11,-126,0,1,2,-22,0,1,3,-31,0,-12,10,-41,0,1,2,-19,0,2,15,7,-86,0,1,2,-14,
           0,1,8,-3,10,-89,0,1,2,-12,0,1,8,-94,0,1,2,-10,0,1,8,-96,0,-10,10,-1447,0,-22,-2147483648,-85,0,-22,-2147483648,
           -85,0,-22,-2147483648,-85,0,-22,-2147483648,-85,0,-22,-2147483648,-85,0,-22,-2147483648,-85,0,-22,-2147483648,
           -85,0,-22,-2147483648,-85,0,-22,-2147483648,-85,0,-22,-2147483648,-85,0,-24,-2147483648,-83,0,-24,-2147483648,

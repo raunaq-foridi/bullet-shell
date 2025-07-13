@@ -13,6 +13,7 @@ gears = 0; //This ones probably for final usage.
 
 room_saves = ds_map_create();			//ds_map of ds_maps. 1 map per room, titled by room name
 //persistent_states = ds_map_create();
+room_saves_struct ={};
 
 //inventory
 #macro INV_SIZE 30
@@ -44,3 +45,4 @@ function item_pickup(_item_id){
 item_pickup(3);
 item_pickup(2);
 print(inventory);*/
+test_json = @'{"Room1_Child_0":{"o_lever#x256#y429":[["activated",true],["tag",""]]},"Room2":{"o_lever#x1504#y429":[["activated",true],["tag",""]]},"Room1":{"o_enemy2#x896#y224":[["hp",3.0],["alive",true]],"o_collectible#x928#y320":[],"o_enemyShooter#x672#y288":[["hp",5.0],["alive",true]],"o_collectible#x1600#y128":[],"o_enemy2#x1632#y544":[["hp",3.0],["alive",true]],"o_collectible#x1184#y256":[],"o_enemy1#x512#y320":[["hp",4.0],["alive",true]],"o_lever#x1952#y357":[["activated",true],["tag",""]],"o_enemy2#x1440#y416":[["hp",3.0],["alive",true]],"o_enemy2#x1408#y544":[["hp",2.0],["alive",true]],"o_enemy1#x1376#y448":[["hp",3.0],["alive",true]]}}';

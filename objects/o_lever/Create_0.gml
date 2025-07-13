@@ -3,7 +3,7 @@
 event_inherited();
 
 keep_state = true;		//Is this remembered after moving to the next room?
-save_state = false;		//Is this saved during a game save/ permanently remembered?
+save_state = true;		//Is this saved during a game save/ permanently remembered?
 //must be defined for any saved
 start_x=x;
 start_y=y;
