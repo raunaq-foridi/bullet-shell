@@ -9,8 +9,8 @@
   "name":"o_portal",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Special",
+    "path":"folders/Objects/Special.yy",
   },
   "parentObjectId":null,
   "persistent":false,
