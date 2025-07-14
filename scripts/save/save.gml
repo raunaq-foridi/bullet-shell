@@ -4,7 +4,8 @@
 function save(_slot=1){
 
 	//save room data (temporary, will be amended)	
-	var _room_save = o_manager.room_persist_struct;
+	//var _room_save = o_manager.room_persist_struct;
+	var _room_save = o_manager.game_save_struct;
 	//var _room_string = json_stringify(_room_save,false);
 	//save player data
 	var _player_data ={};
@@ -31,9 +32,11 @@ function save(_slot=1){
 }
 
 function load(_slot=1){
-	with(o_pause){pause();}
+	with(o_pause){
+		if(paused){pause();}
+		}
 	var _file = file_text_open_read("test_save"+string(_slot)+".txt");
-	if (_file==-1){exit}
+	if (_file==-1){return -1}
 	
 	var _string = file_text_read_string(_file)
 	var _struct = json_parse(_string);
@@ -42,7 +45,8 @@ function load(_slot=1){
 	room_goto(_struct.world.current_room);
 	var _room_data = _struct.world.rooms;
 	with(o_manager){
-		room_persist_struct = _room_data;
+		room_persist_struct = {};
+		game_save_struct = _room_data;
 		inventory = _player_data.inventory;
 		gears = _player_data.gears;
 		print("ehh?");
@@ -54,6 +58,7 @@ function load(_slot=1){
 		y = _player_data.y;
 	}
 	//o_inventory_menu.small_slots=_player_data.equipment;
+	return _slot
 }
 
 function read(_slot=1){

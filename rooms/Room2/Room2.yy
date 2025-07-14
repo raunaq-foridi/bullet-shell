@@ -10,6 +10,9 @@
     {"name":"inst_5810CC80","path":"rooms/Room2/Room2.yy",},
     {"name":"inst_1A6F407D","path":"rooms/Room2/Room2.yy",},
     {"name":"inst_2C2CA54E","path":"rooms/Room2/Room2.yy",},
+    {"name":"inst_22B1EEF3","path":"rooms/Room2/Room2.yy",},
+    {"name":"inst_1EA7F99C","path":"rooms/Room2/Room2.yy",},
+    {"name":"inst_4358D233","path":"rooms/Room2/Room2.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -23,6 +26,9 @@
             {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"o_portal","path":"objects/o_portal/o_portal.yy",},"propertyId":{"name":"player_pos","path":"objects/o_portal/o_portal.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"[45,305]",},
           ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1664.0,"y":384.0,},
         {"$GMRInstance":"","%Name":"inst_2C2CA54E","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_2C2CA54E","objectId":{"name":"o_lever","path":"objects/o_lever/o_lever.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1504.0,"y":429.0,},
+        {"$GMRInstance":"","%Name":"inst_22B1EEF3","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_22B1EEF3","objectId":{"name":"o_gear","path":"objects/o_gear/o_gear.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2055.0,"y":366.0,},
+        {"$GMRInstance":"","%Name":"inst_1EA7F99C","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_1EA7F99C","objectId":{"name":"o_gear","path":"objects/o_gear/o_gear.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1278.0,"y":412.0,},
+        {"$GMRInstance":"","%Name":"inst_4358D233","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_4358D233","objectId":{"name":"o_gear","path":"objects/o_gear/o_gear.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1316.0,"y":411.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRTileLayer":"","%Name":"water_tiles","depth":0,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":true,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"water_tiles","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":63,"SerialiseWidth":107,"TileCompressedData":[
           -17,-2147483648,-90,0,-17,-2147483648,-90,0,-17,-2147483648,-90,0,-17,-2147483648,-90,0,-17,-2147483648,

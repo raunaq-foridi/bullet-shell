@@ -1,6 +1,6 @@
 /// @description Jump/waterdash
 // You can write your code in this editor
-print(equipment);
+//print(equipment);
 if(occupied){exit}		//pause controls if in dialogue
 
 if(grounded and not water){
