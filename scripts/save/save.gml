@@ -34,7 +34,8 @@ function save(_slot=1){
 function load(_slot=1){
 	with(o_pause){
 		if(paused){pause();}
-		}
+	}
+	o_manager.loading=true;
 	var _file = file_text_open_read("test_save"+string(_slot)+".txt");
 	if (_file==-1){return -1}
 	

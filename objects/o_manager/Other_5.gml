@@ -1,6 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 //Room persistence
+if(loading){exit}	//dont run room end if Loading file
 var _room_name = room_get_name(room);
 var _room_struct={};
 var _save_data_struct={};

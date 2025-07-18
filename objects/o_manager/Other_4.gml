@@ -1,10 +1,12 @@
 /// @description Insert description here
 // You can write your code in this editor
+loading=false;
 if (not struct_exists(room_persist_struct,room_get_name(room))){
 	print("No room data found");
 	if (not struct_exists(game_save_struct,room_get_name(room))){exit}
 	print("Saved data found");
 	var _saved_state= game_save_struct[$ room_get_name(room)];
+	//print(_saved_state);
 	with(all){
 		if (variable_instance_exists(id,"save_state")){
 			if(save_state==false){continue}
@@ -16,7 +18,8 @@ if (not struct_exists(room_persist_struct,room_get_name(room))){
 			state = _saved_state[$ _key];
 			//iterate over states
 			//print(_key,state);
-			if(is_undefined(state) or array_length(state)==0){
+			if(is_undefined(state)){
+				//print(_key, "destroyed",state);
 				instance_destroy();
 				//continue;
 			}

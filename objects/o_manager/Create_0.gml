@@ -13,6 +13,10 @@ gears = 0; //This ones probably for final usage.
 
 room_persist_struct ={};	//should be used for saving things between rooms, i.e persistence
 game_save_struct = {};	//should be used for things that must be permanently remembered
+
+//Game state
+loading=false;
+
 //inventory
 #macro INV_SIZE 30
 inventory=array_create(INV_SIZE,[0,0]);	//Create an Array of 0's

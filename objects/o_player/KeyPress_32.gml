@@ -10,7 +10,7 @@ if(grounded and not water){
 	if(place_meeting(x,y+1,o_platform)){ // and (abs(x-o_platform.x)<o_platform.clamp_x)
 		
 		var _platform = furthest_instance(o_platform);
-		if not(place_meeting(x,y,_platform)){	//ignore error. this works.
+		if (not place_meeting(x,y,_platform) and _platform.active){	//ignore error. this works.
 			vel_x+= _platform.momentum_x;
 		}
 	}         
