@@ -1,5 +1,5 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description Persistence, saving and maps
+
 //Room persistence
 if(loading){exit}	//dont run room end if Loading file
 var _room_name = room_get_name(room);
@@ -32,3 +32,4 @@ with (all){
 //Use room_saves_struct to save each rooms data, keyed by room name
 variable_struct_set(room_persist_struct,_room_name,_room_struct);
 variable_struct_set(game_save_struct,_room_name,_save_data_struct);
+

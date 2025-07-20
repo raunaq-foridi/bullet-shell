@@ -13,6 +13,7 @@
     {"name":"inst_22B1EEF3","path":"rooms/Room2/Room2.yy",},
     {"name":"inst_1EA7F99C","path":"rooms/Room2/Room2.yy",},
     {"name":"inst_4358D233","path":"rooms/Room2/Room2.yy",},
+    {"name":"inst_1962F100","path":"rooms/Room2/Room2.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -33,6 +34,10 @@
         {"$GMRInstance":"","%Name":"inst_22B1EEF3","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_22B1EEF3","objectId":{"name":"o_gear","path":"objects/o_gear/o_gear.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":2055.0,"y":366.0,},
         {"$GMRInstance":"","%Name":"inst_1EA7F99C","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_1EA7F99C","objectId":{"name":"o_gear","path":"objects/o_gear/o_gear.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1278.0,"y":412.0,},
         {"$GMRInstance":"","%Name":"inst_4358D233","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_4358D233","objectId":{"name":"o_gear","path":"objects/o_gear/o_gear.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1316.0,"y":411.0,},
+        {"$GMRInstance":"","%Name":"inst_1962F100","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_1962F100","objectId":{"name":"o_room_info","path":"objects/o_room_info/o_room_info.yy",},"properties":[
+            {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"o_room_info","path":"objects/o_room_info/o_room_info.yy",},"propertyId":{"name":"map_x","path":"objects/o_room_info/o_room_info.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"2",},
+            {"$GMOverriddenProperty":"","%Name":"","name":"","objectId":{"name":"o_room_info","path":"objects/o_room_info/o_room_info.yy",},"propertyId":{"name":"map_y","path":"objects/o_room_info/o_room_info.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"1",},
+          ],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":32.0,"y":32.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRTileLayer":"","%Name":"water_tiles","depth":0,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":true,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"water_tiles","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":63,"SerialiseWidth":107,"TileCompressedData":[
           -17,-2147483648,-90,0,-17,-2147483648,-90,0,-17,-2147483648,-90,0,-17,-2147483648,-90,0,-17,-2147483648,
