@@ -38,6 +38,7 @@ var _room_state2= room_persist_struct[$ room_get_name(room)];
 //print(_room_state[? ds_map_find_first(_room_state)]);
 //print(_room_state);
 with(all){
+	print("room data found");
 	if (variable_instance_exists(id,"keep_state")){
 		//if(save_state==false){continue}
 		var _key = ""
@@ -48,7 +49,7 @@ with(all){
 		state = _room_state2[$ _key];
 		//iterate over states
 		//print(state);
-		if(is_undefined(state) or array_length(state)==0){
+		if(is_undefined(state)){
 			instance_destroy();
 			//continue;
 		}

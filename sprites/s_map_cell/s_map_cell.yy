@@ -46,8 +46,8 @@
   },
   "origin":0,
   "parent":{
-    "name":"Special",
-    "path":"folders/Objects/Special.yy",
+    "name":"Map",
+    "path":"folders/Objects/menu/Map.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
