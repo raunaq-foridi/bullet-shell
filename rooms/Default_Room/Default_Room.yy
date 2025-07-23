@@ -10,22 +10,7 @@
   ],
   "isDnd":false,
   "layers":[
-    {"$GMRTileLayer":"","%Name":"water_tiles","depth":0,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":true,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"water_tiles","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":63,"SerialiseWidth":188,"TileCompressedData":[
-          -17,-2147483648,-160,0,-28,-2147483648,-160,0,-28,-2147483648,-160,0,-28,-2147483648,-160,0,-28,-2147483648,
-          -160,0,-28,-2147483648,-160,0,-28,-2147483648,-160,0,-28,-2147483648,-160,0,-28,-2147483648,-160,0,-28,
-          -2147483648,-160,0,-28,-2147483648,-160,0,-28,-2147483648,-160,0,-28,-2147483648,-160,0,-28,-2147483648,
-          -160,0,-28,-2147483648,-160,0,-28,-2147483648,-160,0,-28,-2147483648,-160,0,-28,-2147483648,-160,0,-28,
-          -2147483648,-160,0,-28,-2147483648,-160,0,-28,-2147483648,-160,0,-28,-2147483648,-160,0,-28,-2147483648,
-          -160,0,-28,-2147483648,-160,0,-28,-2147483648,-160,0,-28,-2147483648,-160,0,-28,-2147483648,-160,0,-28,
-          -2147483648,-160,0,-108,-2147483648,-91,0,-97,-2147483648,-91,0,-97,-2147483648,-91,0,-97,-2147483648,
-          -91,0,-97,-2147483648,-91,0,-97,-2147483648,-91,0,-97,-2147483648,-91,0,-97,-2147483648,-91,0,-97,-2147483648,
-          -91,0,-97,-2147483648,-91,0,-97,-2147483648,-91,0,-97,-2147483648,-91,0,-97,-2147483648,-91,0,-97,-2147483648,
-          -91,0,-97,-2147483648,-91,0,-97,-2147483648,-91,0,-97,-2147483648,-91,0,-97,-2147483648,-91,0,-97,-2147483648,
-          -91,0,-97,-2147483648,-91,0,-97,-2147483648,-91,0,-97,-2147483648,-91,0,-97,-2147483648,-91,0,-97,-2147483648,
-          -91,0,-97,-2147483648,-91,0,-97,-2147483648,-91,0,-97,-2147483648,-91,0,-97,-2147483648,-91,0,-97,-2147483648,
-          -91,0,-97,-2147483648,-91,0,-97,-2147483648,-91,0,-97,-2147483648,-91,0,-97,-2147483648,-91,0,-97,-2147483648,
-          -91,0,-97,-2147483648,-91,0,
-        ],"TileDataFormat":1,},"tilesetId":{"name":"WaterTiles","path":"tilesets/WaterTiles/WaterTiles.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
+    {"$GMRTileLayer":"","%Name":"water_tiles","depth":0,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":true,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"water_tiles","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":63,"SerialiseWidth":188,"TileCompressedData":[-11844,0,],"TileDataFormat":1,},"tilesetId":{"name":"WaterTiles","path":"tilesets/WaterTiles/WaterTiles.yy",},"userdefinedDepth":false,"visible":true,"x":0,"y":0,},
     {"$GMRTileLayer":"","%Name":"solid_tiles","depth":100,"effectEnabled":true,"effectType":null,"gridX":32,"gridY":32,"hierarchyFrozen":false,"inheritLayerDepth":true,"inheritLayerSettings":false,"inheritSubLayers":true,"inheritVisibility":true,"layers":[],"name":"solid_tiles","properties":[],"resourceType":"GMRTileLayer","resourceVersion":"2.0","tiles":{"SerialiseHeight":63,"SerialiseWidth":188,"TileCompressedData":[
           -564,-2147483648,-72,0,-116,-2147483648,-72,0,-116,-2147483648,-72,0,-116,-2147483648,-72,0,-116,-2147483648,
           -72,0,-6,-2147483648,-80,0,-30,-2147483648,-72,0,-6,-2147483648,-80,0,-30,-2147483648,-72,0,-6,-2147483648,

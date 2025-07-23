@@ -28,3 +28,9 @@ if(grounded){
 if(not climbing){climbable=false;}
 
 array_sort(interactions,sort_distance);	//order the interactable objects by distance, so only the nearest is interacted with
+
+//Deal with death
+if (hp<=0){
+	hp=max_hp;
+	event_user(0);
+}

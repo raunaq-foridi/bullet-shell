@@ -56,4 +56,8 @@ fly_speed=0;		//useful for jumping off moving platforms, or taking
 equipment = [0,0];	//Items equipped in the small_slot of o_inventory_menu
 
 interactions = []	//A list of all instances the player can interact with.
-occupied = false;	//Prevents further interactions. Will maybe later prevent movement too.
+occupied = false;	//Prevents further interactions and prevents movement
+teleporting = false;//If fast-traveling, warp to the correct position using the checkpoint in the room
+
+recent_checkpoint=room;	//will be the init room, and hence will tp to the same position in Room1
+recent_savepoint=noone;

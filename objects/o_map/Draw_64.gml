@@ -43,13 +43,21 @@ for(var _x=map_start_x;_x<map_width;_x++){
 	//check if slot is hovered/selected: [done in this way as to allow keyboard controls later]
 	if (window_mouse_get_x()>_x_pos and window_mouse_get_x()<_x_pos+cell_size
 	and window_mouse_get_y()>_y_pos and window_mouse_get_y()<_y_pos+cell_size){
-	
+		_selected=true;
 		_tooltip = _cell_info.tooltip;
 		//_name = _cell_info.name;
 		
 		_tooltip_pos = [_x_pos,_y_pos];
 		
 	
+	}
+	if(_selected and mouse_check_button_released(mb_left)){
+		print(_cell_info);
+		if(teleportation==true and _cell_info.checkpoint==true){
+			print("teleporting");
+			room_goto(_cell_info.room);
+			o_player.teleporting=true;
+		}
 	}
 }
 }

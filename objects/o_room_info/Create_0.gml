@@ -5,5 +5,6 @@ global.room_info[# map_x, map_y] = {
 	name,
 	checkpoint,
 	savepoint,
-	icon
+	icon,
+	room,
 }

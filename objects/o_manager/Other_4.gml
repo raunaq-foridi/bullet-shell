@@ -2,9 +2,9 @@
 // You can write your code in this editor
 loading=false;
 if (not struct_exists(room_persist_struct,room_get_name(room))){
-	print("No room data found");
+	//print("No room data found");
 	if (not struct_exists(game_save_struct,room_get_name(room))){exit}
-	print("Saved data found");
+	//print("Saved data found");
 	var _saved_state= game_save_struct[$ room_get_name(room)];
 	//print(_saved_state);
 	with(all){
@@ -38,7 +38,7 @@ var _room_state2= room_persist_struct[$ room_get_name(room)];
 //print(_room_state[? ds_map_find_first(_room_state)]);
 //print(_room_state);
 with(all){
-	print("room data found");
+	//print("room data found");
 	if (variable_instance_exists(id,"keep_state")){
 		//if(save_state==false){continue}
 		var _key = ""

@@ -105,7 +105,7 @@ if(climbing){
 			}
 
 		}
-		if(climbable){
+		if(instance_exists(climbable)){
 			if (climbable.snap_x){
 				x=climbable.x+climbable.rel_x;	//"snap" to climbable, with a relative distance.
 			}									//allows you to stay on a moving platform
@@ -171,7 +171,12 @@ else if (not flying){vel_x=0;}	//cuts off any speed <0.5; probably good for perf
 else{vel_y=0;}	//cuts off any speed <0.5; probably good for performance, stops oscillation.
 */
 
+//deal with teleporting
+if(teleporting and instance_exists(o_checkpoint)){
+	x = o_checkpoint.x;
+	y = o_checkpoint.y-50;
 
+}
 
 //KEYBOARD CENTRIC CODE. BEWARE.
 if(not keyboard_check(ord("W")) and not keyboard_check(ord("S"))){
@@ -181,3 +186,5 @@ if(not keyboard_check(ord("W")) and not keyboard_check(ord("S"))){
 if(not keyboard_check(ord("A")) and not keyboard_check(ord("D"))){
 	dir[0]=0;
 }
+
+teleporting=false;

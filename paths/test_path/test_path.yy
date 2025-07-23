@@ -1,0 +1,20 @@
+{
+  "$GMPath":"",
+  "%Name":"test_path",
+  "closed":true,
+  "kind":0,
+  "name":"test_path",
+  "parent":{
+    "name":"Platforms",
+    "path":"folders/Objects/Platforms.yy",
+  },
+  "points":[
+    {"speed":100.0,"x":256.0,"y":320.25,},
+    {"speed":100.0,"x":545.0,"y":321.25,},
+    {"speed":100.0,"x":545.0,"y":353.25,},
+    {"speed":100.0,"x":257.0,"y":352.25,},
+  ],
+  "precision":4,
+  "resourceType":"GMPath",
+  "resourceVersion":"2.0",
+}

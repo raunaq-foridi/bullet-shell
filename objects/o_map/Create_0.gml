@@ -15,3 +15,7 @@ map_height=10;
 visited_rooms = ds_grid_create(global.world_map_width,global.world_map_height);	//0 = unvisited, 1 = visited, 2 = current
 
 visible=false;
+
+//Map capabilities
+
+teleportation = true;
