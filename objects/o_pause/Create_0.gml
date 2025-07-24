@@ -21,7 +21,7 @@ function pause(){
 	//create_button(620,90,5.3,1.5,"Full Reset",true_restart);
 	create_button(620,190,5.3,1.5,"Restart",true_restart);		//ignore errors. 7th param is optional.
 	create_button(620,290,5.3,1.5,"Settings",open_settings);
-	create_button(620,390,5.3,1.5,"Load Save",load);
+	create_button(620,390,5.3,1.5,"Load Save",ask_to_load);
 	//create_button(620,390,5.3,1.5,"Next Room",room_goto,[Room1_Child_0]);
 }
 else{

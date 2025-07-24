@@ -28,6 +28,9 @@ for(var _x=map_start_x;_x<map_width;_x++){
 	if(_cell_info.savepoint == true){
 		draw_sprite_stretched(s_save_icon,-1, _x_pos, _y_pos, cell_size,cell_size);
 	}
+	else if (_cell_info.checkpoint == true){
+		draw_sprite_stretched(s_checkpoint,1, _x_pos, _y_pos, cell_size,cell_size);	
+	}
 	else if (_cell_info.icon != noone){
 		draw_sprite_stretched(_cell_info.icon,-1, _x_pos, _y_pos, cell_size,cell_size);
 	}

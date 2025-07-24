@@ -66,3 +66,18 @@ function read(_slot=1){
 	//read key details from a saveslot for preview purpose
 	
 }
+
+function ask_to_load(){
+	//A helper function to create the question for which slot to load
+	with(o_pause){
+		if(paused){pause();}
+	}
+	o_player.occupied=true;
+	var _load_question = instance_create_layer(x,y,"Instances",o_question_box);
+	with(_load_question){
+		header="Load from which slot?";
+		text=["Load slot 1","Load slot 2","Load slot 3","cancel"];
+		functions=[[load,1],[load,2],[load,3],[print,"cancelled loading"]];
+	}
+	
+}
