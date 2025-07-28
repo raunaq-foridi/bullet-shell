@@ -29,3 +29,4 @@ y=window_get_height()-300;
 width = window_get_width() -2*x;
 height = 200;
 o_player.occupied=true;
+continuing_dialogue=false;

@@ -20,7 +20,7 @@ loading=false;
 
 //inventory
 #macro INV_SIZE 30
-inventory=array_create(INV_SIZE,[0,0]);	//Create an Array of 0's
+inventory=array_create(INV_SIZE,[0,0]);	//Create an Array of [0,0]'s
 //inventory format: [itemID,count]
 
 function item_pickup(_item_id){

@@ -1,0 +1,8 @@
+flag = {
+	
+	grasslands: {
+		johnathon: false,
+		
+	}
+	
+};

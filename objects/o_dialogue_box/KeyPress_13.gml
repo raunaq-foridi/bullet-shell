@@ -12,5 +12,6 @@ else{
 if (dialogue>=array_length(text)){
 	//print("WHAT");
 	//o_player.occupied=false;
+	script_execute_ext(end_function[0],end_function[1]);
 	instance_destroy();
 }
