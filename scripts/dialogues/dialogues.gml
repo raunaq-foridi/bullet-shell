@@ -142,6 +142,7 @@ dialogue = {
 		hatred:{
 			type:"dialogue",
 			text: "Don't talk to me, Jimminy-hater.",
+			name: "Vengeful Jimminy",
 			voice: snd_type,
 			next:0
 		}

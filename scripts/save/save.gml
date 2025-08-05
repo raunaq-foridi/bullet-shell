@@ -18,7 +18,7 @@ function save(_slot=1){
 
 	var _world_data = {};
 	_world_data.rooms = _room_save;
-	_world_data.flags = {};				//populate this eventually I guess
+	_world_data.flags = global.flag;
 	_world_data.current_room = room;
 	_world_data.map_data = o_map.visited_rooms;
 	
@@ -60,6 +60,7 @@ function load(_slot=1){
 		y = _player_data.y;
 	}
 	o_map.visited_rooms = _struct.world.map_data;
+	global.flag = _struct.world.flags;
 	//o_inventory_menu.small_slots=_player_data.equipment;
 	return _slot
 }
