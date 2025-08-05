@@ -12,6 +12,7 @@ dialogue = 0;		//Text will later be made into a list, that goes through upon pre
 scale = 2;
 
 end_function = [print,["dialogue done"]];	//function and parameter(s) to run after dialogue completes
+end_functions= [[print,"dialogue done"]];	//New format, to support running multiple functions.
 
 letter_mode = true;
 letter_pos=0;		//for letter-by-letter typing; what letter is it on?

@@ -1,9 +1,9 @@
 {
   "$GMScript":"",
-  "%Name":"flags",
+  "%Name":"flagging",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"flags",
+  "name":"flagging",
   "parent":{
     "name":"Scripts",
     "path":"folders/Scripts.yy",

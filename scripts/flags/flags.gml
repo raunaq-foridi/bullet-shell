@@ -1,8 +1,0 @@
-flag = {
-	
-	grasslands: {
-		johnathon: false,
-		
-	}
-	
-};
