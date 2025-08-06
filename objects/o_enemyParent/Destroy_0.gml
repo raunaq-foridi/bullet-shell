@@ -1,7 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
 //var _gears = gears + irandom(bonus_gears);
-
+if (drops ==false){exit}
 for (var _val=0;_val<array_length(gear_value);_val++){	//Iterate over elements of gear_value
 	var _gears = gears[_val]
 	if (bonus_gears!=0){

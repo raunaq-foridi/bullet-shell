@@ -4,7 +4,6 @@ image_xscale = width;
 image_yscale = height;
 //x=620;
 //y=190;
-//draw_sprite(s_restart_button,0,200,200);
 draw_self();
 draw_set_color(c_white);
 draw_set_halign(fa_center);

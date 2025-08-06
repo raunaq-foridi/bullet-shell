@@ -11,7 +11,10 @@ text_size=1;
 dialogue = 0;		//Text will later be made into a list, that goes through upon pressing enter. this tracks which index to use.
 scale = 2;
 
-letter_mode = true;	//for now, unused.
+end_function = [print,["dialogue done"]];	//function and parameter(s) to run after dialogue completes
+end_functions= [[print,"dialogue done"]];	//New format, to support running multiple functions.
+
+letter_mode = true;
 letter_pos=0;		//for letter-by-letter typing; what letter is it on?
 text_padding = 20;
 
@@ -29,3 +32,5 @@ y=window_get_height()-300;
 width = window_get_width() -2*x;
 height = 200;
 o_player.occupied=true;
+
+continuing_dialogue=false;

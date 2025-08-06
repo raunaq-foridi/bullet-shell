@@ -31,7 +31,11 @@ else{
 
 if (place_meeting(x,y-o_player.vel_y-1,o_player)){	//move the player with the platform
 	if(not place_meeting(x,y,o_player)){		//No-clipping behaviour.
-		o_player.y+=mov_y						//avoid clipping through level design.
+		o_player.y+=mov_y						
+		//avoid clipping through level design.
+		with(o_player){
+			if(detect_tile_objectless(0,0)){y-=other.mov_y;}	
+		}
 	}
 }
 y+=mov_y;

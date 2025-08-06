@@ -67,7 +67,8 @@ function list_name(_listname){
 			_array = [
 			["mute","toggle",0,[0,1],"mute"],
 			["volume","slider",100,[0,1],"volume"],
-			["resolution","list","low",["low","medium","high"],"resolution"]
+			["resolution","list","low",["low","medium","high"],"resolution"],
+			["map transparency","toggle",0,[0,1],"map_transparency"]
 			//["volume2","slider",100,[0,200],"dummy"],
 			//["","","",[],""]	//dummy entry. Required to fix stuff.
 			]

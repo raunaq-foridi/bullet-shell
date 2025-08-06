@@ -3,6 +3,7 @@
 
 // Inherit the parent event
 event_inherited();
+active=true;
 start_x=x;
 range=300;
 moving="left";

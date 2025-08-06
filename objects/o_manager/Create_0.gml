@@ -6,14 +6,21 @@ global.volume= 1;
 global.dummy= 0;			//dummy variable for testing or holding values. No intended use. Do not make it important.
 global.text_speed=1;		//works by division, so 5 is 5x less delay
 global.dialogue_text_size=2;//specifically for dialogue boxes. May be replaced with text toggle
+global.map_transparency=false;
 
 //Persistent Variables
 coins = 0; //This is NOT for final usage. This is for testing purposes
 gears = 0; //This ones probably for final usage.
 
+room_persist_struct ={};	//should be used for saving things between rooms, i.e persistence
+game_save_struct = {};	//should be used for things that must be permanently remembered
+
+//Game state
+loading=false;
+
 //inventory
 #macro INV_SIZE 30
-inventory=array_create(INV_SIZE,[0,0]);	//Create an Array of 0's
+inventory=array_create(INV_SIZE,[0,0]);	//Create an Array of [0,0]'s
 //inventory format: [itemID,count]
 
 function item_pickup(_item_id){
@@ -41,3 +48,4 @@ function item_pickup(_item_id){
 item_pickup(3);
 item_pickup(2);
 print(inventory);*/
+//test_json = @'{"Room1_Child_0":{"o_lever#x256#y429":[["activated",true],["tag",""]]},"Room2":{"o_lever#x1504#y429":[["activated",true],["tag",""]]},"Room1":{"o_enemy2#x896#y224":[["hp",3.0],["alive",true]],"o_collectible#x928#y320":[],"o_enemyShooter#x672#y288":[["hp",5.0],["alive",true]],"o_collectible#x1600#y128":[],"o_enemy2#x1632#y544":[["hp",3.0],["alive",true]],"o_collectible#x1184#y256":[],"o_enemy1#x512#y320":[["hp",4.0],["alive",true]],"o_lever#x1952#y357":[["activated",true],["tag",""]],"o_enemy2#x1440#y416":[["hp",3.0],["alive",true]],"o_enemy2#x1408#y544":[["hp",2.0],["alive",true]],"o_enemy1#x1376#y448":[["hp",3.0],["alive",true]]}}';

@@ -15,5 +15,7 @@ bonus_mov_y=0;	//use for change of direction
 clamp_x=0;		//the "pickup" distance for the platform
 				//The platform will "ignore" the player until within this range.
 				//ignored if 0
+				
+active=true;
 			
 				
