@@ -4,7 +4,7 @@ event_inherited();
 
 function interaction(){
 	o_player.occupied=true;
-	var _prompt = instance_create_layer(x,y,"Instances",o_question_box);
+	var _prompt = instance_create_layer(x,y,layer,o_question_box);
 	with (_prompt){
 		header = "Would you like to teleport to your most recent savepoint?";
 		text=["Teleport","Stay"];

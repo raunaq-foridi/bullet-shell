@@ -11,7 +11,7 @@ for (var _val=0;_val<array_length(gear_value);_val++){	//Iterate over elements o
 		var _angle =random_range(gear_directions[0],gear_directions[1])
 		var _speed =random(gear_strength);
 	
-		var _gear = instance_create_layer(x,y,"Instances",o_fallen_gear);
+		var _gear = instance_create_layer(x,y,layer,o_fallen_gear);
 		_gear.vel_x = _speed * cos(_angle);
 		_gear.vel_y = _speed * sin(_angle);
 		_gear.value = gear_value[_val];

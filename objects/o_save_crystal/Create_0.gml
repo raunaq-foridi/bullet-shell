@@ -11,7 +11,7 @@ function interaction(){
 	//save();	//This will later instead open a menu, and that menu will allow you to save
 	
 	//Create Question box for saving
-	var _save_question = instance_create_layer(x,y,"Instances",o_question_box);
+	var _save_question = instance_create_layer(x,y,layer,o_question_box);
 	with(_save_question){
 		header="Save to which slot?";
 		text=["Save slot 1","Save slot 2","Save slot 3","cancel"];

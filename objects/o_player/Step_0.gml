@@ -29,12 +29,6 @@ if(place_meeting(x,y+1,o_platform) and not place_meeting(x,y,o_solid_platform)){
 				repeat_move(_platform.mov_x,0);
 			}
 		}
-		//dirty and broken. do not use.
-		//print(_platform.mov_y);
-		/*if(abs(vel_y)<abs(o_platform.mov_y)){
-			y+=_platform.mov_y + _platform.bonus_mov_y;
-		}*/
-
 
 	}
 }

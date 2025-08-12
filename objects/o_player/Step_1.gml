@@ -70,13 +70,7 @@ if(climbing){
 				climbable.rel_x=x-climbable.x;
 				climbable.rel_y=y-climbable.y;
 			}
-			/*else if((keyboard_check(ord("A")) or keyboard_check(ord("D"))) and not climbable.lock_x){
-				climbable=_climbable;			//the line above allows lock_x to work
-				if(abs(x-climbable.x)<climbable.clamp_x){
-					climbable.rel_x=x-climbable.x;	//By preventing input from changing relative x
-				}
-				
-			}*/
+
 			else{
 				if(keyboard_check(ord("A")) and not climbable.lock_x){
 					climbable=_climbable;

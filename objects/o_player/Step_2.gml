@@ -13,7 +13,7 @@ if(grounded){
 	//Sloping Upwards
 	if(detect_tile(sign(vel_x),0)){		//check for a tile directly in front of player
 		
-		var _dy=up_slope();				//find how steep a slope
+		var _dy=up_slope();				//find how steep a slope/step is
 		if (_dy<=slope_max){vel_y-=_dy;}//if slope detected, add vertical speed to scale it
 										//if "too steep", treat as a wall instead and do nothing
 	}

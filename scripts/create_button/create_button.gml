@@ -37,7 +37,7 @@ function create_slider(_x,_y,_width,_height,_text,_var,_cleanup,_range,_align){
 			_rotation = 270;
 	}
 	if(is_undefined(_range)){_range=[0,1];}
-	var _slot = instance_create_layer(_x,_y,layer_get_id("Instances"),o_slider_slot);
+	var _slot = instance_create_layer(_x,_y,layer_get_id(layer),o_slider_slot);
 	with(_slot){
 		x=_x;
 		y=_y;
@@ -50,7 +50,7 @@ function create_slider(_x,_y,_width,_height,_text,_var,_cleanup,_range,_align){
 		image_angle = _rotation
 	}
 	ds_list_add(_cleanup,_slot);
-	var _bar = instance_create_layer(_x,_y,layer_get_id("Instances"),o_slider_bar);
+	var _bar = instance_create_layer(_x,_y,layer_get_id(layer),o_slider_bar);
 	with(_bar){
 		x=_x-30;	//initial value. probably full.
 		//x=(_x-30) - (6.4*_width - 72)	//set to empty, for debugging
@@ -73,7 +73,7 @@ function create_slider(_x,_y,_width,_height,_text,_var,_cleanup,_range,_align){
 
 function create_text_toggle(_x,_y,_width,_height,_values,_var,_cleanup,_align){
 	if(is_undefined(_align)){_align="right";}
-	var _obj = instance_create_layer(_x,_y,layer_get_id("Instances"),o_text_toggle);
+	var _obj = instance_create_layer(_x,_y,layer_get_id(layer),o_text_toggle);
 	with(_obj){
 		x=_x;
 		y=_y;
