@@ -74,8 +74,9 @@ function set_flag(_flag,_value){
 }
 function get_flag(_flag){
 	var _accessors = string_split(_flag,".");
-	var _next = variable_clone(global.flag); //I hope to make this more efficient. eventually.
-	for (var _i=0; _i<array_length(_accessors);_i++){
+	//var _next = variable_clone(global.flag); //I hope to make this more efficient. eventually.
+	var _next = variable_clone(global.flag[$ _accessors[0]]);
+	for (var _i=1; _i<array_length(_accessors);_i++){
 		//print(_accessors[_i]);
 		_next = _next[$ _accessors[_i]];
 	}
