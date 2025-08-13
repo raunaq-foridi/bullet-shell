@@ -10,6 +10,7 @@ for (var _i=0; _i<_grid_height; _i++){
 	keyboard_pos[1]%=_grid_height;
 	if(keyboard_grid[# keyboard_pos[0],keyboard_pos[1]] ==1){break}
 	else{
+		if(keyboard_grid[# keyboard_pos[0],keyboard_pos[1]] ==0){continue}
 		if(keyboard_grid[# keyboard_pos[0],keyboard_pos[1]] <0.5){
 			print("less");
 			for (var _j=0; _j<_grid_width; _j++){

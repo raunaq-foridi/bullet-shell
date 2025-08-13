@@ -12,9 +12,9 @@ if(timer%120=0){
 	//o_projBall experiences gravity, so it moves diagonally.
 	
 	
-	//var _projectile1 = instance_create_layer(x,y,,"Instances",,o_projBall);
+	//var _projectile1 = instance_create_layer(x,y,"Instances",o_projBall);
 	//_projectile1.vel_x=2;
-	//var _projectile2 = instance_create_layer(x,y,,"Instances",,o_projBall);
+	//var _projectile2 = instance_create_layer(x,y,"Instances",o_projBall);
 	//_projectile2.vel_x=-2;
 	
 	

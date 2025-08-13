@@ -1,6 +1,6 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
-function create_button(_x,_y,_width,_height,_text,_script,_arguments,_textless=false){
+function create_button(_x,_y,_width,_height,_text,_script,_arguments,_keyboard_pos,_textless=false){
 	if(is_undefined(_arguments)){_arguments=[];}
 	var _button = instance_create_layer(_x,_y,layer_get_id("Instances"),o_generic_button);
 	with(_button){
@@ -12,7 +12,8 @@ function create_button(_x,_y,_width,_height,_text,_script,_arguments,_textless=f
 		if(not _textless){text = _text;}
 		else{text="";}
 		script= _script;		//pass a script without parentheses, eg print or create_button
-		arguments=_arguments		//Pass a list of parameters to pass through the script
+		arguments=_arguments;		//Pass a list of parameters to pass through the script
+		keyboard_pos = _keyboard_pos;
 	}
 }
 
@@ -37,7 +38,7 @@ function create_slider(_x,_y,_width,_height,_text,_var,_cleanup,_range,_align){
 			_rotation = 270;
 	}
 	if(is_undefined(_range)){_range=[0,1];}
-	var _slot = instance_create_layer(_x,_y,layer_get_id(layer),o_slider_slot);
+	var _slot = instance_create_layer(_x,_y,layer_get_id("Instances"),o_slider_slot);
 	with(_slot){
 		x=_x;
 		y=_y;
@@ -50,7 +51,7 @@ function create_slider(_x,_y,_width,_height,_text,_var,_cleanup,_range,_align){
 		image_angle = _rotation
 	}
 	ds_list_add(_cleanup,_slot);
-	var _bar = instance_create_layer(_x,_y,layer_get_id(layer),o_slider_bar);
+	var _bar = instance_create_layer(_x,_y,layer_get_id("Instances"),o_slider_bar);
 	with(_bar){
 		x=_x-30;	//initial value. probably full.
 		//x=(_x-30) - (6.4*_width - 72)	//set to empty, for debugging
@@ -73,7 +74,7 @@ function create_slider(_x,_y,_width,_height,_text,_var,_cleanup,_range,_align){
 
 function create_text_toggle(_x,_y,_width,_height,_values,_var,_cleanup,_align){
 	if(is_undefined(_align)){_align="right";}
-	var _obj = instance_create_layer(_x,_y,layer_get_id(layer),o_text_toggle);
+	var _obj = instance_create_layer(_x,_y,layer_get_id("Instances"),o_text_toggle);
 	with(_obj){
 		x=_x;
 		y=_y;

@@ -1,5 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
+if(o_player.occupied==true){exit}
 instance_activate_object(o_inventory_menu);
 if (not instance_exists(o_inventory_menu)){
 	instance_create_layer(x,y,layer,o_inventory_menu);
