@@ -12,8 +12,11 @@ with (o_keyboard_controller){
 	
 	//resize the keyboard grid to the inventory + a row for equipment. Populate with 1s in appropriate locations
 	ds_grid_resize(keyboard_grid,o_inventory_menu.list_width,o_inventory_menu.list_height+1);
-	ds_grid_set(keyboard_grid,0,0,1);
+	ds_grid_set(keyboard_grid,0,0,0.6);
 	ds_grid_set(keyboard_grid,1,0,1);
+	ds_grid_set(keyboard_grid,2,0,0.4);
+	ds_grid_set(keyboard_grid,3,0,1);
+	ds_grid_set(keyboard_grid,4,0,0.4);
 	ds_grid_set_region(keyboard_grid,0,1,o_inventory_menu.list_width,o_inventory_menu.list_height+1,1);
 	
 }

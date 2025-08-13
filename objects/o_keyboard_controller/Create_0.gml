@@ -9,3 +9,9 @@ keyboard_grid = ds_grid_create(5,5); //arbitrary default. change via ds_grid_res
 
 keyboard_pos = [0,0];
 
+
+//a value of 1 means an object is on that part of the grid
+//0 means it is empty and should be skipped
+//less than 0.5 means "move left when entered vertically, otherwise skip"
+//more than 0.5 means "move right when entered vertically, otherwise skip"
+//the decimals exist to make fat objects that take multiple space

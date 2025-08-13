@@ -61,6 +61,9 @@ if (window_mouse_get_x()>inv_x_pos + inv_padding and window_mouse_get_x()<inv_x_
 	and window_mouse_get_y()>inv_y_pos + inv_padding and window_mouse_get_y()<inv_y_pos + inv_padding +_total_height){
 	mousing=true;	
 }
+if (point_distance(_mouse_x,_mouse_y,200,200)<small_slot_radius or point_distance(_mouse_x,_mouse_y,300,200)<small_slot_radius){
+	mousing=true;
+}
 for (var _i=0; _i<INV_SIZE;_i++){
 	var _item = _inventory[_i];
 	//idea: grid position. x= _i % list_width; y = _i // list_width
@@ -132,7 +135,6 @@ for (var _i=0; _i<INV_SIZE;_i++){
 		//REFACTOR THIS CODE LATER. DUPLICATED AND MESSY
 		//if (mouse_check_button_released(mb_left)){
 		if(keyboard_check_released(vk_enter)){
-			print("Im TRYINg ok???");
 			if(_item[0]!=0 and _item[1]>0){
 				
 				//If the same item as the held equip slot is clicked, return the item to the inventory
@@ -219,17 +221,19 @@ for (var _i=0; _i<INV_SIZE;_i++){
 	//if(_selected){draw_text(window_mouse_get_x(),window_mouse_get_y(),_item_properties[ITEM_PROP.DESCRIPTION]);}
 }
 //dont worry, this will be cleaned up later.
-
+//will it?
 
 //Equipment
 
 //equipment slot 1 - coded as "selected = -2"
 draw_set_color(c_dkgray);
 //if((_mouse_x-200)^2 + (_mouse_y-200)^2 < 50){ draw_set_color(c_ltgray);}	//^ is NOT exponentiation.
-if(point_distance(_mouse_x,_mouse_y,200,200)<small_slot_radius or held==-2){ 
+if(point_distance(_mouse_x,_mouse_y,200,200)<small_slot_radius 
+	or (array_equals(o_keyboard_controller.keyboard_pos,[1,0]) and not mousing) 
+	or held==-2){ 
 	draw_set_color(c_gray);
 	selected = -2;
-	if (mouse_check_button_released(mb_left)){
+	if (mouse_check_button_released(mb_left) or keyboard_check_released(vk_enter)){
 		if(held<=-1){held=-2;}
 		else if(held>=0){
 			//return old item to inventory
@@ -260,10 +264,12 @@ if (small_slots[0]!=0){
 
 //equipment slot 2 - coded as "selected = -3"
 draw_set_color(c_dkgray);
-if(point_distance(_mouse_x,_mouse_y,300,200)<small_slot_radius or held==-3){ 
+if(point_distance(_mouse_x,_mouse_y,300,200)<small_slot_radius 
+	or (array_equals(o_keyboard_controller.keyboard_pos,[3,0]) and not mousing) 
+	or held==-3){ 
 	draw_set_color(c_gray);
 	selected = -3;
-	if (mouse_check_button_released(mb_left)){
+	if (mouse_check_button_released(mb_left) or keyboard_check_released(vk_enter)){
 		if(held<=-1){held=-3;}
 		else if(held>=0){
 			//return old item to inventory
