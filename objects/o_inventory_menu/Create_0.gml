@@ -19,7 +19,7 @@ item_padding=5;
 
 //Shape of inventory items
 list_width=10;
-list_height=8;
+list_height=3;
 //The product of these should be greater than inventory size
 
 //Size and position of inventory

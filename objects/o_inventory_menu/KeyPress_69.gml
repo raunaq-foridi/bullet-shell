@@ -3,6 +3,7 @@
 
 //update any changes to equipment to the player
 o_player.equipment = small_slots;
+o_player.occupied = false;
 //print(o_player.equipment);
 //reset selections and deactivate
 selected=-1;

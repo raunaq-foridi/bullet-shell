@@ -1,5 +1,7 @@
 /// @description Insert description here
 // You can write your code in this editor
+o_player.occupied=true;
+
 var _mouse_x = window_mouse_get_x();
 var _mouse_y = window_mouse_get_y();
 //Draw Background
