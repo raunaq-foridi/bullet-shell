@@ -5,6 +5,7 @@ o_player.occupied=true;
 var _mouse_x = window_mouse_get_x();
 var _mouse_y = window_mouse_get_y();
 //Draw Background
+mousing = false;
 if (bg_sprite==-1){	//run if no sprite provided
 	//var _camera = view_camera[0];
 	//var _vp = room_get_viewport()
@@ -52,6 +53,14 @@ else{
 
 var _inventory = o_manager.inventory;
 var _tooltip_pos = [0,0];
+
+//take over with mouse if hovering
+var _total_width = (item_size + item_padding) * list_width;
+var _total_height =(item_size + item_padding) * list_height;
+if (window_mouse_get_x()>inv_x_pos + inv_padding and window_mouse_get_x()<inv_x_pos + inv_padding +_total_width
+	and window_mouse_get_y()>inv_y_pos + inv_padding and window_mouse_get_y()<inv_y_pos + inv_padding +_total_height){
+	mousing=true;	
+}
 for (var _i=0; _i<INV_SIZE;_i++){
 	var _item = _inventory[_i];
 	//idea: grid position. x= _i % list_width; y = _i // list_width
@@ -109,12 +118,70 @@ for (var _i=0; _i<INV_SIZE;_i++){
 			}
 		}
 	}
-	else{_selected=false;}
+	//else{_selected=false;}
+	
+	//beginning of keyboard control code
+	
+	else if (o_keyboard_controller.keyboard_pos[0]==_grid_x and o_keyboard_controller.keyboard_pos[1]==_grid_y+1
+			and not mousing){
+		//print(_grid_x,_grid_y,"is selected");
+		_selected = true;	
+		selected = _i;
+		_tooltip_pos=[_x,_y];
+		
+		//REFACTOR THIS CODE LATER. DUPLICATED AND MESSY
+		//if (mouse_check_button_released(mb_left)){
+		if(keyboard_check_released(vk_enter)){
+			print("Im TRYINg ok???");
+			if(_item[0]!=0 and _item[1]>0){
+				
+				//If the same item as the held equip slot is clicked, return the item to the inventory
+				if(held==-2 and small_slots[0]==_item[0]){
+					with(o_manager){
+						item_pickup(other.small_slots[0]);
+					}
+					small_slots[0]=0;
+					held=-1
+				}
+				else if(held==-3 and small_slots[1]==_item[0]){
+					with(o_manager){
+						item_pickup(other.small_slots[1]);
+					}
+					small_slots[1]=0;
+					held=-1
+				}
+				//otherwise, hold the new item
+				else{held=_i;}
+			}
+			else{
+				//clear equipment by clicking on empty slot
+				if(held==-2){
+					//return the item to inventory
+					with(o_manager){
+						item_pickup(other.small_slots[0]);
+					}
+					small_slots[0]=0;		
+				}			
+				else if(held==-3){
+					with(o_manager){
+						item_pickup(other.small_slots[1]);
+					}
+					small_slots[1]=0;
+				}
+				held=-1;
+			}
+		}
+		
+		
+	}
+
+	
+	
 	//Render the slot
 	if (slot_sprite == -1){
 		//draw default square
 		draw_set_color(c_black);
-		if(_selected ==true or held ==_i){
+		if((_selected ==true and selected==_i) or held ==_i){
 			draw_set_color(c_gray);	
 		}
 		//display_mouse_get_y()

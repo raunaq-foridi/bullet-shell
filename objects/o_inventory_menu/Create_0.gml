@@ -50,3 +50,6 @@ large_slots=[0];
 
 small_slot_radius=50;
 instance_deactivate_object(id);
+
+//keyboard vs mouse
+mousing=false;
