@@ -76,7 +76,7 @@ function ask_to_load(){
 		if(paused){pause();}
 	}
 	o_player.occupied=true;
-	var _load_question = instance_create_layer(x,y,layer,o_question_box);
+	var _load_question = instance_create_layer(x,y,"Instances",o_question_box);
 	with(_load_question){
 		header="Load from which slot?";
 		text=["Load slot 1","Load slot 2","Load slot 3","cancel"];
