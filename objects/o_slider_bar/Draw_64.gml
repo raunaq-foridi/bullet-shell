@@ -2,6 +2,8 @@
 // You can write your code in this editor
 image_yscale=scale;
 image_xscale=scale;
+if(hovering){image_index=1}
+else{image_index=0;}
 //x=window_mouse_get_x();
 //print(x);
 //print("slider: " + string(slider.x));

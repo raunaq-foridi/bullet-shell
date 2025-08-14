@@ -10,3 +10,6 @@ values=[];
 current=0;
 
 clicking=false;
+keyboard_pos=[99,99]; 
+
+hovering=false;

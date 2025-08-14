@@ -17,7 +17,7 @@ function create_button(_x,_y,_width,_height,_text,_script,_arguments,_keyboard_p
 	}
 }
 
-function create_toggle(_x,_y,_width,_height,_text,_bool,_cleanup,_align){
+function create_toggle(_x,_y,_width,_height,_text,_bool,_cleanup,_keypos,_align){
 	if(is_undefined(_align)){_align="right";}
 	var _toggle = instance_create_layer(_x,_y,layer_get_id("Instances"),o_toggle);
 	with(_toggle){
@@ -26,12 +26,13 @@ function create_toggle(_x,_y,_width,_height,_text,_bool,_cleanup,_align){
 		toggle=_bool;
 		text=_text;
 		align=_align;
+		keyboard_pos=_keypos;
 	}
 	//add to _cleanup list
 	ds_list_add(_cleanup,_toggle);
 }
 
-function create_slider(_x,_y,_width,_height,_text,_var,_cleanup,_range,_align){
+function create_slider(_x,_y,_width,_height,_text,_var,_cleanup,_keypos,_range,_align){
 	var _rotation = 0;
 	if(is_undefined(_align)){_align="right";}
 	else if(_align=="scrollbar"){
@@ -62,6 +63,7 @@ function create_slider(_x,_y,_width,_height,_text,_var,_cleanup,_range,_align){
 		variable=_var;
 		slider=_slot;
 		range=_range;
+		keyboard_pos= _keypos;
 		with(_slot){
 			bar=_bar
 		}
@@ -72,7 +74,7 @@ function create_slider(_x,_y,_width,_height,_text,_var,_cleanup,_range,_align){
 	ds_list_add(_cleanup,_bar);
 }
 
-function create_text_toggle(_x,_y,_width,_height,_values,_var,_cleanup,_align){
+function create_text_toggle(_x,_y,_width,_height,_values,_var,_cleanup,_keypos,_align){
 	if(is_undefined(_align)){_align="right";}
 	var _obj = instance_create_layer(_x,_y,layer_get_id("Instances"),o_text_toggle);
 	with(_obj){
@@ -83,6 +85,7 @@ function create_text_toggle(_x,_y,_width,_height,_values,_var,_cleanup,_align){
 		variable=_var;
 		align=_align;
 		values=_values;
+		keyboard_pos= _keypos;
 	}
 	ds_list_add(_cleanup,_obj);
 }

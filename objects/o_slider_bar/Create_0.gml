@@ -18,3 +18,5 @@ grabbing = false;
 text=""
 
 range=[0,1];
+
+keyboard_pos = [99,99];

@@ -16,3 +16,5 @@ surface_reset_target();
 */
 //draw_self();
 text=values[current];
+if(not hovering){image_index=0}
+else{image_index=1}

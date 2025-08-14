@@ -1,5 +1,5 @@
 /// @description Define defaults
-depth = 200;
+depth = -200;
 width=4.5;
 height=1.5;
 
