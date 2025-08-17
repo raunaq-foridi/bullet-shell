@@ -13,7 +13,12 @@ for(var _x=map_start_x;_x<map_width;_x++){
 
 	if(_x>global.world_map_width or _y>global.world_map_height){continue}
 	//draw_sprite(s_map_cell,visited_rooms[# _x,_y],x_pos + _x*cell_size,y_pos + _y*cell_size);
-	if(transparent_map==true and visited_rooms[# _x,_y]==0){continue}
+	if(transparent_map==true and visited_rooms[# _x,_y]==0){
+		o_keyboard_controller.keyboard_grid[# _x, _y] = 0;
+		continue
+	}
+	else{o_keyboard_controller.keyboard_grid[# _x, _y] = 1;}
+	
 	draw_sprite_stretched(s_map_cell,visited_rooms[# _x,_y],x_pos + _x*cell_size,y_pos + _y*cell_size,cell_size,cell_size);
 	draw_set_alpha(1);
 	if(visited_rooms[# _x,_y]==2){_current_room=[_x,_y];}
@@ -72,7 +77,7 @@ for(var _x=map_start_x;_x<map_width;_x++){
 		
 		_tooltip_pos = [_x_pos,_y_pos];
 	}
-	if(_selected and (mouse_check_button_released(mb_left) or keyboard_check_released(vk_enter)) ){
+	if(_selected and (mouse_check_button_released(mb_left) or keyboard_check_released(global.keys.select)) ){
 		print(_cell_info);
 		if(teleportation==true and _cell_info.checkpoint==true){
 			print("teleporting");

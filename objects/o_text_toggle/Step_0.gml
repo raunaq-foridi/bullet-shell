@@ -13,7 +13,7 @@ else{
 	//print("Compare",keyboard_pos,"to",o_keyboard_controller.keyboard_pos);
 }
 if(hovering){
-	if(keyboard_check_pressed(vk_enter)){
+	if(keyboard_check_pressed(global.keys.select)){
 		current+=1;
 		if current>=array_length(values){
 			current=0;}

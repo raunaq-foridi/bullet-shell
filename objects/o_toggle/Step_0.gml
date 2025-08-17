@@ -13,10 +13,10 @@ if (array_equals(o_keyboard_controller.keyboard_pos,keyboard_pos)
 else{hovering = false;}
 if(hovering){
 	//image_index=SPRITES.OFF_HOVERED;
-	if (mouse_check_button_pressed(mb_any) or keyboard_check_pressed(vk_enter)){clicked=true;}
+	if (mouse_check_button_pressed(mb_any) or keyboard_check_pressed(global.keys.select)){clicked=true;}
 	if (clicked){
 		//image_index=SPRITES.ON_HOVERED;
-		if (mouse_check_button_released(mb_any) or keyboard_check_released(vk_enter)){
+		if (mouse_check_button_released(mb_any) or keyboard_check_released(global.keys.select)){
 			//script_execute_ext(script,arguments);
 			state =!state;
 			variable_global_set(toggle,state);

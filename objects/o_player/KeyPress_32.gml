@@ -1,6 +1,8 @@
 /// @description Jump/waterdash
 // You can write your code in this editor
 //print(equipment);
+/*
+
 if(occupied){exit}		//pause controls if in dialogue
 
 if(grounded and not water){
@@ -36,3 +38,5 @@ else if(water and alarm[2]<=0){
 }
 
 if(climbing){climbing=false;}	//stop climbing if you jump
+
+*/

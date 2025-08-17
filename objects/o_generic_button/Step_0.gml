@@ -10,10 +10,10 @@ if (array_equals(o_keyboard_controller.keyboard_pos,keyboard_pos)
 else{hovering = false;}
 if(hovering){
 	image_index=1;
-	if (mouse_check_button_pressed(mb_any) or keyboard_check_pressed(vk_enter)){clicked=true;}
+	if (mouse_check_button_pressed(mb_any) or keyboard_check_pressed(global.keys.select)){clicked=true;}
 	if (clicked){
 		image_index=2;
-		if (mouse_check_button_released(mb_any) or keyboard_check_pressed(vk_enter)){script_execute_ext(script,arguments);}
+		if (mouse_check_button_released(mb_any) or keyboard_check_pressed(global.keys.select)){script_execute_ext(script,arguments);}
 	}
 }
 else{

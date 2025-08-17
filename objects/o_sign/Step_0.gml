@@ -21,3 +21,7 @@ if(array_length(o_player.interactions)>0){
 	else{closest=false;}
 }
 else{closest=false;}
+
+if (keyboard_check_pressed(global.keys.select)){
+	alarm[0]=1;	
+}

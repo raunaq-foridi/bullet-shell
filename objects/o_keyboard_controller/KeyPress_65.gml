@@ -1,5 +1,6 @@
 /// @description Leftwards
 
+/*
 var _grid_width = ds_grid_width(keyboard_grid);
 //var _grid_height = ds_grid_height(keyboard_grid);
 
@@ -12,3 +13,4 @@ for (var _i=0; _i<_grid_width; _i++){
 }
 
 print(keyboard_pos);
+*/

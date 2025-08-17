@@ -1,5 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
+/*
 if(o_player.occupied==true){exit}
 instance_activate_object(o_inventory_menu);
 if (not instance_exists(o_inventory_menu)){
@@ -20,4 +21,4 @@ with (o_keyboard_controller){
 	ds_grid_set(keyboard_grid,4,0,0.4);
 	ds_grid_set_region(keyboard_grid,0,1,o_inventory_menu.list_width,o_inventory_menu.list_height+1,1);
 	
-}
+}*/
