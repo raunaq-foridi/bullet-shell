@@ -89,3 +89,19 @@ function create_text_toggle(_x,_y,_width,_height,_values,_var,_cleanup,_keypos,_
 	}
 	ds_list_add(_cleanup,_obj);
 }
+
+function create_keybinder(_x,_y,_width,_height,_assignment,_cleanup,_keypos,_align="right"){
+	if(is_undefined(_align)){_align="right";}
+	var _obj = instance_create_layer(_x,_y,layer_get_id("Instances"),o_keybinder);
+	with(_obj){
+		x=_x;
+		y=_y;
+		width=_width;
+		height=_height;
+		controlled_input = _assignment;
+		align=_align;
+		keyboard_pos= _keypos;
+	}
+	ds_list_add(_cleanup,_obj);	
+	
+}

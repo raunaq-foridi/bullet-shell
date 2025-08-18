@@ -22,3 +22,5 @@ if (keyboard_check_pressed(global.keys.inventory) and not o_player.occupied){
 	
 	}
 }
+
+//print(keyboard_lastchar,"LENGTH",string_length(keyboard_lastchar),keyboard_lastkey);

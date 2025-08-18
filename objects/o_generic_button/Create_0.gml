@@ -10,5 +10,6 @@ arguments = ["hello","Test"]	//should be an array - arbitrary size and type, for
 
 hovering=false;
 clicked=false;
+mouse_hover=false;
 
 keyboard_pos=[0,0];

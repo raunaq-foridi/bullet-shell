@@ -12,6 +12,8 @@ else{
 	hovering = false;
 	//print("Compare",keyboard_pos,"to",o_keyboard_controller.keyboard_pos);
 }
+if (position_meeting(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), id)){mouse_hover=true;}
+else{mouse_hover=false};
 if(hovering){
 	if(keyboard_check_pressed(global.keys.select)){
 		current+=1;

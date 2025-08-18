@@ -6,6 +6,11 @@
 //Keyboard events WASD will deal with placement on a grid
 //however, we soon wish to replace Keyboard events to allow rebinding
 
+if(enabled == false){
+	//print("keyblocked");
+	exit
+	}
+
 //Left
 
 if (keyboard_check_pressed(global.keys.move_left)){

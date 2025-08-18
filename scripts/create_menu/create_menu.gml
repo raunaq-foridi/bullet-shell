@@ -49,6 +49,9 @@ function settings_item(_x,_y,_text,_type,_variable,_cleanup,_keypos,_range=[0,1]
 		//Multitasking is bad. Change this later.
 			create_text_toggle(_x,_y,1,1,_text,_variable,_cleanup,_keypos);
 		break
+		case "keybind":
+		//Use _variable to choose which input it assigns
+			create_keybinder(_x,_y,1,1,_variable,_cleanup,_keypos);
 	}
 }
 
@@ -81,7 +84,7 @@ function list_name(_listname){
 			//Solved: Add a new dummy entry for each slider.
 		break
 		case "text_settings":
-		//list format is [text,type,current value,range,variable name]
+		//list format is [text,type,current value,range,variable name, key_pos]
 		//for discrete variables, range is all possible values
 		//for continuous ones like sliders, it is simply min and max.
 		//variable name should be a string referring to a global variable.
@@ -96,6 +99,17 @@ function list_name(_listname){
 			//long day. Not sustainable in its current form.
 			//Solved: Add a new dummy entry for each slider.
 		break
+		case "keybinds":
+		//settings_item(_x+width-padding,_y+item_height/2,_range,_type,_variable,cleanup_list,_key_pos,_range);
+		//_x,_y,_text,_type,_variable,_cleanup,_keypos,_range=[0,1]
+		//This is the way items are created
+		//list format is [text,type,current value,range,variable name, key_pos]
+		//Hence, keybind format is [Text, "keybind", 0, 0, "assignment", [key,pos]  ]
+			_array = [
+			["Test Keybind Up","keybind",0, 0, "move_up", [0,1]],
+			["Test Keybind Down","keybind",0, 0, "move_down", [0,2]],
+			
+			]
 		
 	}
 	for(var _i=0; _i<array_length(_array); _i++){

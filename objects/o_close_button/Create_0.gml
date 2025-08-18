@@ -6,3 +6,4 @@ visible=true;
 hovering=false;
 clicked=false;
 keyboard_pos=[0,0];
+mouse_hover=false;

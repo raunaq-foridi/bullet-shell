@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"mouse_in_box",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"mouse_in_box",
+  "parent":{
+    "name":"Scripts",
+    "path":"folders/Scripts.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

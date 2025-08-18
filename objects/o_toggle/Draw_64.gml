@@ -7,12 +7,12 @@ else{image_index=0;}*/
 
 if (hovering){
 	
-	if(state==false){image_index=SPRITES.OFF_HOVERED}
-	else { image_index=SPRITES.ON_HOVERED;}
+	if(state==false){image_index=TOGGLE_SPRITES.OFF_HOVERED}
+	else { image_index=TOGGLE_SPRITES.ON_HOVERED;}
 	
 }
 else{
-	if(state==false){image_index=SPRITES.OFF;}
-	else { image_index=SPRITES.ON;}
+	if(state==false){image_index=TOGGLE_SPRITES.OFF;}
+	else { image_index=TOGGLE_SPRITES.ON;}
 	
 }

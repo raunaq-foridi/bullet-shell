@@ -12,7 +12,7 @@ function open_settings(){
 	//instance_activate_object(o_settings);
 	instance_deactivate_object(o_generic_button);
 	//create_toggle(620,290,5,5,"Mute toggle","mute");
-	create_menu(100,100,_width,_height,list_name("settings"),-1,["settings","text_settings"],"settings");	//ignore error, this works
+	create_menu(100,100,_width,_height,list_name("settings"),-1,["settings","text_settings","keybinds"],"settings");	//ignore error, this works
 }
 
 function true_restart(){
