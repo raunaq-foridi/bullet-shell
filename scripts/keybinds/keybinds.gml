@@ -94,3 +94,36 @@ function load_keybinds(){
 	global.keys = variable_clone(_struct);
 	
 }
+
+function set_keybinds(){
+	with(o_keybinder){
+		global.keys[$ controlled_input] = assigned_key;	
+	}
+	
+}
+//Temporary struct used during keybinding (so to give the user a chance to confirm)
+
+temp_keys = {
+	move_left : ord("A"),	
+	move_right: ord("D"),
+	move_up   : ord("W"),
+	move_down : ord("S"),
+	jump	  : vk_space,
+	
+	select	  : vk_enter,
+	
+	camera_left:	vk_left,
+	camera_right:	vk_right,
+	camera_up:		vk_up,
+	camera_down:	vk_down,
+	
+	menu_up:	vk_up,
+	menu_down:	vk_down,
+	
+	mouse_attack: false,
+	attack:		ord("L"),	//idk man. get Adam to choose more wisely
+	
+	inventory:	ord("E"),
+	map:		ord("M"),
+	pause_key:	ord("P")
+}

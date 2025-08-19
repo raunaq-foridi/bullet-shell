@@ -37,4 +37,6 @@ enum KEYBINDER_SPRITES{
 	LISTENING
 }
 
-exceptions =[vk_alt,vk_backspace,vk_control,vk_delete,vk_tab,vk_space,vk_shift,vk_left,vk_right,vk_up,vk_down]
+exceptions =[vk_escape,vk_alt,vk_backspace,vk_control,vk_delete,vk_tab,vk_space,vk_shift,vk_enter,vk_left,vk_right,vk_up,vk_down,vk_lcontrol,vk_rcontrol,20,vk_delete];
+
+alarm[1]=1;

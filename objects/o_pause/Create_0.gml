@@ -58,4 +58,5 @@ function pause(){
 		}
 		active=[];
 	}
+	global.temp_keys = variable_clone(global.keys);
 }

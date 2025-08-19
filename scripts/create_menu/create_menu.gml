@@ -52,6 +52,11 @@ function settings_item(_x,_y,_text,_type,_variable,_cleanup,_keypos,_range=[0,1]
 		case "keybind":
 		//Use _variable to choose which input it assigns
 			create_keybinder(_x,_y,1,1,_variable,_cleanup,_keypos);
+		break
+		case "button":
+			//use _variable for the function, and _range for any parameters/arguments
+			create_button(_x,_y,1,1,_text,_variable,_range,_keypos,true,_cleanup);
+		break
 	}
 }
 
@@ -108,7 +113,7 @@ function list_name(_listname){
 			_array = [
 			["Test Keybind Up","keybind",0, 0, "move_up", [0,1]],
 			["Test Keybind Down","keybind",0, 0, "move_down", [0,2]],
-			
+			["Set Keybinds","button",0,[],set_keybinds,[0,3]]
 			]
 		
 	}

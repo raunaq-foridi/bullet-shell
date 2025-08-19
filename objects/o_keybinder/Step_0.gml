@@ -1,5 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
+//assigned_key = global.temp_keys[$ controlled_input]
 hovering = position_meeting(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), id);
 //print("keypos",o_keyboard_controller.keyboard_pos);
 //print(controlled_input,keyboard_pos);
@@ -39,6 +40,7 @@ if (listening){
 	
 	if (keyboard_check_pressed(vk_anykey)){
 		assigned_key=keyboard_key;
+		global.temp_keys[$ controlled_input] = assigned_key;
 		key_name = keyboard_lastchar;
 		hovering=false;
 		listening=false;
