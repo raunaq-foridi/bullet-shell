@@ -63,40 +63,34 @@ if(climbing){
 		var _climbable = nearest_instance(o_climbable,0,0,0);
 		//print(_climbable);
 		
-		if (keyboard_check(ord("W")) or keyboard_check(ord("S")) or keyboard_check(ord("A")) or keyboard_check(ord("D"))){
+		if (input_check("move_up") or input_check("move_down") or input_check("move_left") or input_check("move_right")){
 											//Change which climbable surface is latched onto only on input
 			if(climbable!=_climbable){		//if nothing is latched onto, latch on and set relative distances
 				climbable=_climbable;
 				climbable.rel_x=x-climbable.x;
 				climbable.rel_y=y-climbable.y;
 			}
-			/*else if((keyboard_check(ord("A")) or keyboard_check(ord("D"))) and not climbable.lock_x){
-				climbable=_climbable;			//the line above allows lock_x to work
-				if(abs(x-climbable.x)<climbable.clamp_x){
-					climbable.rel_x=x-climbable.x;	//By preventing input from changing relative x
-				}
-				
-			}*/
+
 			else{
-				if(keyboard_check(ord("A")) and not climbable.lock_x){
+				if(input_check("move_left") and not climbable.lock_x){
 					climbable=_climbable;
 					if(climbable.x-x < climbable.clamp_x or climbable.clamp_x<0){
 						climbable.rel_x=x-climbable.x;		//allows movement if not locked, and not beyond clamp range.
 					}
 				}
-				else if(keyboard_check(ord("D")) and not climbable.lock_x){
+				else if(input_check("move_right") and not climbable.lock_x){
 					if(x-climbable.x<climbable.clamp_x or climbable.clamp_x<0){
 						climbable.rel_x=x-climbable.x;	//Likewise
 					}
 				}
 			
-				if (keyboard_check(ord("W")) and not climbable.lock_y){		//this allows lock_y to work
+				if (input_check("move_up") and not climbable.lock_y){		//this allows lock_y to work
 					climbable=_climbable;			//for the same reason.
 					if(climbable.y-y<climbable.clamp_y or climbable.clamp_y<0){
 						climbable.rel_y=y-climbable.y;
 					}
 				}
-				else if (keyboard_check(ord("S")) and not climbable.lock_y){		//this allows lock_y to work
+				else if (input_check("move_down") and not climbable.lock_y){		//this allows lock_y to work
 					climbable=_climbable;			//for the same reason.
 					if(y-climbable.y<climbable.clamp_y or climbable.clamp_y<0){
 						climbable.rel_y=y-climbable.y;
@@ -179,11 +173,12 @@ if(teleporting and instance_exists(o_checkpoint)){
 }
 
 //KEYBOARD CENTRIC CODE. BEWARE.
-if(not keyboard_check(ord("W")) and not keyboard_check(ord("S"))){
+//BEING FIXED. AM AWARE.
+if(not input_check("move_up") and not input_check("move_down")){
 	dir[1]=0;
 }
 
-if(not keyboard_check(ord("A")) and not keyboard_check(ord("D"))){
+if(not input_check("move_left") and not input_check("move_right")){
 	dir[0]=0;
 }
 

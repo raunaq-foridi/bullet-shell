@@ -1,7 +1,7 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function speak_dialogue(_text,_text_delay,_voice=snd_type,_name="",){
-	var _dialogue = instance_create_layer(x,y,"Instances",o_dialogue_box);
+	var _dialogue = instance_create_layer(x,y,layer,o_dialogue_box);
 	with(_dialogue){
 		if(typeof(other.text)=="string"){other.text=[other.text];}
 		text = other.text;
@@ -18,9 +18,10 @@ function next_dialogue(_dialogue){
 	//If _dialogue is a string, assume it is an accessor from global.dialogue
 	
 	if (typeof(_dialogue) == "string"){
-		var _next = variable_clone( global.dialogue); //inefficient, but :(
+		//var _next = variable_clone( global.dialogue); //inefficient, but :(
 		var _accessors = string_split(_dialogue,".");
-		for (var _i=0; _i<array_length(_accessors);_i++){
+		var _next = variable_clone( global.dialogue[$ _accessors[0]]); //hopefully more efficient
+		for (var _i=1; _i<array_length(_accessors);_i++){
 			_next = _next[$ _accessors[_i]];
 		}
 		_dialogue = _next;
@@ -36,7 +37,7 @@ function next_dialogue(_dialogue){
 	
 	//Deal with Dialogue:
 	if( _dialogue.type=="dialogue"){
-		var _speech = instance_create_layer(x,y,"Instances",o_dialogue_box);
+		var _speech = instance_create_layer(x,y,layer,o_dialogue_box);
 		with(_speech){
 			if(typeof(_dialogue.text)=="string"){_dialogue.text=[_dialogue.text];}
 			if(_dialogue.next!=0){continuing_dialogue=true;}
@@ -57,8 +58,8 @@ function next_dialogue(_dialogue){
 				//Long day. Access dialogue.x.y.z via looping. I pray this works.
 				var _accessors = string_split(_dialogue.next,".");
 				//print(_accessors);
-				var _next = variable_clone(global.dialogue); //inefficient, but :(
-				for (var _i=0; _i<array_length(_accessors);_i++){
+				var _next = variable_clone(global.dialogue[$ _accessors[0]]); //inefficient, but :(
+				for (var _i=1; _i<array_length(_accessors);_i++){
 					//print(_accessors[_i]);
 					_next = _next[$ _accessors[_i]];
 				}
@@ -69,7 +70,7 @@ function next_dialogue(_dialogue){
 	}
 	//Deal with Questions:
 	else if(_dialogue.type=="question"){
-		var _question = instance_create_layer(x,y,"Instances",o_question_box);	
+		var _question = instance_create_layer(x,y,layer,o_question_box);	
 		with(_question){
 			if(_dialogue.next!=0){continuing_dialogue=true;}
 			else{continuing_dialogue=false;}
@@ -136,7 +137,7 @@ dialogue = {
 			text: "Well thats not very nice.",
 			name: "Angry Jimminy",
 			voice: snd_type,
-			//Cant use x,y or refer to objects here.
+			//Cant use x,y or refer to objects here, nor any other built-in variables for instances
 			end_functions: [[print,"AAAAA"],[instance_create_layer,545,200,"Instances",o_enemy2],[set_flag,"grasslands.jimminy_angered",true]]
 		},
 		hatred:{

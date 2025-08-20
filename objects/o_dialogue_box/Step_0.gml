@@ -11,3 +11,8 @@ if (letter_pos<string_length(text[dialogue])*_text_delay+1){
 		}
 	}
 }
+
+if(input_check_pressed("select")){
+		
+	alarm[1]=1;
+}

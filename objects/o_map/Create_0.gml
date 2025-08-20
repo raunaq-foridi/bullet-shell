@@ -14,6 +14,7 @@ map_width=15;
 map_height=10;
 visited_rooms = ds_grid_create(global.world_map_width,global.world_map_height);	//0 = unvisited, 1 = visited, 2 = current
 
+current_room = [0,0]
 visible=false;
 
 //Map capabilities

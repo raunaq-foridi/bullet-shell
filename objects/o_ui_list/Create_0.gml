@@ -15,7 +15,7 @@ sprite=-1;
 //sprite = s_restart_button;
 
 y_offset=0;
-max_scroll=100;
+max_scroll=200;
 
 menu_surf=surface_create(width, height);
 surface_free(menu_surf);
@@ -28,3 +28,9 @@ close = instance_create_layer(x,y,"Instances",o_close_button);
 other_lists=[];
 name="";
 alarm[0]=1;
+
+scroll_modifier = 5; //how much is scrolled per frame of scrolling
+snap_modifier = 10;	 //how much faster to scroll when doing it via selection
+
+distance_before_scroll = 550;	//What distance, from the top of the menu, must the current item be before forcing a scroll
+upwards_before_scroll = 100;	//What distance from top before scrolling back up?

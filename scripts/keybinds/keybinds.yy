@@ -1,0 +1,13 @@
+{
+  "$GMScript":"",
+  "%Name":"keybinds",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"keybinds",
+  "parent":{
+    "name":"Controls",
+    "path":"folders/Scripts/Controls.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

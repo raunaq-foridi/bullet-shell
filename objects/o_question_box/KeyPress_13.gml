@@ -1,5 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
+/*
 var _func_array = functions[selection];
 
 var _func = array_shift(_func_array);	//removes first element, too
@@ -9,3 +10,4 @@ if(not continuing_dialogue){
 	o_player.alarm[4]=1;	//resets occupied state after 1 frame
 }
 instance_destroy();
+*/

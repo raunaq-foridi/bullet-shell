@@ -1,4 +1,6 @@
 /// @description Water + Climbing.
+/*
+
 if(occupied){exit}		//pause controls if in dialogue
 
 if (place_meeting(x,y,o_climbable)){		//begin climb if pressed on ladder
@@ -18,3 +20,5 @@ if(climbing and not detect_tile(0,-1)){								//ascend ladder.
 		}
 }
 }
+
+*/

@@ -1,8 +1,11 @@
 /// @description Insert description here
 // You can write your code in this editor
+o_player.occupied=true;
+
 var _mouse_x = window_mouse_get_x();
 var _mouse_y = window_mouse_get_y();
 //Draw Background
+mousing = false;
 if (bg_sprite==-1){	//run if no sprite provided
 	//var _camera = view_camera[0];
 	//var _vp = room_get_viewport()
@@ -50,6 +53,17 @@ else{
 
 var _inventory = o_manager.inventory;
 var _tooltip_pos = [0,0];
+
+//take over with mouse if hovering
+var _total_width = (item_size + item_padding) * list_width;
+var _total_height =(item_size + item_padding) * list_height;
+if (window_mouse_get_x()>inv_x_pos + inv_padding and window_mouse_get_x()<inv_x_pos + inv_padding +_total_width
+	and window_mouse_get_y()>inv_y_pos + inv_padding and window_mouse_get_y()<inv_y_pos + inv_padding +_total_height){
+	mousing=true;	
+}
+if (point_distance(_mouse_x,_mouse_y,200,200)<small_slot_radius or point_distance(_mouse_x,_mouse_y,300,200)<small_slot_radius){
+	mousing=true;
+}
 for (var _i=0; _i<INV_SIZE;_i++){
 	var _item = _inventory[_i];
 	//idea: grid position. x= _i % list_width; y = _i // list_width
@@ -107,12 +121,69 @@ for (var _i=0; _i<INV_SIZE;_i++){
 			}
 		}
 	}
-	else{_selected=false;}
+	//else{_selected=false;}
+	
+	//beginning of keyboard control code
+	
+	else if (o_keyboard_controller.keyboard_pos[0]==_grid_x and o_keyboard_controller.keyboard_pos[1]==_grid_y+1
+			and not mousing){
+		//print(_grid_x,_grid_y,"is selected");
+		_selected = true;	
+		selected = _i;
+		_tooltip_pos=[_x,_y];
+		
+		//REFACTOR THIS CODE LATER. DUPLICATED AND MESSY
+		//if (mouse_check_button_released(mb_left)){
+		if(input_check_released("select")){
+			if(_item[0]!=0 and _item[1]>0){
+				
+				//If the same item as the held equip slot is clicked, return the item to the inventory
+				if(held==-2 and small_slots[0]==_item[0]){
+					with(o_manager){
+						item_pickup(other.small_slots[0]);
+					}
+					small_slots[0]=0;
+					held=-1
+				}
+				else if(held==-3 and small_slots[1]==_item[0]){
+					with(o_manager){
+						item_pickup(other.small_slots[1]);
+					}
+					small_slots[1]=0;
+					held=-1
+				}
+				//otherwise, hold the new item
+				else{held=_i;}
+			}
+			else{
+				//clear equipment by clicking on empty slot
+				if(held==-2){
+					//return the item to inventory
+					with(o_manager){
+						item_pickup(other.small_slots[0]);
+					}
+					small_slots[0]=0;		
+				}			
+				else if(held==-3){
+					with(o_manager){
+						item_pickup(other.small_slots[1]);
+					}
+					small_slots[1]=0;
+				}
+				held=-1;
+			}
+		}
+		
+		
+	}
+
+	
+	
 	//Render the slot
 	if (slot_sprite == -1){
 		//draw default square
 		draw_set_color(c_black);
-		if(_selected ==true or held ==_i){
+		if((_selected ==true and selected==_i) or held ==_i){
 			draw_set_color(c_gray);	
 		}
 		//display_mouse_get_y()
@@ -150,17 +221,19 @@ for (var _i=0; _i<INV_SIZE;_i++){
 	//if(_selected){draw_text(window_mouse_get_x(),window_mouse_get_y(),_item_properties[ITEM_PROP.DESCRIPTION]);}
 }
 //dont worry, this will be cleaned up later.
-
+//will it?
 
 //Equipment
 
 //equipment slot 1 - coded as "selected = -2"
 draw_set_color(c_dkgray);
 //if((_mouse_x-200)^2 + (_mouse_y-200)^2 < 50){ draw_set_color(c_ltgray);}	//^ is NOT exponentiation.
-if(point_distance(_mouse_x,_mouse_y,200,200)<small_slot_radius or held==-2){ 
+if(point_distance(_mouse_x,_mouse_y,200,200)<small_slot_radius 
+	or (array_equals(o_keyboard_controller.keyboard_pos,[1,0]) and not mousing) 
+	or held==-2){ 
 	draw_set_color(c_gray);
 	selected = -2;
-	if (mouse_check_button_released(mb_left)){
+	if (mouse_check_button_released(mb_left) or input_check_released("select")){
 		if(held<=-1){held=-2;}
 		else if(held>=0){
 			//return old item to inventory
@@ -191,10 +264,12 @@ if (small_slots[0]!=0){
 
 //equipment slot 2 - coded as "selected = -3"
 draw_set_color(c_dkgray);
-if(point_distance(_mouse_x,_mouse_y,300,200)<small_slot_radius or held==-3){ 
+if(point_distance(_mouse_x,_mouse_y,300,200)<small_slot_radius 
+	or (array_equals(o_keyboard_controller.keyboard_pos,[3,0]) and not mousing) 
+	or held==-3){ 
 	draw_set_color(c_gray);
 	selected = -3;
-	if (mouse_check_button_released(mb_left)){
+	if (mouse_check_button_released(mb_left) or input_check_released("select")){
 		if(held<=-1){held=-3;}
 		else if(held>=0){
 			//return old item to inventory

@@ -19,7 +19,7 @@ item_padding=5;
 
 //Shape of inventory items
 list_width=10;
-list_height=8;
+list_height=3;
 //The product of these should be greater than inventory size
 
 //Size and position of inventory
@@ -50,3 +50,6 @@ large_slots=[0];
 
 small_slot_radius=50;
 instance_deactivate_object(id);
+
+//keyboard vs mouse
+mousing=false;

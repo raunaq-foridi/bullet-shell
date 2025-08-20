@@ -52,12 +52,17 @@ draw_clear_alpha(c_black, 0);
 for (var _i=0; _i<ds_list_size(list); _i++){
 	
 	var _array = list[| _i]; //access the i'th element
+	//debug
+	//for (var _j=0; _j<array_length(_array); _j++){print(_j,_array[_j]);}
+	
 	//for easier access:
 	var _text = _array[UI.TEXT];
 	var _range = _array[UI.RANGE];
 	var _current = _array[UI.CURRENT];
 	var _type = _array[UI.TYPE];
 	var _variable = _array[UI.VARIABLE];
+	var _key_pos = _array[UI.KEY_POS];
+	//var _key_pos = [0,1];
 	
 	//introduce padding
 	var _x = x-padding;
@@ -69,13 +74,20 @@ for (var _i=0; _i<ds_list_size(list); _i++){
 	draw_set_halign(fa_right);
 	
 	if (ds_list_size(cleanup_list)<ds_list_size(list)+1){
-		settings_item(_x+width-padding,_y+item_height/2,_range,_type,_variable,cleanup_list,_range);
+		settings_item(_x+width-padding,_y+item_height/2,_text,_type,_variable,cleanup_list,_key_pos,_range);
+		//settings_item(_x+width-padding,_y+item_height/2,_range,_type,_variable,cleanup_list,_key_pos,_range);
 	}
 	//with(o_toggle){draw_sprite(sprite_index,image_index,x-o_ui_list.x,y-o_ui_list.y);}
 	//with(cleanup_list[| _i]){draw_sprite(sprite_index,image_index,x-o_ui_list.x,y-o_ui_list.y);}
+	
 	with(cleanup_list[| _i]){
 		draw_sprite_ext(sprite_index,image_index,x-o_ui_list.x,y-o_ui_list.y,image_xscale,image_yscale,0,c_white,1);
-		draw_text(x-o_ui_list.x+o_ui_list.padding,y-o_ui_list.y,text);
+		
+		draw_set_halign(fa_center);
+		draw_set_valign(fa_middle);
+		draw_text(x-o_ui_list.x,y-o_ui_list.y,text);
+		draw_set_halign(fa_left);
+		draw_set_valign(fa_top);
 		//print(text + string(_i));
 		}
 }

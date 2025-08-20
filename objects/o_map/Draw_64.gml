@@ -13,7 +13,12 @@ for(var _x=map_start_x;_x<map_width;_x++){
 
 	if(_x>global.world_map_width or _y>global.world_map_height){continue}
 	//draw_sprite(s_map_cell,visited_rooms[# _x,_y],x_pos + _x*cell_size,y_pos + _y*cell_size);
-	if(transparent_map==true and visited_rooms[# _x,_y]==0){continue}
+	if(transparent_map==true and visited_rooms[# _x,_y]==0){
+		o_keyboard_controller.keyboard_grid[# _x, _y] = 0;
+		continue
+	}
+	else{o_keyboard_controller.keyboard_grid[# _x, _y] = 1;}
+	
 	draw_sprite_stretched(s_map_cell,visited_rooms[# _x,_y],x_pos + _x*cell_size,y_pos + _y*cell_size,cell_size,cell_size);
 	draw_set_alpha(1);
 	if(visited_rooms[# _x,_y]==2){_current_room=[_x,_y];}
@@ -23,7 +28,17 @@ for(var _x=map_start_x;_x<map_width;_x++){
 	var _y_pos = y_pos + _y*cell_size;
 	
 	var _cell_info = global.room_info[# _x, _y];
-	if(_cell_info==0 or is_undefined(_cell_info)){continue}	
+	if(_cell_info==0 or is_undefined(_cell_info) ){
+		//continue
+		_cell_info = {
+			tooltip : "",
+			name : "",
+			checkpoint : false,
+			savepoint : false,
+			icon : noone,
+			room : noone,
+		}
+	}	
 	//Savepoint takes priority over other conditions
 	if(_cell_info.savepoint == true){
 		draw_sprite_stretched(s_save_icon,-1, _x_pos, _y_pos, cell_size,cell_size);
@@ -54,7 +69,15 @@ for(var _x=map_start_x;_x<map_width;_x++){
 		
 	
 	}
-	if(_selected and mouse_check_button_released(mb_left)){
+	if (array_equals(o_keyboard_controller.keyboard_pos, [_x,_y])){
+		draw_sprite_stretched(s_map_select,1, _x_pos, _y_pos, cell_size,cell_size);
+		_selected=true;	
+		_tooltip = _cell_info.tooltip;
+		//_name = _cell_info.name;
+		
+		_tooltip_pos = [_x_pos,_y_pos];
+	}
+	if(_selected and (mouse_check_button_released(mb_left) or input_check_released("select")) ){
 		print(_cell_info);
 		if(teleportation==true and _cell_info.checkpoint==true){
 			print("teleporting");
@@ -78,3 +101,4 @@ if(not _current_room_info==0 and not is_undefined(_current_room_info)){
 draw_set_halign(fa_center);
 draw_text_transformed(_centre_pos,y_pos,_name,2,2,0);
 draw_set_halign(fa_left);
+current_room=_current_room;

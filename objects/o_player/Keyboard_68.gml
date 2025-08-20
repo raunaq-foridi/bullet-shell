@@ -1,5 +1,7 @@
 /// @description Right
 // You can write your code in this editor
+/*
+
 if(occupied){exit}		//pause controls if in dialogue
 
 facing="right";
@@ -17,3 +19,5 @@ else{
 	}
 	dir[0]=1;
 }
+
+/*

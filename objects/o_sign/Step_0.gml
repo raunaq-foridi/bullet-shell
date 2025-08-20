@@ -21,3 +21,7 @@ if(array_length(o_player.interactions)>0){
 	else{closest=false;}
 }
 else{closest=false;}
+
+if (input_check_pressed("select")){
+	alarm[0]=1;	
+}

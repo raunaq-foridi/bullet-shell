@@ -21,3 +21,12 @@ if(array_length(o_player.interactions)>0){
 	else{closest=false;}
 }
 else{closest=false;}
+
+if(input_check_pressed("select")){
+	if(within_range){
+		if(o_player.interactions[0]==id and not o_player.occupied){
+			//interaction(parameters);
+			script_execute_ext(interaction,parameters);
+		}
+	}
+}

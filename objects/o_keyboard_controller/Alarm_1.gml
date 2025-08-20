@@ -1,0 +1,2 @@
+/// @description cooldown
+cooldown=false;
