@@ -8,7 +8,7 @@ if (input_check_pressed("select")){
 
 //Up
 
-if (input_check_pressed("move_up")){
+if (input_check_pressed("menu_up")){
 	
 	selection-=1;
 	selection%=array_length(text);
@@ -19,7 +19,7 @@ if (input_check_pressed("move_up")){
 
 //Down
 
-if (input_check_pressed("move_down")){
+if (input_check_pressed("menu_down")){
 	selection+=1;
 	selection%=array_length(text);
 }

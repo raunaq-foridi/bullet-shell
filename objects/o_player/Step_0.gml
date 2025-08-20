@@ -62,7 +62,7 @@ if (input_check("move_left")){
 	//regular movement
 	else{
 		if(-vel_x<=move_speed){
-			vel_x=-move_speed;
+			vel_x=-move_speed * input_check("move_left");
 			if(flying){flying=false;}
 		}
 		dir[0]=-1;
@@ -84,7 +84,7 @@ if (input_check("move_right")){
 	//regular movement
 	else{
 		if(vel_x<=move_speed){
-			vel_x=move_speed;
+			vel_x=move_speed*input_check("move_right");
 			if(flying){flying=false;}
 		}
 		dir[0]=1;
@@ -101,7 +101,7 @@ if (input_check("move_up")){
 	}
 
 	if(water and -vel_y<=swim_speed and alarm[3]<=0){
-		vel_y-=swim_acceleration;	
+		vel_y-=swim_acceleration*input_check("move_up");	
 		dir[1]=-1;
 	}
 	if(climbing and not detect_tile(0,-1)){								//ascend ladder.
@@ -139,7 +139,7 @@ if (input_check("move_down")){
 		}	
 	
 	if(not grounded and water){					//swim downwards
-		if(vel_y<swim_speed){vel_y+=swim_acceleration;}	
+		if(vel_y<swim_speed){vel_y+=swim_acceleration*input_check("move_down");}	
 		dir[1]=1;
 	}
 }

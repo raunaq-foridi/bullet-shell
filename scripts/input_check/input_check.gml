@@ -59,6 +59,8 @@ function input_check(_input){
 	else{print("gamepad detected")}*/
 	var _controlcheck = gamepad_check(_input);
 	
+	if(_keycheck){return _keycheck}
+	if(_controlcheck>0){return _controlcheck}
 	return (_keycheck or _controlcheck)
 	
 }

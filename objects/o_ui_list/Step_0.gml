@@ -15,10 +15,10 @@ if (_current_pos>distance_before_scroll){
 			cleanup_list[| _i].y+=scroll_modifier;
 		}
 	}*/
-	if(y_offset<max_scroll-scroll_modifier){
-		y_offset+=scroll_modifier;
+	if(y_offset<max_scroll-scroll_modifier-snap_modifier){
+		y_offset+=scroll_modifier+snap_modifier;
 		for (var _i=0; _i<ds_list_size(cleanup_list); _i++){
-			cleanup_list[| _i].y-=scroll_modifier;
+			cleanup_list[| _i].y-=scroll_modifier+snap_modifier;
 		}	
 	}
 	
@@ -30,10 +30,10 @@ if (_current_pos<upwards_before_scroll){
 			cleanup_list[| _i].y-=scroll_modifier;
 		}
 	}*/
-	if (y_offset>scroll_modifier){
-		y_offset-=scroll_modifier;
+	if (y_offset>scroll_modifier+snap_modifier){
+		y_offset-=scroll_modifier+snap_modifier;
 		for (var _i=0; _i<ds_list_size(cleanup_list); _i++){
-			cleanup_list[| _i].y+=scroll_modifier;
+			cleanup_list[| _i].y+=scroll_modifier+snap_modifier;
 		}
 	}
 }

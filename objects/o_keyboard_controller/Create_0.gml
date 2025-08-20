@@ -24,4 +24,4 @@ cooldown=false;
 
 //gamepad support
 gamepads=[]
-deadzone=0.1
+deadzone=0.01

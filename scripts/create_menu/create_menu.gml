@@ -139,7 +139,7 @@ function list_name(_listname){
 			["Set Keybinds","button",0,[],set_keybinds,[0,19]],
 			["Set to Default","button",0,[],reset_keybinds,[0,20]]
 			]
-			_scrollsize = 300;
+			_scrollsize = 480;
 		
 	}
 	for(var _i=0; _i<array_length(_array); _i++){

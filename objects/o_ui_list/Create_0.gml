@@ -30,6 +30,7 @@ name="";
 alarm[0]=1;
 
 scroll_modifier = 5; //how much is scrolled per frame of scrolling
+snap_modifier = 10;	 //how much faster to scroll when doing it via selection
 
 distance_before_scroll = 550;	//What distance, from the top of the menu, must the current item be before forcing a scroll
 upwards_before_scroll = 100;	//What distance from top before scrolling back up?
