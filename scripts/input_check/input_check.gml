@@ -30,7 +30,7 @@ function gamepad_check_pressed(_input){
 	if(is_array(_button)){
 		return gamepad_axis_value(_gamepad,_button[0]*_button[1])
 	}
-	if (gamepad_button_check_pressed(_gamepad,_button)){print("WOOOOOOO")}
+	//if (gamepad_button_check_pressed(_gamepad,_button)){print("WOOOOOOO")}
 	return gamepad_button_check_pressed(_gamepad,_button);
 }
 function gamepad_check_released(_input){

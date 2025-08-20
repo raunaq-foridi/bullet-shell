@@ -9,7 +9,7 @@ if (not occupied){
 //Jumping
 
 //if (keyboard_check_pressed(global.keys.jump)){
-print(input_check_pressed("jump"),"jump");
+//print(input_check_pressed("jump"),"jump");
 if (input_check_pressed("jump")){
 	if(grounded and not water){
 		vel_y = -jump_speed;	//negative, because positive is downwards for some weird reason.
@@ -194,4 +194,12 @@ if(alternate_dash){
 	}
 	
 repeat_move(vel_x,vel_y);
+
+//Animation!
+if (abs(dir[0])!=0){image_xscale=dir[0]}
+if(not falling){
+	if(abs(vel_x)>=0.6){sprite_index=s_player_run};
+	else{sprite_index=s_player_idle}
+}
+else{sprite_index=s_player_faller}
 //print(vel_x, vel_y, grounded);

@@ -7,20 +7,26 @@ if (invincible){
 else{visible=true;}
 
 //checking for Slopes
-
+sloping=false;
 if(grounded){
 	
 	//Sloping Upwards
 	if(detect_tile(sign(vel_x),0)){		//check for a tile directly in front of player
 		
 		var _dy=up_slope();				//find how steep a slope/step is
-		if (_dy<=slope_max){vel_y-=_dy;}//if slope detected, add vertical speed to scale it
+		if (_dy<=slope_max){
+			vel_y-=_dy;					//if slope detected, add vertical speed to scale it
 										//if "too steep", treat as a wall instead and do nothing
+			sloping=true;
+		}
 	}
 	
 	if(detect_tile(-sign(vel_x),0)){	//check for tile directly behind player
 		var _dy = down_slope();
-		if (_dy<=slope_max){vel_y+=_dy}	//shove player down while moving down slope
+		if (_dy<=slope_max){
+			vel_y+=_dy;					//shove player down while moving down slope
+			sloping=true;
+		}
 	}
 	
 		

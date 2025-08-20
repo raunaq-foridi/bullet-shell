@@ -8,6 +8,9 @@ grounded = false;
 grounded_x = x;	//position of last point the player was grounded
 grounded_y = y;
 
+sloping=false;
+falling=false;
+
 vel_x = 0;	//Velocity for next step; passed into repeat_move()
 vel_y = 0;
 

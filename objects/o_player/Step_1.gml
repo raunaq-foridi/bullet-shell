@@ -34,8 +34,16 @@ if (detect_tile(0,1)!=0){
 	grounded=true;
 	if(flying){vel_x=0;}
 	flying=false;
+	falling=false
+	alarm[5]=-1;
 }
-else{grounded=false;}
+else{
+	if(grounded){alarm[5]=2;}
+	grounded=false;
+	//print("gwowo");
+	print(alarm[5]);
+	//alarm[5]=2;
+}
 if (not flying){fly_speed=0;}
 
 //Deal with Semi Solids		
@@ -44,6 +52,7 @@ if(place_meeting(x,y+1,o_semiSolid) and vel_y>=0){
 	var _semisolid = furthest_instance(o_semiSolid);
 	if(not place_meeting(x,y,_semisolid)){
 		grounded=true;		//if at foot but NOT intersecting player, set grounded.
+		falling=false;
 		flying=false;
 	}
 
@@ -58,6 +67,7 @@ if(climbing){
 		grounded=true;
 		vel_y=0;
 		flying=false;
+		falling=false;
 		//Deal with moving climbables
 		
 		var _climbable = nearest_instance(o_climbable,0,0,0);
