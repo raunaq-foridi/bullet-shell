@@ -13,33 +13,58 @@ if(enabled == false){
 
 //Left
 
-if (keyboard_check_pressed(global.keys.move_left)){
+if (keyboard_check(global.keys.move_left)){
 	
 	var _grid_width = ds_grid_width(keyboard_grid);
 	//var _grid_height = ds_grid_height(keyboard_grid);
-
-	for (var _i=0; _i<_grid_width; _i++){
-	
-		keyboard_pos[0]-=1;
-		keyboard_pos[0]+=_grid_width;
-		keyboard_pos[0]%=_grid_width;
-		if(keyboard_grid[# keyboard_pos[0],keyboard_pos[1]] ==1){break}
+	var _firstrun;
+	if (keyboard_check_pressed(global.keys.move_left)){
+		alarm[0]=hold_start_delay
+		_firstrun=true;
 	}
-
+	else{
+		_firstrun=false;
+	}
+	if(_firstrun or (holding and not cooldown)){
+		cooldown=true;
+		alarm[1]=hold_interval;
+		for (var _i=0; _i<_grid_width; _i++){
+	
+			keyboard_pos[0]-=1;
+			keyboard_pos[0]+=_grid_width;
+			keyboard_pos[0]%=_grid_width;
+			if(keyboard_grid[# keyboard_pos[0],keyboard_pos[1]] ==1){break}
+		}
+		_firstrun=false;
+	}
+	
 	print(keyboard_pos);
 }
 	
 //Right
 
-if (keyboard_check_pressed(global.keys.move_right)){
+if (keyboard_check(global.keys.move_right)){
 	var _grid_width = ds_grid_width(keyboard_grid);
 	//var _grid_height = ds_grid_height(keyboard_grid);
-
-	for (var _i=0; _i<_grid_width; _i++){
 	
-		keyboard_pos[0]+=1;
-		keyboard_pos[0]%=_grid_width;
-		if(keyboard_grid[# keyboard_pos[0],keyboard_pos[1]] ==1){break}
+	var _firstrun;
+	if (keyboard_check_pressed(global.keys.move_right)){
+		alarm[0]=hold_start_delay
+		_firstrun=true;
+	}
+	else{
+		_firstrun=false;
+	}
+	if(_firstrun or (holding and not cooldown)){
+		cooldown=true;
+		alarm[1]=hold_interval;
+		
+		for (var _i=0; _i<_grid_width; _i++){
+	
+			keyboard_pos[0]+=1;
+			keyboard_pos[0]%=_grid_width;
+			if(keyboard_grid[# keyboard_pos[0],keyboard_pos[1]] ==1){break}
+		}
 	}
 
 	print(keyboard_pos);
@@ -47,82 +72,111 @@ if (keyboard_check_pressed(global.keys.move_right)){
 	
 //Up
 
-if (keyboard_check_pressed(global.keys.move_up)){
+if (keyboard_check(global.keys.move_up)){
 	
 	var _grid_width = ds_grid_width(keyboard_grid);
 	var _grid_height = ds_grid_height(keyboard_grid);
-
-	for (var _i=0; _i<_grid_height; _i++){
 	
-		keyboard_pos[1]-=1;
-		keyboard_pos[1]+=_grid_height;
-		keyboard_pos[1]%=_grid_height;
-		if(keyboard_grid[# keyboard_pos[0],keyboard_pos[1]] ==1){break}
-		else{
-			if(keyboard_grid[# keyboard_pos[0],keyboard_pos[1]] ==0){continue}
-			if(keyboard_grid[# keyboard_pos[0],keyboard_pos[1]] <0.5){
-				print("less");
-				for (var _j=0; _j<_grid_width; _j++){
+	var _firstrun;
+	if (keyboard_check_pressed(global.keys.move_up)){
+		alarm[0]=hold_start_delay
+		_firstrun=true;
+	}
+	else{
+		_firstrun=false;
+	}
+	if(_firstrun or (holding and not cooldown)){
+		cooldown=true;
+		alarm[1]=hold_interval;
+		
+		for (var _i=0; _i<_grid_height; _i++){
 	
-					keyboard_pos[0]-=1;
-					keyboard_pos[0]+=_grid_width;
-					keyboard_pos[0]%=_grid_width;
-					if(keyboard_grid[# keyboard_pos[0],keyboard_pos[1]] ==1){break}
+			keyboard_pos[1]-=1;
+			keyboard_pos[1]+=_grid_height;
+			keyboard_pos[1]%=_grid_height;
+			if(keyboard_grid[# keyboard_pos[0],keyboard_pos[1]] ==1){break}
+			else{
+				if(keyboard_grid[# keyboard_pos[0],keyboard_pos[1]] ==0){continue}
+				if(keyboard_grid[# keyboard_pos[0],keyboard_pos[1]] <0.5){
+					print("less");
+					for (var _j=0; _j<_grid_width; _j++){
+	
+						keyboard_pos[0]-=1;
+						keyboard_pos[0]+=_grid_width;
+						keyboard_pos[0]%=_grid_width;
+						if(keyboard_grid[# keyboard_pos[0],keyboard_pos[1]] ==1){break}
+					}
 				}
-			}
-			else if(keyboard_grid[# keyboard_pos[0],keyboard_pos[1]] >=0.5){
-				print("moar");
-				for (var _j=0; _j<_grid_width; _j++){
+				else if(keyboard_grid[# keyboard_pos[0],keyboard_pos[1]] >=0.5){
+					print("moar");
+					for (var _j=0; _j<_grid_width; _j++){
 	
-					keyboard_pos[0]+=1;
-					keyboard_pos[0]+=_grid_width;
-					keyboard_pos[0]%=_grid_width;
-					if(keyboard_grid[# keyboard_pos[0],keyboard_pos[1]] ==1){break}
+						keyboard_pos[0]+=1;
+						keyboard_pos[0]+=_grid_width;
+						keyboard_pos[0]%=_grid_width;
+						if(keyboard_grid[# keyboard_pos[0],keyboard_pos[1]] ==1){break}
+					}
 				}
+				break
 			}
-			break
 		}
 	}
-
 	print(keyboard_pos);
 }
 
 //Down
 
-if (keyboard_check_pressed(global.keys.move_down)){
+if (keyboard_check(global.keys.move_down)){
 	
 	var _grid_width = ds_grid_width(keyboard_grid);
 	var _grid_height = ds_grid_height(keyboard_grid);
-
-	for (var _i=0; _i<_grid_height; _i++){
 	
-		keyboard_pos[1]+=1;
-		keyboard_pos[1]%=_grid_height;
-		if(keyboard_grid[# keyboard_pos[0],keyboard_pos[1]] ==1){break}
-		else{
-			if(keyboard_grid[# keyboard_pos[0],keyboard_pos[1]] ==0){continue}
-			if(keyboard_grid[# keyboard_pos[0],keyboard_pos[1]] <0.5){
-				for (var _j=0; _j<_grid_width; _j++){
+	var _firstrun;
+	if (keyboard_check_pressed(global.keys.move_down)){
+		alarm[0]=hold_start_delay
+		_firstrun=true;
+	}
+	else{
+		_firstrun=false;
+	}
+	if(_firstrun or (holding and not cooldown)){
+		cooldown=true;
+		alarm[1]=hold_interval;
+		
+		for (var _i=0; _i<_grid_height; _i++){
 	
-					keyboard_pos[0]-=1;
-					keyboard_pos[0]+=_grid_width;
-					keyboard_pos[0]%=_grid_width;
-					if(keyboard_grid[# keyboard_pos[0],keyboard_pos[1]] ==1){break}
+			keyboard_pos[1]+=1;
+			keyboard_pos[1]%=_grid_height;
+			if(keyboard_grid[# keyboard_pos[0],keyboard_pos[1]] ==1){break}
+			else{
+				if(keyboard_grid[# keyboard_pos[0],keyboard_pos[1]] ==0){continue}
+				if(keyboard_grid[# keyboard_pos[0],keyboard_pos[1]] <0.5){
+					for (var _j=0; _j<_grid_width; _j++){
+	
+						keyboard_pos[0]-=1;
+						keyboard_pos[0]+=_grid_width;
+						keyboard_pos[0]%=_grid_width;
+						if(keyboard_grid[# keyboard_pos[0],keyboard_pos[1]] ==1){break}
+					}
 				}
-			}
-			else if(keyboard_grid[# keyboard_pos[0],keyboard_pos[1]] >=0.5){
-				for (var _j=0; _j<_grid_width; _j++){
+				else if(keyboard_grid[# keyboard_pos[0],keyboard_pos[1]] >=0.5){
+					for (var _j=0; _j<_grid_width; _j++){
 	
-					keyboard_pos[0]+=1;
-					keyboard_pos[0]+=_grid_width;
-					keyboard_pos[0]%=_grid_width;
-					if(keyboard_grid[# keyboard_pos[0],keyboard_pos[1]] ==1){break}
+						keyboard_pos[0]+=1;
+						keyboard_pos[0]+=_grid_width;
+						keyboard_pos[0]%=_grid_width;
+						if(keyboard_grid[# keyboard_pos[0],keyboard_pos[1]] ==1){break}
+					}
 				}
+				break
 			}
-			break
 		}
 	}
 
 
 	print(keyboard_pos);
+}
+if (keyboard_check_released(vk_anykey)){
+	holding=false;
+	alarm[0]=-1;
 }

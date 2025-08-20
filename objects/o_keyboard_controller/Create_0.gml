@@ -16,3 +16,8 @@ keyboard_pos = [0,0];
 //the decimals exist to make fat objects that take multiple space
 
 enabled = true;	//Use to disable when needed. Make sure to re enable
+
+hold_start_delay = 30;	//how many frames before moving through quickly?
+hold_interval = 3;		//when holding, move every ___ frames. Unused for now
+holding=false;
+cooldown=false;

@@ -12,7 +12,7 @@ draw_set_valign(fa_middle);
 //surface_set_target(o_ui_list.menu_surf);
 if(not array_contains(exceptions,assigned_key)){
 	//print("assigned as",assigned_key,keyboard_lastchar,keyboard_lastkey);
-	display_name= key_name;
+	display_name= string_upper(key_name);
 	//draw_text(x,y,string_upper(key_name));	
 }
 else{
@@ -88,7 +88,8 @@ else{
 	//draw_text(x,y,_name);
 }
 //surface_reset_target();
-text= display_name;
+text= display_name;		//Technically, the display_name variable is completely redundant
+						//but is kept for debugging, because text can be changed by other methods
 draw_set_halign(fa_left);
 draw_set_valign(fa_top);
 

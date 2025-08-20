@@ -31,5 +31,5 @@ alarm[0]=1;
 
 scroll_modifier = 5; //how much is scrolled per frame of scrolling
 
-distance_before_scroll = 500;	//What distance, from the top of the menu, must the current item be before forcing a scroll
+distance_before_scroll = 550;	//What distance, from the top of the menu, must the current item be before forcing a scroll
 upwards_before_scroll = 100;	//What distance from top before scrolling back up?
