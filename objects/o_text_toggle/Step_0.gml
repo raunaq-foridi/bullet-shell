@@ -15,7 +15,7 @@ else{
 if (position_meeting(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), id)){mouse_hover=true;}
 else{mouse_hover=false};
 if(hovering){
-	if(keyboard_check_pressed(global.keys.select)){
+	if(input_check_pressed("select")){
 		current+=1;
 		if current>=array_length(values){
 			current=0;}

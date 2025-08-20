@@ -116,23 +116,28 @@ function list_name(_listname){
 		//This is the way items are created
 		//list format is [text,type,current value,range,variable name, key_pos]
 		//Hence, keybind format is [Text, "keybind", 0, 0, "assignment", [key,pos]  ]
+		//buttons are ["Text", "button",0,[], function, [key,pos] ]
 			_array = [
-			["Test Keybind Up","keybind",0, 0, "move_up", [0,1]],
-			["Test Keybind Down","keybind",0, 0, "move_down", [0,2]],
+			["Move Up","keybind",0, 0, "move_up", [0,1]],
+			["Move Down","keybind",0, 0, "move_down", [0,2]],
 			["Move Left","keybind",0, 0, "move_left", [0,3]],
 			["Move Right","keybind",0, 0, "move_right", [0,4]],
 			["Jump","keybind",0, 0, "jump", [0,5]],
 			["Select","keybind",0, 0, "select", [0,6]],
-			["Camera Up","keybind",0, 0, "camera_up", [0,7]],
-			["Camera Down","keybind",0, 0, "camera_down", [0,8]],
-			["Camera Left","keybind",0, 0, "camera_left", [0,9]],
-			["Camera Right","keybind",0, 0, "camera_right", [0,10]],
-			["Melee Attack","keybind",0, 0, "attack", [0,11]],
-			["Open Inventory","keybind",0, 0, "inventory", [0,12]],
-			["Open Map","keybind",0, 0, "map", [0,13]],
-			["Pause","keybind",0, 0, "pause_key", [0,14]],
-			["Set Keybinds","button",0,[],set_keybinds,[0,15]],
-			["Set to Default","button",0,[],reset_keybinds,[0,16]]
+			["Menu Up","keybind",0, 0, "menu_up", [0,7]],
+			["Menu Down","keybind",0, 0, "menu_down", [0,8]],
+			["Menu Left","keybind",0, 0, "menu_left", [0,9]],
+			["Menu Right","keybind",0, 0, "menu_right", [0,10]],
+			["Camera Up","keybind",0, 0, "camera_up", [0,11]],
+			["Camera Down","keybind",0, 0, "camera_down", [0,12]],
+			["Camera Left","keybind",0, 0, "camera_left", [0,13]],
+			["Camera Right","keybind",0, 0, "camera_right", [0,14]],
+			["Melee Attack","keybind",0, 0, "attack", [0,15]],
+			["Open Inventory","keybind",0, 0, "inventory", [0,16]],
+			["Open Map","keybind",0, 0, "map", [0,17]],
+			["Pause","keybind",0, 0, "pause_key", [0,18]],
+			["Set Keybinds","button",0,[],set_keybinds,[0,19]],
+			["Set to Default","button",0,[],reset_keybinds,[0,20]]
 			]
 			_scrollsize = 300;
 		

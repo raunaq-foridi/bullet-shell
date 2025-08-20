@@ -17,3 +17,4 @@ global.room_info[# map_x, map_y] = {
 }
 */
 //Is the structure of room info
+//Data is saved in the o_room_info object

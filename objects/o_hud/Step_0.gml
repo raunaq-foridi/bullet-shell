@@ -1,5 +1,5 @@
 
-if (keyboard_check_pressed(global.keys.inventory) and not o_player.occupied){
+if (input_check_pressed("inventory") and not o_player.occupied){
 	
 	instance_activate_object(o_inventory_menu);
 	if (not instance_exists(o_inventory_menu)){

@@ -12,8 +12,13 @@ keys = {
 	camera_up:		vk_up,
 	camera_down:	vk_down,
 	
-	menu_up:	vk_up,
-	menu_down:	vk_down,
+	menu_up:	ord("W"),
+	menu_down:	ord("S"),
+	menu_left:	ord("A"),
+	menu_right:	ord("D"),
+	
+	scroll_up:	vk_up,
+	scroll_down:	vk_down,
 	
 	mouse_attack: false,
 	attack:		ord("L"),	//idk man. get Adam to choose more wisely
@@ -21,6 +26,38 @@ keys = {
 	inventory:	ord("E"),
 	map:		ord("M"),
 	pause_key:	ord("P")
+}
+
+//use keys for keyboard, controls for controllers
+controls = {
+	//move_left : gamepad_axis_value()
+	move_left: [gp_axislh,-1],
+	move_right: [gp_axislh,1],
+	move_up   : [gp_axislv,-1],
+	move_down : [gp_axislv,1],
+	jump	  : gp_face1,
+	
+	select	  : gp_face2,
+	
+	camera_left:	[gp_axisrh,-1],
+	camera_right:	[gp_axisrh,1],
+	camera_up:		[gp_axisrv,-1],
+	camera_down:	[gp_axisrv,1],
+	
+	menu_up:	gp_padu,
+	menu_down:	gp_padd,
+	menu_left:	gp_padl,
+	menu_right: gp_padr,
+	
+	mouse_attack: false,	//Not Applicable
+	attack:		gp_face2,	
+	
+	//inventory:	gp_select,
+	inventory: gp_face3,
+	//inventory: gp_start,
+	map:		gp_stickl,
+	//map: gp_face3,
+	pause_key:	gp_start
 }
 
 default_keyboard_mouse = {
@@ -36,6 +73,11 @@ default_keyboard_mouse = {
 	camera_right:	vk_right,
 	camera_up:		vk_up,
 	camera_down:	vk_down,
+	
+	menu_up:	ord("W"),
+	menu_down:	ord("S"),
+	menu_left:	ord("A"),
+	menu_right:	ord("D"),
 	
 	scroll_up:	vk_up,
 	scroll_down:	vk_down,
@@ -61,6 +103,11 @@ default_keyboard_only = {
 	camera_right:	ord("D"),
 	camera_up:		ord("W"),
 	camera_down:	ord("S"),
+	
+	menu_up:	vk_up,
+	menu_down:	vk_down,
+	menu_left:	vk_left,
+	menu_right:	vk_right,
 	
 	scroll_up:		ord("W"),
 	scroll_down:	ord("S"),

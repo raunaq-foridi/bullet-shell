@@ -21,4 +21,4 @@ if (ds_grid_width(_kb_grid)!=list_width or ds_grid_height(_kb_grid)!=list_height
 
 //Close inventory
 
-if(keyboard_check_pressed(global.keys.inventory)){alarm[0]=1;}
+if(input_check_pressed("inventory")){alarm[0]=1;}

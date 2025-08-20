@@ -77,7 +77,7 @@ for(var _x=map_start_x;_x<map_width;_x++){
 		
 		_tooltip_pos = [_x_pos,_y_pos];
 	}
-	if(_selected and (mouse_check_button_released(mb_left) or keyboard_check_released(global.keys.select)) ){
+	if(_selected and (mouse_check_button_released(mb_left) or input_check_released("select")) ){
 		print(_cell_info);
 		if(teleportation==true and _cell_info.checkpoint==true){
 			print("teleporting");

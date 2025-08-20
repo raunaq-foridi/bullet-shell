@@ -21,3 +21,7 @@ hold_start_delay = 30;	//how many frames before moving through quickly?
 hold_interval = 3;		//when holding, move every ___ frames. Unused for now
 holding=false;
 cooldown=false;
+
+//gamepad support
+gamepads=[]
+deadzone=0.1

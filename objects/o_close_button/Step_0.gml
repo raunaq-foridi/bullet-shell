@@ -28,10 +28,10 @@ else{
 };
 if(hovering){
 	image_index=1;
-	if ((mouse_check_button_pressed(mb_any) and mouse_hover) or keyboard_check_pressed(global.keys.select)){clicked=true;}
+	if ((mouse_check_button_pressed(mb_any) and mouse_hover) or input_check_pressed("select")){clicked=true;}
 	if (clicked){
 		image_index=2;
-		if ((mouse_check_button_released(mb_any) and mouse_hover) or keyboard_check_pressed(global.keys.select)){with(o_pause){pause();}}
+		if ((mouse_check_button_released(mb_any) and mouse_hover) or input_check_pressed("select")){with(o_pause){pause();}}
 	}
 }
 else{

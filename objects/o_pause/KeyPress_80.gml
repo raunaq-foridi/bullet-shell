@@ -34,4 +34,4 @@ else{
 	active=[];
 	}
 	*/
-pause();
+//pause();

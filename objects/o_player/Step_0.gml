@@ -8,7 +8,9 @@ if (not occupied){
 
 //Jumping
 
-if (keyboard_check_pressed(global.keys.jump)){
+//if (keyboard_check_pressed(global.keys.jump)){
+print(input_check_pressed("jump"),"jump");
+if (input_check_pressed("jump")){
 	if(grounded and not water){
 		vel_y = -jump_speed;	//negative, because positive is downwards for some weird reason.
 	
@@ -46,7 +48,10 @@ if (keyboard_check_pressed(global.keys.jump)){
 
 //Left
 
-if (keyboard_check(global.keys.move_left)){
+//if (keyboard_check(global.keys.move_left)){
+
+if (input_check("move_left")){
+	//print("left");
 	facing="left";
 	//climbing code
 	if(climbing and climbable and not climbable.lock_x){	//ignore code if Locked.
@@ -66,8 +71,9 @@ if (keyboard_check(global.keys.move_left)){
 
 //Right
 
-if (keyboard_check(global.keys.move_right)){
-	
+//if (keyboard_check(global.keys.move_right)){
+if (input_check("move_right")){
+	//print("Good");
 	facing="right";
 	//climbing code
 	if(climbing and climbable and not climbable.lock_x){	//ignore code if Locked.
@@ -87,7 +93,8 @@ if (keyboard_check(global.keys.move_right)){
 
 //Up
 
-if (keyboard_check(global.keys.move_up)){
+//if (keyboard_check(global.keys.move_up)){
+if (input_check("move_up")){
 	
 	if (place_meeting(x,y,o_climbable)){		//begin climb if pressed on ladder
 		climbing=true;	
@@ -111,7 +118,8 @@ if (keyboard_check(global.keys.move_up)){
 
 //Down
 
-if (keyboard_check(global.keys.move_down)){
+//if (keyboard_check(global.keys.move_down)){
+if (input_check("move_down")){
 
 	if (place_meeting(x,y,o_climbable)){		//begin climb if pressed on ladder
 		climbing=true;	

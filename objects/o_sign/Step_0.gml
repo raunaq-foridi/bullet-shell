@@ -22,6 +22,6 @@ if(array_length(o_player.interactions)>0){
 }
 else{closest=false;}
 
-if (keyboard_check_pressed(global.keys.select)){
+if (input_check_pressed("select")){
 	alarm[0]=1;	
 }

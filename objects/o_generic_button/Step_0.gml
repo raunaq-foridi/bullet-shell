@@ -12,10 +12,10 @@ if (position_meeting(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), id)){mo
 else{mouse_hover=false};
 if(hovering){
 	image_index=1;
-	if ((mouse_check_button_pressed(mb_any) and mouse_hover) or keyboard_check_pressed(global.keys.select)){clicked=true;}
+	if ((mouse_check_button_pressed(mb_any) and mouse_hover) or input_check_pressed("select")){clicked=true;}
 	if (clicked){
 		image_index=2;
-		if (mouse_check_button_released(mb_any) or keyboard_check_pressed(global.keys.select)){script_execute_ext(script,arguments);}
+		if (mouse_check_button_released(mb_any) or input_check_pressed("select")){script_execute_ext(script,arguments);}
 	}
 }
 else{

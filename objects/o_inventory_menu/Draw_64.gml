@@ -134,7 +134,7 @@ for (var _i=0; _i<INV_SIZE;_i++){
 		
 		//REFACTOR THIS CODE LATER. DUPLICATED AND MESSY
 		//if (mouse_check_button_released(mb_left)){
-		if(keyboard_check_released(global.keys.select)){
+		if(input_check_released("select")){
 			if(_item[0]!=0 and _item[1]>0){
 				
 				//If the same item as the held equip slot is clicked, return the item to the inventory
@@ -233,7 +233,7 @@ if(point_distance(_mouse_x,_mouse_y,200,200)<small_slot_radius
 	or held==-2){ 
 	draw_set_color(c_gray);
 	selected = -2;
-	if (mouse_check_button_released(mb_left) or keyboard_check_released(global.keys.select)){
+	if (mouse_check_button_released(mb_left) or input_check_released("select")){
 		if(held<=-1){held=-2;}
 		else if(held>=0){
 			//return old item to inventory
@@ -269,7 +269,7 @@ if(point_distance(_mouse_x,_mouse_y,300,200)<small_slot_radius
 	or held==-3){ 
 	draw_set_color(c_gray);
 	selected = -3;
-	if (mouse_check_button_released(mb_left) or keyboard_check_released(global.keys.select)){
+	if (mouse_check_button_released(mb_left) or input_check_released("select")){
 		if(held<=-1){held=-3;}
 		else if(held>=0){
 			//return old item to inventory

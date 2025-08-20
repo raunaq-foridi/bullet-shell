@@ -1,6 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-transparent_map=global.map_transparency;
+/*transparent_map=global.map_transparency;
 if (not o_player.occupied){
 	visible = not visible;
 	o_player.occupied = true;
@@ -10,4 +10,4 @@ if (not o_player.occupied){
 else if (visible){
 	visible = not visible;
 	o_player.occupied = false;
-}
+}*/

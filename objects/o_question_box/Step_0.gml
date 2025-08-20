@@ -1,14 +1,14 @@
 /// @description Keyboard Controls
 
 //Select
-if (keyboard_check_pressed(global.keys.select)){
+if (input_check_pressed("select")){
 	
 	alarm[0]=1;
 }
 
 //Up
 
-if (keyboard_check_pressed(global.keys.move_up)){
+if (input_check_pressed("move_up")){
 	
 	selection-=1;
 	selection%=array_length(text);
@@ -19,7 +19,7 @@ if (keyboard_check_pressed(global.keys.move_up)){
 
 //Down
 
-if (keyboard_check_pressed(global.keys.move_down)){
+if (input_check_pressed("move_down")){
 	selection+=1;
 	selection%=array_length(text);
 }

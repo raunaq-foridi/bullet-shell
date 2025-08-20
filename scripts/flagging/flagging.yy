@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"flagging",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"Data",
+    "path":"folders/Scripts/Data.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

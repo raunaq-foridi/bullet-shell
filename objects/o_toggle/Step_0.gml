@@ -15,10 +15,10 @@ if (position_meeting(device_mouse_x_to_gui(0), device_mouse_y_to_gui(0), id)){mo
 else{mouse_hover=false};
 if(hovering){
 	//image_index=SPRITES.OFF_HOVERED;
-	if ((mouse_check_button_pressed(mb_any) and mouse_hover) or keyboard_check_pressed(global.keys.select)){clicked=true;}
+	if ((mouse_check_button_pressed(mb_any) and mouse_hover) or input_check_pressed("select")){clicked=true;}
 	if (clicked){
 		//image_index=SPRITES.ON_HOVERED;
-		if (mouse_check_button_released(mb_any) or keyboard_check_released(global.keys.select)){
+		if (mouse_check_button_released(mb_any) or input_check_released("select")){
 			//script_execute_ext(script,arguments);
 			state =!state;
 			variable_global_set(toggle,state);

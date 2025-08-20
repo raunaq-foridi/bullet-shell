@@ -1,9 +1,9 @@
 {
   "$GMScript":"",
-  "%Name":"keybinds",
+  "%Name":"input_check",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"keybinds",
+  "name":"input_check",
   "parent":{
     "name":"Controls",
     "path":"folders/Scripts/Controls.yy",

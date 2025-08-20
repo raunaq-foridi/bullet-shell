@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"furthest_instance",
   "parent":{
-    "name":"Scripts",
-    "path":"folders/Scripts.yy",
+    "name":"Movement and detection",
+    "path":"folders/Scripts/Movement and detection.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

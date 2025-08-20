@@ -25,11 +25,11 @@ else{
 if(hovering){
 	//print("Hobaa");
 	//image_index=SPRITES.OFF_HOVERED;
-	if (keyboard_check(global.keys.move_right) and progress<=1){
+	if (input_check("move_right") and progress<=1){
 		//clicked=true;
 		x+=1
 	}
-	else if(keyboard_check(global.keys.move_left) and progress>=0 ){
+	else if(input_check("move_left") and progress>=0 ){
 		x-=1;	
 	}
 }

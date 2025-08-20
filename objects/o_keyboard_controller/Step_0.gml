@@ -13,12 +13,12 @@ if(enabled == false){
 
 //Left
 
-if (keyboard_check(global.keys.move_left)){
-	
+if (input_check("menu_left")){
+	//print("left")
 	var _grid_width = ds_grid_width(keyboard_grid);
 	//var _grid_height = ds_grid_height(keyboard_grid);
 	var _firstrun;
-	if (keyboard_check_pressed(global.keys.move_left)){
+	if (input_check_pressed("menu_left")){
 		alarm[0]=hold_start_delay
 		_firstrun=true;
 	}
@@ -38,17 +38,17 @@ if (keyboard_check(global.keys.move_left)){
 		_firstrun=false;
 	}
 	
-	print(keyboard_pos);
+	//print(keyboard_pos);
 }
 	
 //Right
 
-if (keyboard_check(global.keys.move_right)){
+if (input_check("menu_right")){
 	var _grid_width = ds_grid_width(keyboard_grid);
 	//var _grid_height = ds_grid_height(keyboard_grid);
 	
 	var _firstrun;
-	if (keyboard_check_pressed(global.keys.move_right)){
+	if (input_check_pressed("menu_right")){
 		alarm[0]=hold_start_delay
 		_firstrun=true;
 	}
@@ -67,18 +67,18 @@ if (keyboard_check(global.keys.move_right)){
 		}
 	}
 
-	print(keyboard_pos);
+	//print(keyboard_pos);
 }
 	
 //Up
 
-if (keyboard_check(global.keys.move_up)){
+if (input_check("menu_up")){
 	
 	var _grid_width = ds_grid_width(keyboard_grid);
 	var _grid_height = ds_grid_height(keyboard_grid);
 	
 	var _firstrun;
-	if (keyboard_check_pressed(global.keys.move_up)){
+	if (input_check_pressed("menu_up")){
 		alarm[0]=hold_start_delay
 		_firstrun=true;
 	}
@@ -121,18 +121,18 @@ if (keyboard_check(global.keys.move_up)){
 			}
 		}
 	}
-	print(keyboard_pos);
+	//print(keyboard_pos);
 }
 
 //Down
 
-if (keyboard_check(global.keys.move_down)){
+if (input_check("menu_down")){
 	
 	var _grid_width = ds_grid_width(keyboard_grid);
 	var _grid_height = ds_grid_height(keyboard_grid);
 	
 	var _firstrun;
-	if (keyboard_check_pressed(global.keys.move_down)){
+	if (input_check_pressed("menu_down")){
 		alarm[0]=hold_start_delay
 		_firstrun=true;
 	}
@@ -174,9 +174,13 @@ if (keyboard_check(global.keys.move_down)){
 	}
 
 
-	print(keyboard_pos);
+	//print(keyboard_pos);
 }
-if (keyboard_check_released(vk_anykey)){
+var _released = false;
+if (not( input_check("menu_up") or input_check("menu_down") or input_check("menu_left") or input_check("menu_right"))){
+	_released = true;
+}
+if (keyboard_check_released(vk_anykey) or _released){
 	holding=false;
 	alarm[0]=-1;
 }
