@@ -1,3 +1,3 @@
 /// @description Falling cooldown
 falling=true;
-print("gwo");
+//print("gwo");

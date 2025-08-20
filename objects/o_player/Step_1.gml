@@ -41,7 +41,7 @@ else{
 	if(grounded){alarm[5]=2;}
 	grounded=false;
 	//print("gwowo");
-	print(alarm[5]);
+	//print(alarm[5]);
 	//alarm[5]=2;
 }
 if (not flying){fly_speed=0;}
@@ -109,7 +109,9 @@ if(climbing){
 			}
 
 		}
-		if(instance_exists(climbable)){
+		//ERROR HERE	
+		if(instance_exists(climbable) and climbable!=0){
+			print(climbable);
 			if (climbable.snap_x){
 				x=climbable.x+climbable.rel_x;	//"snap" to climbable, with a relative distance.
 			}									//allows you to stay on a moving platform
@@ -120,6 +122,14 @@ if(climbing){
 				vel_x=0;
 			}
 		}
+		/*with(climbable){
+			if (variable_instance_exists(id,snap_x)){
+				if(snap_x){other.x = x+rel_x}
+				if(snap_y){other.y = y+rel_y}
+				if(lock_x){vel_x=0}
+			}
+			
+		}*/
 	}
 }
 

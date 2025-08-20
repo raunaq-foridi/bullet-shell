@@ -17,7 +17,7 @@ else{hovering = false;
 if(hovering){
 	if (mouse_check_button_pressed(mb_any) or (keyboard_check_pressed(global.keys.select) and not listening)){
 		clicked=true;
-		print("Clack");
+		//print("Clack");
 	}
 	if (clicked and not listening){
 		if (mouse_check_button_released(mb_any) or keyboard_check_released(global.keys.select)){
@@ -44,7 +44,7 @@ if (listening){
 		key_name = keyboard_lastchar;
 		hovering=false;
 		listening=false;
-		print(keyboard_lastchar);
+		//print(keyboard_lastchar);
 		alarm[0]=1;
 		//o_pause.enabled=true;
 		//o_keyboard_controller.enabled = true;

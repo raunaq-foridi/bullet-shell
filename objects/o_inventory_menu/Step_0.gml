@@ -3,7 +3,7 @@
 
 var _kb_grid = o_keyboard_controller.keyboard_grid
 if (ds_grid_width(_kb_grid)!=list_width or ds_grid_height(_kb_grid)!=list_height+1){
-	print(ds_grid_width(_kb_grid),list_width);
+	//print(ds_grid_width(_kb_grid),list_width);
 	with (o_keyboard_controller){
 		keyboard_pos=[0,0];
 	
