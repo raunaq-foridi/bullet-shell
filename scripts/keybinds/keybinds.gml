@@ -101,6 +101,15 @@ function set_keybinds(){
 	}
 	
 }
+function reset_keybinds(){
+	global.keys= variable_clone(global.default_keyboard_mouse);
+	global.temp_keys = variable_clone(global.default_keyboard_mouse);
+	with(o_keybinder){
+		assigned_key = global.keys[$ controlled_input];
+		key_name = chr(assigned_key);	
+	}
+	
+}
 //Temporary struct used during keybinding (so to give the user a chance to confirm)
 
 temp_keys = {

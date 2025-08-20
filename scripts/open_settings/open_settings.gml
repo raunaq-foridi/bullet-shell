@@ -12,7 +12,7 @@ function open_settings(){
 	//instance_activate_object(o_settings);
 	instance_deactivate_object(o_generic_button);
 	//create_toggle(620,290,5,5,"Mute toggle","mute");
-	create_menu(100,100,_width,_height,list_name("settings"),-1,["settings","text_settings","keybinds"],"settings");	//ignore error, this works
+	create_menu(100,100,_width,_height,list_name("settings").array,-1,["settings","text_settings","keybinds"],"settings",list_name("settings").scrollsize);	//ignore error, this works
 }
 
 function true_restart(){
@@ -30,6 +30,6 @@ function change_menu(_menu,_other_lists){
 	var _width = _screen_width - 2*_padding;
 	var _height = _screen_height-2*_padding;
 	instance_destroy(o_ui_list);
-	create_menu(100,100,_width,_height,list_name(_menu),-1,_other_lists,_menu);
+	create_menu(100,100,_width,_height,list_name(_menu).array,-1,_other_lists,_menu,list_name(_menu).scrollsize);
 	instance_destroy();
 }

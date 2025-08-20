@@ -9,9 +9,11 @@ else{image_index=KEYBINDER_SPRITES.OFF;}
 draw_set_halign(fa_center);
 draw_set_valign(fa_middle);
 
+//surface_set_target(o_ui_list.menu_surf);
 if(not array_contains(exceptions,assigned_key)){
 	//print("assigned as",assigned_key,keyboard_lastchar,keyboard_lastkey);
-	draw_text(x,y,string_upper(key_name));	
+	display_name= key_name;
+	//draw_text(x,y,string_upper(key_name));	
 }
 else{
 	var _name = "";
@@ -82,9 +84,11 @@ else{
 		
 	}
 	//
-	draw_text(x,y,_name);
+	display_name = _name;
+	//draw_text(x,y,_name);
 }
-
+//surface_reset_target();
+text= display_name;
 draw_set_halign(fa_left);
 draw_set_valign(fa_top);
 

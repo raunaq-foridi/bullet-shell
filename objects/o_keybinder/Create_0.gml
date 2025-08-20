@@ -5,6 +5,7 @@ assigned =false;
 
 assigned_key = -1;
 key_name = ""
+display_name = "";
 
 depth=-100;
 width=10;		//unused

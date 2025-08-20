@@ -24,7 +24,7 @@
   ],
   "name":"s_text_toggle",
   "nineSlice":null,
-  "origin":3,
+  "origin":4,
   "parent":{
     "name":"Bullet Shell",
     "path":"Bullet Shell.yyp",
@@ -79,7 +79,7 @@
     ],
     "visibleRange":null,
     "volume":1.0,
-    "xorigin":0,
+    "xorigin":32,
     "yorigin":32,
   },
   "swatchColours":null,

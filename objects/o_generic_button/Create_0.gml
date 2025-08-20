@@ -13,3 +13,5 @@ clicked=false;
 mouse_hover=false;
 
 keyboard_pos=[0,0];
+
+skip_draw=false;

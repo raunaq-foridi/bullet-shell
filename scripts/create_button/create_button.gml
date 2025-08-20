@@ -17,6 +17,7 @@ function create_button(_x,_y,_width,_height,_text,_script,_arguments,_keyboard_p
 	}
 	if(not is_undefined(_cleanup)){
 		ds_list_add(_cleanup,_button);	
+		return _button
 	}
 }
 

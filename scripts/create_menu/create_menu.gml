@@ -9,7 +9,7 @@ enum UI{
 }
 
 //creates a list menu, such as a settings menu
-function create_menu(_x,_y,_width,_height,_list,_sprite,_other_lists=[],_name=""){
+function create_menu(_x,_y,_width,_height,_list,_sprite,_other_lists=[],_name="",_maxscroll=100){
 	if (is_undefined(_sprite)){_sprite=-1;}
 	var _menu = instance_create_layer(_x,_y,"Instances",o_ui_list);
 	with(_menu){
@@ -18,6 +18,7 @@ function create_menu(_x,_y,_width,_height,_list,_sprite,_other_lists=[],_name=""
 		sprite=_sprite;	//cranberry
 		other_lists=_other_lists;		//what other tabs can be accessed
 		name = _name;					//what tab is this? If no other lists, this is unnecessary
+		max_scroll=_maxscroll			//Important to make sure you can actually scroll to the end
 		for(var _i = 0; _i<array_length(_list); _i++){
 			ds_list_add(list,_list[_i]);
 			
@@ -47,7 +48,8 @@ function settings_item(_x,_y,_text,_type,_variable,_cleanup,_keypos,_range=[0,1]
 		case "list":
 		//the _text parameter is used for the list of options here. multitasking :D
 		//Multitasking is bad. Change this later.
-			create_text_toggle(_x,_y,1,1,_text,_variable,_cleanup,_keypos);
+		//changed hopefully.
+			create_text_toggle(_x+30,_y,1,1,_range,_variable,_cleanup,_keypos);
 		break
 		case "keybind":
 		//Use _variable to choose which input it assigns
@@ -55,7 +57,10 @@ function settings_item(_x,_y,_text,_type,_variable,_cleanup,_keypos,_range=[0,1]
 		break
 		case "button":
 			//use _variable for the function, and _range for any parameters/arguments
-			create_button(_x,_y,1,1,_text,_variable,_range,_keypos,true,_cleanup);
+			var _button = create_button(_x,_y,1,1,_text,_variable,_range,_keypos,true,_cleanup);
+			with(_button){
+				skip_draw=true;	
+			}
 		break
 	}
 }
@@ -67,6 +72,7 @@ function settings_item(_x,_y,_text,_type,_variable,_cleanup,_keypos,_range=[0,1]
 function list_name(_listname){
 	//take in a string list name, output an array
 	var _array = [];
+	var _scrollsize = 100;
 	switch(_listname){
 
 		case "settings":
@@ -83,7 +89,7 @@ function list_name(_listname){
 			//["volume2","slider",100,[0,200],"dummy"],
 			//["","","",[],""]	//dummy entry. Required to fix stuff.
 			]
-			
+			_scrollsize = 100;
 			//Current issue: Each slider requires its own dummy entry at the end to function.
 			//long day. Not sustainable in its current form.
 			//Solved: Add a new dummy entry for each slider.
@@ -99,7 +105,7 @@ function list_name(_listname){
 			//["volume2","slider",100,[0,200],"dummy"],
 			//["","","",[],""]	//dummy entry. Required to fix stuff.
 			]
-			
+			_scrollsize = 100;
 			//Current issue: Each slider requires its own dummy entry at the end to function.
 			//long day. Not sustainable in its current form.
 			//Solved: Add a new dummy entry for each slider.
@@ -113,8 +119,22 @@ function list_name(_listname){
 			_array = [
 			["Test Keybind Up","keybind",0, 0, "move_up", [0,1]],
 			["Test Keybind Down","keybind",0, 0, "move_down", [0,2]],
-			["Set Keybinds","button",0,[],set_keybinds,[0,3]]
+			["Move Left","keybind",0, 0, "move_left", [0,3]],
+			["Move Right","keybind",0, 0, "move_right", [0,4]],
+			["Jump","keybind",0, 0, "jump", [0,5]],
+			["Select","keybind",0, 0, "select", [0,6]],
+			["Camera Up","keybind",0, 0, "camera_up", [0,7]],
+			["Camera Down","keybind",0, 0, "camera_down", [0,8]],
+			["Camera Left","keybind",0, 0, "camera_left", [0,9]],
+			["Camera Right","keybind",0, 0, "camera_right", [0,10]],
+			["Melee Attack","keybind",0, 0, "attack", [0,11]],
+			["Open Inventory","keybind",0, 0, "inventory", [0,12]],
+			["Open Map","keybind",0, 0, "map", [0,13]],
+			["Pause","keybind",0, 0, "pause_key", [0,14]],
+			["Set Keybinds","button",0,[],set_keybinds,[0,15]],
+			["Set to Default","button",0,[],reset_keybinds,[0,16]]
 			]
+			_scrollsize = 300;
 		
 	}
 	for(var _i=0; _i<array_length(_array); _i++){
@@ -123,5 +143,5 @@ function list_name(_listname){
 			array_push(_array,["","","",[],"",[]]);
 		}
 	}
-	return _array
+	return {array :_array, scrollsize: _scrollsize}
 }
