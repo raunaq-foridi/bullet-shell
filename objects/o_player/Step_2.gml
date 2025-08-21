@@ -2,9 +2,9 @@
 
 
 if (invincible){
-	visible=blink;
+	o_player_animator.visible=blink;
 }
-else{visible=true;}
+else{o_player_animator.visible=true;}
 
 //checking for Slopes
 sloping=false;

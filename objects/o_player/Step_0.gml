@@ -196,10 +196,11 @@ if(alternate_dash){
 repeat_move(vel_x,vel_y);
 
 //Animation!
+/*
 if (abs(dir[0])!=0){image_xscale=dir[0]}
 if(not falling){
 	if(abs(vel_x)>=0.6){sprite_index=s_player_run};
 	else{sprite_index=s_player_idle}
 }
-else{sprite_index=s_player_faller}
+else{sprite_index=s_player_faller}*/
 //print(vel_x, vel_y, grounded);
