@@ -1,5 +1,7 @@
 /// @description Melee damage
 
+//CURRENTLY DISABLED IN FAVOUR OF HITBOXES
+/*
 if (not other.invincible and attacking){
 	other.hp-=1;
 	//print(other.hp);
@@ -16,3 +18,4 @@ if (not other.invincible and attacking){
 	audio_play_sound(snd_hit,1,false);	//play a hit sound effect
 }
 
+*/
