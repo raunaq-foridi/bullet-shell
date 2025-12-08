@@ -25,6 +25,8 @@ waiting=false;		//is the delay still going?
 
 knockback=5;	//deal knockback in direction opposite to player. 
 applied_iframes = 20;
+contact_disable= 0;	//how many frames to disable enemy contact damage for
+
 //Currently unmodifiable
 
 stun=25;	//how long an enemy will be stunned for [set to 0 to remove]

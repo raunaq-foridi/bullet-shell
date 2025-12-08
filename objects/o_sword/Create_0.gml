@@ -61,13 +61,14 @@ function neutral(){
 		
 		//testing refactored version
 		basic_attack_setup(_duration,_cooldown,_input_window,_state+1,s_player_neutral_1,_anim_speed);
-		player_hitbox(30*player_facing,20,40,70,attack_duration,"box",0,true);
+		player_hitbox(30*player_facing,20,40,70,attack_duration,"box",0,true,,,,30);
 		player_hitbox(30*player_facing,50,40,20,attack_duration,"circle",3,true);
 		
 		//Hitbox explanation:
-		// (x, y, width, height, lifespan, shape, delay, attached to player, x speed, y speed, knockback, iframes, freeze time)
+		// (x, y, width, height, lifespan, shape, delay, attached to player, x speed, y speed, knockback, contact disable ,iframes, freeze time)
 		//x and y are relative to the players position, and are the hitbox Centre. If attached to player, this distance is maintained
 		//x speed, y speed allows the hitbox to move linearly.
+		//_contact_disable gives in frames how long the hitbox will disable the enemies contact damage
 		
 		//for box hitboxes, there is the simplifed p_box_hitbox() which takes the Corners of the hitbox instead
 	}
@@ -98,12 +99,12 @@ function neutral(){
 		//player_hitbox(30*player_facing,30,40,40,attack_duration,"box",0,true);
 		//player_hitbox(20*player_facing,10,40,20,attack_duration,"circle",10,true);
 		
-		/*player_hitbox(50*player_facing,10,70,80,attack_duration,"box",0,true);
-		player_hitbox(20*player_facing,30,140,36,attack_duration,"box",4,true);*/
+		player_hitbox(50*player_facing,10,70,80,attack_duration,"box",0,true);
+		player_hitbox(20*player_facing,30,140,36,attack_duration,"box",4,true);
 		
-		//Testing out high knockback finish
+		/*//Testing out high knockback finish
 		player_hitbox(50*player_facing,10,70,80,attack_duration,"box",0,true,,,15,,500);
-		player_hitbox(20*player_facing,30,140,36,attack_duration,"box",4,true,,,15,,500);
+		player_hitbox(20*player_facing,30,140,36,attack_duration,"box",4,true,,,15,,500);*/
 	}
 	
 	image_speed = _anim_speed;

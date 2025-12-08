@@ -11,6 +11,10 @@ if (not other.invincible and not waiting){
 		else{other.vel_x-=knockback  * other.knockback_resist;}
 	with(other){
 		alarm[0]=other.applied_iframes;	//starts enemies iframe timer
+		if(other.contact_disable>0){
+			contact_active=false;
+			alarm[3]=other.contact_disable;
+		}
 	}
 		
 	audio_play_sound(snd_hit,1,false);	//play a hit sound effect

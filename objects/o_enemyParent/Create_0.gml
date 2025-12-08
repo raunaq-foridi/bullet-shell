@@ -16,6 +16,7 @@ alive=true;
 hp = 10; 
 contact = 1;  //contact damage. Unsure if it'll ever be greater than 1 but yeah.
 knockback=1;
+contact_active = true;
 
 iframes=20;
 invincible=false;

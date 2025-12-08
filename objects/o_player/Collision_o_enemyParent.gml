@@ -1,6 +1,6 @@
 /// @description Enemy Collision
 
-if (invincible=false){
+if (invincible=false and other.contact_active){
 	hp-=other.contact;	//using "other" to select the specific enemy. 
 	alarm[0]=iframes;	//cancels iframes after alarm is up
 	invincible=true;
