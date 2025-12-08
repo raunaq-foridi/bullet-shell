@@ -28,7 +28,6 @@ function basic_attack_setup(_duration,_cooldown,_input_window,_next_state,_sprit
 	combo=true;
 }
 function neutral(){
-	//print("Tried to attack");
 	var _state = o_player.attack_state;
 	
 	//variable initialisation
@@ -65,6 +64,12 @@ function neutral(){
 		player_hitbox(30*player_facing,20,40,70,attack_duration,"box",0,true);
 		player_hitbox(30*player_facing,50,40,20,attack_duration,"circle",3,true);
 		
+		//Hitbox explanation:
+		// (x, y, width, height, lifespan, shape, delay, attached to player, x speed, y speed, knockback, iframes, freeze time)
+		//x and y are relative to the players position, and are the hitbox Centre. If attached to player, this distance is maintained
+		//x speed, y speed allows the hitbox to move linearly.
+		
+		//for box hitboxes, there is the simplifed p_box_hitbox() which takes the Corners of the hitbox instead
 	}
 	//Attack 2
 	else if(_state==1){
@@ -73,14 +78,6 @@ function neutral(){
 		_input_window = 25;
 		_anim_speed = 15/60;
 		
-		/*player_sprite = s_player_neutral_2;
-		alarm[1]=_duration;
-		alarm[2]=_cooldown;
-		alarm[3]=_input_window;
-		o_player.attack_state=2;
-		
-		
-		combo=true;*/
 		
 		basic_attack_setup(_duration,_cooldown,_input_window,_state+1,s_player_neutral_2,_anim_speed);
 			
@@ -95,22 +92,18 @@ function neutral(){
 		_input_window = 30;
 		_anim_speed = 15/60;
 		
-		/*player_sprite = s_player_neutral_3;
-		alarm[1]=_duration;
-		alarm[2]=_cooldown;
-		alarm[3]=_input_window;
-		o_player.attack_state=3;
-		
-		
-		combo=true;*/
 		
 		basic_attack_setup(_duration,_cooldown,_input_window,_state+1,s_player_neutral_3,_anim_speed);
 		
 		//player_hitbox(30*player_facing,30,40,40,attack_duration,"box",0,true);
 		//player_hitbox(20*player_facing,10,40,20,attack_duration,"circle",10,true);
 		
-		player_hitbox(50*player_facing,10,70,80,attack_duration,"box",0,true);
-		player_hitbox(20*player_facing,30,140,36,attack_duration,"box",4,true);
+		/*player_hitbox(50*player_facing,10,70,80,attack_duration,"box",0,true);
+		player_hitbox(20*player_facing,30,140,36,attack_duration,"box",4,true);*/
+		
+		//Testing out high knockback finish
+		player_hitbox(50*player_facing,10,70,80,attack_duration,"box",0,true,,,15,,500);
+		player_hitbox(20*player_facing,30,140,36,attack_duration,"box",4,true,,,15,,500);
 	}
 	
 	image_speed = _anim_speed;
@@ -121,9 +114,9 @@ function aerial() {
 	
 	//variable initialisation
 	
-	var _duration;		//How long before the next attack can be started?
-	var _cooldown;		//If the combo ends, how long is the cooldown?
-	var _input_window;	//How long to input next attack before the combo ends itself
+	var _duration;		
+	var _cooldown;		
+	var _input_window;	
 	var _anim_speed=1;
 	
 	if (_state==0){
@@ -133,13 +126,6 @@ function aerial() {
 		_input_window = 20;
 		_anim_speed = 20/60;
 		
-		/*player_sprite = s_player_aerial_1;
-		o_player.attack_state=1;
-		alarm[2]=_duration;
-		alarm[3]=_input_window;
-		
-		
-		combo=true;*/
 		
 		basic_attack_setup(_duration,_cooldown,_input_window,_state+1,s_player_aerial_1,_anim_speed);
 		
@@ -156,9 +142,9 @@ function forward(){
 	
 	//variable initialisation
 	
-	var _duration;		//How long before the next attack can be started?
-	var _cooldown;		//If the combo ends, how long is the cooldown?
-	var _input_window;	//How long to input next attack before the combo ends itself
+	var _duration;		
+	var _cooldown;		
+	var _input_window;	
 	var _anim_speed=1;
 	
 	if (_state==0){
@@ -168,13 +154,6 @@ function forward(){
 		_input_window = 20;
 		_anim_speed = 45/60;
 		
-		/*player_sprite = s_player_forward;
-		o_player.attack_state=1;
-		alarm[2]=_duration;
-		alarm[3]=_input_window;
-		
-		
-		combo=true;*/
 		
 		basic_attack_setup(_duration,_cooldown,_input_window,_state+1,s_player_forward,_anim_speed);
 		
@@ -190,9 +169,9 @@ function up(){
 	
 	//variable initialisation
 	
-	var _duration;		//How long before the next attack can be started?
-	var _cooldown;		//If the combo ends, how long is the cooldown?
-	var _input_window;	//How long to input next attack before the combo ends itself
+	var _duration;	
+	var _cooldown;		
+	var _input_window;	
 	var _anim_speed=1;
 	
 	if (_state==0){
@@ -201,14 +180,6 @@ function up(){
 		_cooldown = 15;
 		_input_window = 20;
 		_anim_speed = 30/60;
-		
-		/*player_sprite = s_player_up_1;
-		o_player.attack_state=1;
-		alarm[2]=_duration;
-		alarm[3]=_input_window;
-		
-		
-		combo=true;*/
 		
 		basic_attack_setup(_duration,_cooldown,_input_window,_state+1,s_player_up_1,_anim_speed);
 		player_hitbox(0,0,60,60,attack_duration,"circle",3,true);
@@ -220,14 +191,6 @@ function up(){
 		_cooldown = 15;
 		_input_window = 20;
 		_anim_speed = 20/60;
-		
-		/*player_sprite = s_player_up_2;
-		o_player.attack_state=2;
-		alarm[2]=_duration;
-		alarm[3]=_input_window;
-		
-		
-		combo=true;*/
 		
 		basic_attack_setup(_duration,_cooldown,_input_window,_state+1,s_player_up_2,_anim_speed);
 		player_hitbox(0,0,60,60,attack_duration,"circle",0,true);
@@ -241,9 +204,9 @@ function down(){
 	
 	//variable initialisation
 	
-	var _duration;		//How long before the next attack can be started?
-	var _cooldown;		//If the combo ends, how long is the cooldown?
-	var _input_window;	//How long to input next attack before the combo ends itself
+	var _duration;		
+	var _cooldown;		
+	var _input_window;	
 	var _anim_speed=1;
 	
 	if (_state==0){
@@ -252,14 +215,6 @@ function down(){
 		_cooldown = 15;
 		_input_window = 20;
 		_anim_speed = 20/60;
-		/*
-		player_sprite = s_player_down;
-		o_player.attack_state=1;
-		alarm[2]=_duration;
-		alarm[3]=_input_window;
-		
-		
-		combo=true;*/
 		
 		basic_attack_setup(_duration,_cooldown,_input_window,_state+1,s_player_down,_anim_speed);
 		player_hitbox(20*player_facing,30,60,60,attack_duration,"circle",3,true);

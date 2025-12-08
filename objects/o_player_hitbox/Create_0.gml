@@ -22,7 +22,10 @@ height= 10;
 delay = 0;			//How long before this hitbox becomes active?
 waiting=false;		//is the delay still going?
 
+
+knockback=5;	//deal knockback in direction opposite to player. 
+applied_iframes = 20;
 //Currently unmodifiable
 
 stun=25;	//how long an enemy will be stunned for [set to 0 to remove]
-knockback=5;	//deal knockback in direction opposite to player. 
+

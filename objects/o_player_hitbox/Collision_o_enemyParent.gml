@@ -10,7 +10,7 @@ if (not other.invincible and not waiting){
 		if (o_player.facing="right"){other.vel_x+=knockback * other.knockback_resist;}
 		else{other.vel_x-=knockback  * other.knockback_resist;}
 	with(other){
-		alarm[0]=iframes;	//starts enemies iframe timer
+		alarm[0]=other.applied_iframes;	//starts enemies iframe timer
 	}
 		
 	audio_play_sound(snd_hit,1,false);	//play a hit sound effect
