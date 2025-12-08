@@ -14,6 +14,10 @@ if (not other.invincible and not waiting){
 	}
 		
 	audio_play_sound(snd_hit,1,false);	//play a hit sound effect
+	
+	if(freeze>0){
+		alarm[2]=4;
+	}
 }
 
 

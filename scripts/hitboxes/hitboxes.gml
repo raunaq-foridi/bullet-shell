@@ -1,6 +1,6 @@
 //Scripts for creating hitboxes
 
-function player_hitbox(_rel_x,_rel_y,_width,_height,_lifespan,_shape="box",_delay=0,_follow_player=false,_vel_x=0,_vel_y=0){
+function player_hitbox(_rel_x,_rel_y,_width,_height,_lifespan,_shape="box",_delay=0,_follow_player=false,_vel_x=0,_vel_y=0,_freeze=0){
 	//Create a hitbox for a player attack
 	var _hitbox = instance_create_layer(o_player.x+_rel_x,o_player.y+_rel_y,"Instances",o_player_hitbox);
 	
@@ -15,6 +15,7 @@ function player_hitbox(_rel_x,_rel_y,_width,_height,_lifespan,_shape="box",_dela
 		vel_y = _vel_y;
 		shape = _shape;
 		delay = _delay;
+		freeze = _freeze;
 		
 		alarm[1] = lifespan;
 
@@ -42,4 +43,10 @@ function player_hitbox(_rel_x,_rel_y,_width,_height,_lifespan,_shape="box",_dela
 
 	}
 
+}
+function hitfreeze(_time){
+	//Warning: Freezes the ENTIRE game. Use with caution.
+	var _t = current_time;
+	while (current_time<_t+_time){ };
+	
 }
