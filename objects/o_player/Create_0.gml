@@ -64,3 +64,5 @@ teleporting = false;//If fast-traveling, warp to the correct position using the 
 
 recent_checkpoint=room;	//will be the init room, and hence will tp to the same position in Room1
 recent_savepoint=noone;
+
+attack_state=0;

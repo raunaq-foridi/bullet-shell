@@ -111,7 +111,7 @@ if(climbing){
 		}
 		//ERROR HERE	
 		if(instance_exists(climbable) and climbable!=0){
-			print(climbable);
+			//print(climbable);
 			if (climbable.snap_x){
 				x=climbable.x+climbable.rel_x;	//"snap" to climbable, with a relative distance.
 			}									//allows you to stay on a moving platform

@@ -121,6 +121,9 @@ if (input_check("move_up")){
 //if (keyboard_check(global.keys.move_down)){
 if (input_check("move_down")){
 
+	//shorten hitbox
+	//image_yscale=0.95
+	
 	if (place_meeting(x,y,o_climbable)){		//begin climb if pressed on ladder
 		climbing=true;	
 	}
@@ -142,6 +145,11 @@ if (input_check("move_down")){
 		if(vel_y<swim_speed){vel_y+=swim_acceleration*input_check("move_down");}	
 		dir[1]=1;
 	}
+}
+else{
+	//deal with uncrouching
+	image_yscale=1;
+	
 }
 //----------------------------------------------------------------------------------------//
 }
