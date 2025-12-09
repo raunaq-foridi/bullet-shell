@@ -6,5 +6,13 @@ if (hp<=0 or not alive){
 	alive=false;
 	instance_destroy();
 }
-if (not invincible){visible=true;}
+if (not invincible){
+	visible=true;
+	image_alpha=1;
+	
+
+}
 state = [["hp",hp],["alive",alive]];
+if(alarm[4]>0){ image_blend= c_red}
+else{image_blend = c_white}
+//TODO: Replace with some flash shader

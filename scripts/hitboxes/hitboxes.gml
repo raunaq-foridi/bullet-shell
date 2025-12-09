@@ -61,5 +61,9 @@ function hitfreeze(_time){
 	//Warning: Freezes the ENTIRE game. Use with caution.
 	var _t = current_time;
 	while (current_time<_t+_time){ };
+	//instance_activate_object(o_freezer);
+	//o_freezer.required_time = _t + _time;
+	//game_set_speed(10,gamespeed_fps);
+	//game_set_speed(60,gamespeed_fps);
 	
 }

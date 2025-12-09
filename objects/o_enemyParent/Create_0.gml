@@ -43,5 +43,7 @@ bonus_gears=0;	//creates the above number, plus up to this many uniformly ( unif
 gear_directions=[0,360];	//Limit the directions gears can fly out at. Make sure the second number is larger, i.e [330,390] rather than [330,30]
 gear_strength=5;// limit the speed at which gears fly out.
 
+flash = 5; //frames for which to flash for if hit
+
 alarm[2]=1;
 function movement_ai(){}	//blank function. use in child objects.

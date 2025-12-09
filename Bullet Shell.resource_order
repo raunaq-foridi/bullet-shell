@@ -84,6 +84,7 @@
     {"name":"o_ui_list","order":4,"path":"objects/o_ui_list/o_ui_list.yy",},
     {"name":"o_vertical_platform","order":12,"path":"objects/o_vertical_platform/o_vertical_platform.yy",},
     {"name":"o_vine","order":4,"path":"objects/o_vine/o_vine.yy",},
+    {"name":"o_freezer","order":6,"path":"objects/o_freezer/o_freezer.yy",},
     {"name":"test_path","order":13,"path":"paths/test_path/test_path.yy",},
     {"name":"Default_Room","order":4,"path":"rooms/Default_Room/Default_Room.yy",},
     {"name":"Init_Room","order":5,"path":"rooms/Init_Room/Init_Room.yy",},

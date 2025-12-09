@@ -99,12 +99,12 @@ function neutral(){
 		//player_hitbox(30*player_facing,30,40,40,attack_duration,"box",0,true);
 		//player_hitbox(20*player_facing,10,40,20,attack_duration,"circle",10,true);
 		
-		player_hitbox(50*player_facing,10,70,80,attack_duration,"box",0,true);
-		player_hitbox(20*player_facing,30,140,36,attack_duration,"box",4,true);
+		/*player_hitbox(50*player_facing,10,70,80,attack_duration,"box",0,true);
+		player_hitbox(20*player_facing,30,140,36,attack_duration,"box",4,true);*/
 		
-		/*//Testing out high knockback finish
-		player_hitbox(50*player_facing,10,70,80,attack_duration,"box",0,true,,,15,,500);
-		player_hitbox(20*player_facing,30,140,36,attack_duration,"box",4,true,,,15,,500);*/
+		//Testing out high knockback finish
+		player_hitbox(50*player_facing,10,70,80,attack_duration,"box",0,true,,,15,,,400);
+		player_hitbox(20*player_facing,30,140,36,attack_duration,"box",4,true,,,15,,,400);
 	}
 	
 	image_speed = _anim_speed;
