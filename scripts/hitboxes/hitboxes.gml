@@ -57,13 +57,68 @@ function p_box_hitbox(_x1,_y1,_x2,_y2,_lifespan,_delay=0,_knockback=5,_contact_d
 	player_hitbox(_centre[0],_centre[1],_width,_height,_lifespan,"box",_delay,true,0,0,_knockback,_contact_disable,_iframes,_freeze)
 }
 
+//Other ___boxes
+
+//Pogo Boxes - Cause the player to move in a certain direction upon impact
+
+function p_pogobox(_rel_x,_rel_y,_width,_height,_lifespan,_pogo_x,_pogo_y,_shape="box",_delay=0,_follow_player=false,_vel_x=0,_vel_y=0){
+	
+	var _pogobox = instance_create_layer(o_player.x+_rel_x,o_player.y+_rel_y,"Instances",o_player_pogobox);
+	print("pogoboxed");
+	
+	with(_pogobox){
+		rel_x = _rel_x;
+		rel_y = _rel_y;
+		width = _width;
+		height= _height;
+		lifespan=_lifespan + _delay;
+		pogo_x = _pogo_x;
+		pogo_y = _pogo_y;
+		follow_player= _follow_player;
+		vel_x = _vel_x;
+		vel_y = _vel_y;
+		shape = _shape;
+		delay = _delay;
+		
+		
+		alarm[1] = lifespan;
+
+		switch(shape){
+			case "box":
+				sprite_index = s_pogobox_square;
+			break
+			case "circle":
+				sprite_index = s_pogobox_circle;
+			break
+			default:
+				sprite_index = s_pogobox_square;
+			break
+		}
+
+		image_xscale = width/sprite_width;
+		image_yscale = height/sprite_height;
+		
+		if (delay>0){
+			alarm[0]=delay;
+			visible=false;		//technically, all will be invisible, but this is just useful for development
+			waiting=true;
+			//lifespan+=delay;
+		}
+	}
+}
+
 function hitfreeze(_time){
 	//Warning: Freezes the ENTIRE game. Use with caution.
 	var _t = current_time;
+	
+	while (current_time<_t+_time-50){ };
+	audio_play_sound(snd_meaty_hit,1,false);
 	while (current_time<_t+_time){ };
 	//instance_activate_object(o_freezer);
 	//o_freezer.required_time = _t + _time;
 	//game_set_speed(10,gamespeed_fps);
 	//game_set_speed(60,gamespeed_fps);
+	
+	//audio_play_sound(snd_meaty_hit,1,false);
 	
 }

@@ -85,7 +85,8 @@ function list_name(_listname){
 			["mute","toggle",0,[0,1],"mute",[0,1]],
 			["volume","slider",100,[0,1],"volume",[0,2]],
 			["resolution","list","low",["low","medium","high"],"resolution",[0,3]],
-			["map transparency","toggle",0,[0,1],"map_transparency",[0,4]]
+			["map transparency","toggle",0,[0,1],"map_transparency",[0,4]],
+			["input threshold","slider",0.8,[0.3,1.0],"threshold",[0,5]]
 			//["volume2","slider",100,[0,200],"dummy"],
 			//["","","",[],""]	//dummy entry. Required to fix stuff.
 			]

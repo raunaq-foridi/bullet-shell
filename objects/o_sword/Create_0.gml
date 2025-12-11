@@ -130,7 +130,8 @@ function aerial() {
 		
 		basic_attack_setup(_duration,_cooldown,_input_window,_state+1,s_player_aerial_1,_anim_speed);
 		
-		player_hitbox(0,30,60,100,attack_duration,"circle",3,true);
+		player_hitbox(0,30,70,110,attack_duration,"circle",1,true,,,,50);
+		p_pogobox(0,30,70,110,attack_duration+5,0,-10,"circle",2,true);
 		
 	}
 	
@@ -159,6 +160,7 @@ function forward(){
 		basic_attack_setup(_duration,_cooldown,_input_window,_state+1,s_player_forward,_anim_speed);
 		
 		player_hitbox(0,30,100,80,attack_duration,"circle",3,true);
+		
 		
 	}
 	

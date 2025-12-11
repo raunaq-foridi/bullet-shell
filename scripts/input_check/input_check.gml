@@ -4,6 +4,7 @@ function gamepad_check(_input){
 	//var _gamepad = 0 //"TEMPORARY PLACEHOLDER"
 	var _gamepads = o_keyboard_controller.gamepads;
 	var _gamepad;
+	var _clamp = global.threshold;	//Anything greater than this in absolute value counts as 1
 	if (array_length(_gamepads)==0){return 0}
 	//_input should be a string, such as move_up, regarding a certain control
 	_gamepad = _gamepads[0]
@@ -12,7 +13,12 @@ function gamepad_check(_input){
 	//print(_button);
 	if(is_array(_button)){
 		//if(_input=="move_left"){ print(gamepad_axis_value(_gamepad,_button[0]*_button[1]))}
-		return gamepad_axis_value(_gamepad,_button[0])*_button[1]
+		var _output = gamepad_axis_value(_gamepad,_button[0])*_button[1];
+		//return gamepad_axis_value(_gamepad,_button[0])*_button[1]
+		
+		//try to clamp.
+		if (abs(_output)<=_clamp){return _output}
+		else{return sign(_output)}
 	}
 	//no "else" necessary, since if statement ends function
 	//hence, assume _button is not an axis but rather actually a button

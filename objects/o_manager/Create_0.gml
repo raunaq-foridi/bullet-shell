@@ -7,6 +7,7 @@ global.dummy= 0;			//dummy variable for testing or holding values. No intended u
 global.text_speed=1;		//works by division, so 5 is 5x less delay
 global.dialogue_text_size=2;//specifically for dialogue boxes. May be replaced with text toggle
 global.map_transparency=false;
+global.threshold = 0.8;
 
 //Persistent Variables
 coins = 0; //This is NOT for final usage. This is for testing purposes
