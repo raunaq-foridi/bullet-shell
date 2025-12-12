@@ -85,6 +85,9 @@ function neutral(){
 		player_hitbox(26*player_facing,10,40,60,attack_duration,"box",3,true);
 		player_hitbox(20*player_facing,10,40,20,attack_duration/2,"circle",10,true,-2*player_facing,-2);
 		player_hitbox(30*player_facing,50,40,20,attack_duration,"circle",0,true);
+		
+		//Experimental windbox
+		p_windbox(60*player_facing,30,60,80,attack_duration+5,-3*player_facing,0,"box")
 	}
 	//Attack 3
 	else if(_state==2){

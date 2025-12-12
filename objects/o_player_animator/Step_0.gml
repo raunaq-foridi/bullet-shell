@@ -20,7 +20,8 @@ counter=0;
 if (abs(o_player.dir[0])!=0){image_xscale=o_player.dir[0]}
 if(not o_player.falling){
 	
-	if(abs(o_player.vel_x)>=0.6){sprite_index=s_player_run}
+	//if(abs(o_player.vel_x)>=0.6){sprite_index=s_player_run}
+	if(input_check("move_left") or input_check("move_right")){sprite_index=s_player_run}
 	else{sprite_index=s_player_idle}
 	
 	//crouching

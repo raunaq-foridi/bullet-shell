@@ -29,3 +29,7 @@ if (input_check_pressed("map")){
 	}	
 	
 }
+
+if(is_undefined(visited_rooms)){
+	visited_rooms = ds_grid_create(global.world_map_width,global.world_map_height);	
+}

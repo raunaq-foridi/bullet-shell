@@ -22,7 +22,6 @@ height= 10;
 delay = 0;			//How long before this hitbox becomes active?
 waiting=false;		//is the delay still going?
 
-pogo_x = 0;			//The direction and magnitude in which to throw the player
-pogo_y = 0;		
+wind_x = 0;			//The direction and magnitude in which to throw the *enemy*
+wind_y = 0;		
 
-//TODO: Maximum frames of effect. i.e, if in contact for more than x frames, kill.
