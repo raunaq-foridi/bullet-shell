@@ -44,6 +44,29 @@ gear_directions=[0,360];	//Limit the directions gears can fly out at. Make sure 
 gear_strength=5;// limit the speed at which gears fly out.
 
 flash = 5; //frames for which to flash for if hit
+hit = false;	//Boolean to store when hit by the player. deactivate manually after used.
 
 alarm[2]=1;
 function movement_ai(){}	//blank function. use in child objects.
+function animation(){}		//blank function to animate. Use in child objects.
+
+hurtboxes = [];
+function make_hurtboxes(){
+	//var _cx = x - (bbox_left + bbox_right)/2 + sprite_get_xoffset(sprite_index);
+	//var _cy = y - (bbox_top + bbox_bottom)/2 + sprite_get_yoffset(sprite_index);
+	
+	
+	var _w = abs(bbox_right-bbox_left);
+	var _h = abs(bbox_bottom - bbox_top);
+
+	var _cx = _w/2 - sprite_get_xoffset(sprite_index)/3;
+	var _cy = _h/2 - sprite_get_yoffset(sprite_index)/3;
+
+	array_push(hurtboxes, enemy_hurtbox(_cx,_cy,_w,_h));
+	
+}
+function destroy_hitboxes(){
+	var _f = function(_element,_index){instance_destroy(_element);}
+	array_foreach(hurtboxes,_f);
+}
+make_hurtboxes()

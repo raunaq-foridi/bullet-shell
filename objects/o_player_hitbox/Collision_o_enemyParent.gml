@@ -1,5 +1,8 @@
-/// @description Copied from o_Sword
+/// @description Deprecated
 
+//MOVED TO o_enemy_hurtbox
+
+/*
 if (not other.invincible and not waiting){
 	other.hp-=1;
 	//print(other.hp);
@@ -29,4 +32,4 @@ if (not other.invincible and not waiting){
 	}
 }
 
-
+*/

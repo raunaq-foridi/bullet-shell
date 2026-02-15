@@ -170,3 +170,52 @@ function hitfreeze(_time){
 	//audio_play_sound(snd_meaty_hit,1,false);
 	
 }
+
+
+//--------------------------- HURTBOXES --------------------------//
+
+function enemy_hurtbox(_rel_x,_rel_y,_width,_height,_lifespan=-1,_shape="box",_delay=0,_vel_x=0,_vel_y=0){
+	//Create a hitbox for a player attack
+	var _hurtbox = instance_create_layer(id.x+_rel_x,id.y+_rel_y,"Instances",o_enemy_hurtbox);
+	
+	with(_hurtbox){
+		rel_x = _rel_x;
+		rel_y = _rel_y;
+		width = _width;
+		height= _height;
+		lifespan=_lifespan + _delay;
+		vel_x = _vel_x;
+		vel_y = _vel_y;
+		shape = _shape;
+		delay = _delay;
+		master = other;
+		
+		alarm[1] = lifespan;
+
+		switch(shape){
+			case "box":
+				sprite_index = s_hitbox_square;
+			break
+			case "circle":
+				sprite_index = s_hitbox_circle;
+			break
+			default:
+				sprite_index = s_hitbox_square;
+			break
+		}
+
+		image_xscale = width/sprite_width;
+		image_yscale = height/sprite_height;
+		
+		if (delay>0){
+			alarm[0]=delay;
+			visible=false;		//technically, all will be invisible, but this is just useful for development
+			waiting=true;
+			//lifespan+=delay;
+		}
+
+	}
+	
+	return _hurtbox				//Unlike hitboxes, hurtboxes need to be far more malleable
+
+}
