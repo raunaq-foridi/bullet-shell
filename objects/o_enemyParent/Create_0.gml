@@ -46,6 +46,9 @@ gear_strength=5;// limit the speed at which gears fly out.
 flash = 5; //frames for which to flash for if hit
 hit = false;	//Boolean to store when hit by the player. deactivate manually after used.
 
+anim_death = sprite_index;	//change to death sprite
+dying = false;
+
 alarm[2]=1;
 function movement_ai(){}	//blank function. use in child objects.
 function animation(){}		//blank function to animate. Use in child objects.
@@ -65,7 +68,7 @@ function make_hurtboxes(){
 	array_push(hurtboxes, enemy_hurtbox(_cx,_cy,_w,_h));
 	
 }
-function destroy_hitboxes(){
+function destroy_hurtboxes(){
 	var _f = function(_element,_index){instance_destroy(_element);}
 	array_foreach(hurtboxes,_f);
 }

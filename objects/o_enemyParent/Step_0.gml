@@ -1,10 +1,19 @@
 /// @description Insert description here
 // You can write your code in this editor
+
+if(dying){exit}
+
 repeat_move(vel_x,vel_y);
-if (hp<=0 or not alive){
+
+if (not alive){instance_destroy();}
+if (hp<=0 and alive){
 	//instance_deactivate_object(id);
 	alive=false;
-	instance_destroy();
+	dying=true;
+	sprite_index=anim_death;
+	image_index=0;
+	destroy_hurtboxes();
+	//instance_destroy();
 }
 if (not invincible){
 	visible=true;

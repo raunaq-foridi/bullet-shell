@@ -11,9 +11,14 @@ if (not occupied){
 //if (keyboard_check_pressed(global.keys.jump)){
 //print(input_check_pressed("jump"),"jump");
 if (input_check_pressed("jump")){
-	if(grounded and not water){
+	alarm[7]=jump_buffer;
+	buffered_jump=true;
+}
+if (buffered_jump){
+	if((grounded or coyote) and not water){
+		coyote=false;
 		vel_y = -jump_speed;	//negative, because positive is downwards for some weird reason.
-	
+		buffered_jump=false;
 		//platform momentum
 		if(place_meeting(x,y+1,o_platform)){ // and (abs(x-o_platform.x)<o_platform.clamp_x)
 		
@@ -21,7 +26,9 @@ if (input_check_pressed("jump")){
 			if (not place_meeting(x,y,_platform) and _platform.active){	//ignore error. this works.
 				vel_x+= _platform.momentum_x;
 			}
-		}         
+		}
+		
+		//coyote=false;
 	}
 
 	else if(water and alarm[2]<=0){

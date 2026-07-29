@@ -3,6 +3,8 @@
 
 // Inherit the parent event
 event_inherited();
+hp=2;
+
 scale = [image_xscale,image_yscale];
 
 function animation(){
@@ -74,9 +76,10 @@ function movement_ai(){
 	
 	else{stunned-=1;}
 }
+anim_death=s_worm_death;
 
 //Hurtboxes
-destroy_hitboxes();
+destroy_hurtboxes();		//delete default hurtboxes
 
 hurtboxes = [];
 function make_hurtboxes(){

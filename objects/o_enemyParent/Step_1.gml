@@ -23,6 +23,7 @@ if (round(vel_x!=0)){
 }
 else{vel_x=0;}	//cuts off any speed <0.5; probably good for performance, stops oscillation.
 */
+if(dying){exit}
 basic_gravity();
 basic_friction(0.4);
 

@@ -31,6 +31,7 @@ else{				//Standard Physics Variables
 }
 //Groundedness code
 if (detect_tile(0,1)!=0){
+	//coyote=false;
 	grounded=true;
 	if(flying){vel_x=0;}
 	flying=false;
@@ -38,7 +39,13 @@ if (detect_tile(0,1)!=0){
 	alarm[5]=-1;
 }
 else{
-	if(grounded){alarm[5]=2;}
+	if(grounded){
+		alarm[5]=2;
+		if (vel_y>=0){
+			coyote=true;
+		}
+		alarm[6]=coyote_time;
+	}
 	grounded=false;
 	//print("gwowo");
 	//print(alarm[5]);

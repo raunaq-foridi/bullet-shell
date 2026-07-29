@@ -66,3 +66,9 @@ recent_checkpoint=room;	//will be the init room, and hence will tp to the same p
 recent_savepoint=noone;
 
 attack_state=0;
+
+coyote = false;
+coyote_time=15;
+
+jump_buffer=15;
+buffered_jump = false;
