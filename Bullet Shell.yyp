@@ -236,6 +236,7 @@
     {"id":{"name":"Sprite31","path":"sprites/Sprite31/Sprite31.yy",},},
     {"id":{"name":"Sprite32","path":"sprites/Sprite32/Sprite32.yy",},},
     {"id":{"name":"Sprite42","path":"sprites/Sprite42/Sprite42.yy",},},
+    {"id":{"name":"s_brine","path":"sprites/s_brine/s_brine.yy",},},
     {"id":{"name":"Sprite9","path":"sprites/Sprite9/Sprite9.yy",},},
     {"id":{"name":"ComplexTiles","path":"tilesets/ComplexTiles/ComplexTiles.yy",},},
     {"id":{"name":"SolidTiles","path":"tilesets/SolidTiles/SolidTiles.yy",},},

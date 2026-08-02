@@ -191,6 +191,7 @@
     {"name":"Sprite31","order":5,"path":"sprites/Sprite31/Sprite31.yy",},
     {"name":"Sprite32","order":21,"path":"sprites/Sprite32/Sprite32.yy",},
     {"name":"Sprite42","order":26,"path":"sprites/Sprite42/Sprite42.yy",},
+    {"name":"s_brine","order":5,"path":"sprites/s_brine/s_brine.yy",},
     {"name":"Sprite9","order":4,"path":"sprites/Sprite9/Sprite9.yy",},
     {"name":"ComplexTiles","order":2,"path":"tilesets/ComplexTiles/ComplexTiles.yy",},
     {"name":"WaterTiles","order":5,"path":"tilesets/WaterTiles/WaterTiles.yy",},

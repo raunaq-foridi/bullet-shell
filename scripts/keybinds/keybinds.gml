@@ -23,7 +23,7 @@ keys = {
 	mouse_attack: false,
 	attack:		ord("L"),	//idk man. get Adam to choose more wisely
 	
-	magic: ord("O"),
+	magic: ord("O"),		//again... terrible choice.
 	
 	inventory:	ord("E"),
 	map:		ord("M"),
@@ -183,7 +183,7 @@ temp_keys = {
 	
 	mouse_attack: false,
 	attack:		ord("L"),	//idk man. get Adam to choose more wisely
-	magic:		 ord(";"),
+	magic:		 ord("O"),
 	
 	inventory:	ord("E"),
 	map:		ord("M"),
