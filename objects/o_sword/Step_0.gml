@@ -4,6 +4,8 @@
 //This type of melee attack will be retired
 //Instead, we will summon invisible hitbox objects, and play an animation. o_sword will just be the controller for these
 
+if(o_player.occupied){exit;}
+
 if (mouse_check_button_pressed(mb_left) or input_check_pressed("attack")){
 	
 	if (alarm[2]<=0){recharging=false;}
@@ -51,3 +53,12 @@ if (mouse_check_button_pressed(mb_left) or input_check_pressed("attack")){
 //mask_index = s_test_hitbox;
 //draw_sprite(mask_index,-1,x,y);
 
+//Magic - defer to o_magic_controller
+if (input_check_pressed("magic") or mouse_check_button_pressed(mb_right)){
+	if( not recharging){
+		with(o_magic_controller){
+			use_magic();	
+		}
+	}
+	
+}

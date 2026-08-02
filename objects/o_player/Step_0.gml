@@ -2,7 +2,7 @@
 // You can write your code in this editor
 
 
-//	Controls. Assumes Keyboard, later change to support Controllers.
+//	Controls. uses rebindable inputs
 if (not occupied){
 //----------------------------------------------------------------------------------------//
 

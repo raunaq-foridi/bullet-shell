@@ -134,13 +134,14 @@ function list_name(_listname){
 			["Camera Left","keybind",0, 0, "camera_left", [0,13]],
 			["Camera Right","keybind",0, 0, "camera_right", [0,14]],
 			["Melee Attack","keybind",0, 0, "attack", [0,15]],
-			["Open Inventory","keybind",0, 0, "inventory", [0,16]],
-			["Open Map","keybind",0, 0, "map", [0,17]],
-			["Pause","keybind",0, 0, "pause_key", [0,18]],
-			["Set Keybinds","button",0,[],set_keybinds,[0,19]],
-			["Set to Default","button",0,[],reset_keybinds,[0,20]]
+			["Magic Attack","keybind",0, 0, "magic", [0,16]],
+			["Open Inventory","keybind",0, 0, "inventory", [0,17]],
+			["Open Map","keybind",0, 0, "map", [0,18]],
+			["Pause","keybind",0, 0, "pause_key", [0,19]],
+			["Set Keybinds","button",0,[],set_keybinds,[0,20]],
+			["Set to Default","button",0,[],reset_keybinds,[0,21]]
 			]
-			_scrollsize = 480;
+			_scrollsize = 510;
 		
 	}
 	for(var _i=0; _i<array_length(_array); _i++){

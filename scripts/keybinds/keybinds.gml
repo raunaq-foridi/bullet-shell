@@ -23,6 +23,8 @@ keys = {
 	mouse_attack: false,
 	attack:		ord("L"),	//idk man. get Adam to choose more wisely
 	
+	magic: ord("O"),
+	
 	inventory:	ord("E"),
 	map:		ord("M"),
 	pause_key:	ord("P")
@@ -51,6 +53,7 @@ controls = {
 	
 	mouse_attack: false,	//Not Applicable
 	attack:		gp_face2,	
+	magic:		gp_face4,
 	
 	//inventory:	gp_select,
 	inventory: gp_face3,
@@ -84,6 +87,7 @@ default_keyboard_mouse = {
 	
 	mouse_attack: true,
 	attack:		noone,
+	magic:		ord("O"),
 	
 	inventory:	ord("E"),
 	map:		ord("M"),
@@ -114,6 +118,7 @@ default_keyboard_only = {
 	
 	mouse_attack: false,
 	attack:		ord("Z"),
+	magic:		ord("X"),
 	
 	inventory:	ord("E"),
 	map:		ord("M"),
@@ -178,6 +183,7 @@ temp_keys = {
 	
 	mouse_attack: false,
 	attack:		ord("L"),	//idk man. get Adam to choose more wisely
+	magic:		 ord(";"),
 	
 	inventory:	ord("E"),
 	map:		ord("M"),
