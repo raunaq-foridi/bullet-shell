@@ -10,9 +10,16 @@ enum ELEMENTS{
 
 element = ELEMENTS.FIRE;
 
+mana = 100;
+max_mana=100;
+
+mana_system = "time"		//"none", "time" or "vampire"
+
+
 //image_speed=0;
 
 function use_magic(){
+	if (mana<=1){return;}
 	switch (element){
 		case ELEMENTS.FIRE:
 		break;

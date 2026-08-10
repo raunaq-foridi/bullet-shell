@@ -5,7 +5,7 @@ keys = {
 	move_down : ord("S"),
 	jump	  : vk_space,
 	
-	select	  : vk_enter,
+	select	  : ord("F"),
 	
 	camera_left:	vk_left,
 	camera_right:	vk_right,
@@ -21,13 +21,14 @@ keys = {
 	scroll_down:	vk_down,
 	
 	mouse_attack: false,
-	attack:		ord("L"),	//idk man. get Adam to choose more wisely
+	attack:		ord("J"),	//idk man. get Adam to choose more wisely
 	
-	magic: ord("O"),		//again... terrible choice.
+	magic: ord("K"),		//again... terrible choice.
 	
 	inventory:	ord("E"),
-	map:		ord("M"),
-	pause_key:	ord("P")
+	map:		ord("V"),
+	//pause_key:	ord("P")
+	pause_key:	vk_escape
 }
 
 //use keys for keyboard, controls for controllers

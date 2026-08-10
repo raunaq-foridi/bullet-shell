@@ -5,3 +5,9 @@ if(keyboard_check_pressed(ord("Q"))) {
 	image_speed = 1;
 	element = (element+1) mod 3;
 }
+
+if(mana<max_mana){
+	mana+=0.5;	
+}
+
+print(mana);

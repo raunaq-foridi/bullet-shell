@@ -10,6 +10,7 @@ if(not (input_check("magic") or mouse_check_button(mb_right))){
 	or (player_face=-1 and input_check("move_left"))){
 		
 		if(alarm[0]<=0){
+			o_magic_controller.mana = max(0,o_magic_controller.mana-30);
 			sprite_index = s_hydropump2;
 			//image_xscale = 2*player_face;
 			player_hitbox(player_face*(40+90),30,180,60,60,"square",,true);
@@ -23,6 +24,7 @@ if(not (input_check("magic") or mouse_check_button(mb_right))){
 	else if(input_check("move_down")){
 		
 		if(alarm[0]<=0){
+			o_magic_controller.mana = max(0,o_magic_controller.mana-15);
 			sprite_index = s_brine;
 			x=o_player.x;
 			y=o_player.y+64;
@@ -47,3 +49,4 @@ if(not (input_check("magic") or mouse_check_button(mb_right))){
 }
 o_player.occupied=true;
 player_hitbox(40*player_face,30,20,20,1,"circle")
+
